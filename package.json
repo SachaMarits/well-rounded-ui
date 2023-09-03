@@ -1,0 +1,34 @@
+{
+  "name": "well-rounded-ui",
+  "version": "1.0.0",
+  "description": "Well Rounded UI Inputs to beautify your web projects !",
+  "main": "src/index.js",
+  "scripts": {
+    "pack": "npm pack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SachaMarits/well-rounded-ui.git"
+  },
+  "keywords": [
+    "well",
+    "rounded",
+    "well rounded",
+    "ui",
+    "inputs",
+    "bootstrap"
+  ],
+  "author": "Sacha Marits",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SachaMarits/well-rounded-ui/issues"
+  },
+  "homepage": "https://github.com/SachaMarits/well-rounded-ui#readme",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "node-sass": "^9.0.0",
+    "sass": "1.66.1"
+  }
+}

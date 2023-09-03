@@ -1,0 +1,38 @@
+/* #region Colors */
+
+$primary: #2e94d8;
+$secondary: #974de2;
+$success: rgb(145, 199, 20);
+$danger: rgb(211, 41, 41);
+$orange: #ff891a;
+$warning: #FFBA1A;
+$default: #c0c0c0;
+
+$selection: #7C9AEF;
+
+$main-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  danger: $danger,
+  warning: $warning,
+);
+
+/* Exporting variables to be used in jsx files */
+:export {
+  @each $key, $value in $main-colors {
+    #{unquote($key)}: $value;
+  }
+}
+
+/* #endregion Colors */
+
+
+/* #region Layout */
+
+$spacing: 8px; // margins and paddings spacing amount
+$spacingLevel1: $spacing;
+$spacingLevel2: $spacing * 2;
+$spacingLevel3: $spacing * 3;
+
+/* #endregion Layout */

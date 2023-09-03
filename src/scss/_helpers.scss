@@ -1,0 +1,425 @@
+/* This file describes helpers classes */
+@import './variables';
+@import './animations';
+
+/* #region Position */
+
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+
+/* #endregion Position */
+
+/* #region Sizing */
+
+.h-200 {
+  height: 200px;
+}
+
+/* #endregion Sizing */
+
+/* #region Spacing */
+
+.p-4 {
+  padding: $spacingLevel3;
+}
+.pl-4 {
+  padding-left: $spacingLevel3;
+}
+.pr-4 {
+  padding-right: $spacingLevel3;
+}
+.pt-4 {
+  padding-top: $spacingLevel3;
+}
+.pb-4 {
+  padding-bottom: $spacingLevel3;
+}
+.px-4 {
+  padding: 0 $spacingLevel3;
+}
+.py-4 {
+  padding: $spacingLevel3 0;
+}
+
+.p-3 {
+  padding: $spacingLevel2;
+}
+.pl-3 {
+  padding-left: $spacingLevel2;
+}
+.pr-3 {
+  padding-right: $spacingLevel2;
+}
+.pt-3 {
+  padding-top: $spacingLevel2;
+}
+.pb-3 {
+  padding-bottom: $spacingLevel2;
+}
+.px-3 {
+  padding: 0 $spacingLevel2;
+}
+.py-3 {
+  padding: $spacingLevel2 0;
+}
+
+.p-2 {
+  padding: $spacingLevel1;
+}
+.pl-2 {
+  padding-left: $spacingLevel1;
+}
+.pr-2 {
+  padding-right: $spacingLevel1;
+}
+.pt-2 {
+  padding-top: $spacingLevel1;
+}
+.pb-2 {
+  padding-bottom: $spacingLevel1;
+}
+.px-2 {
+  padding: 0 $spacingLevel1;
+}
+.py-2 {
+  padding: $spacingLevel1 0;
+}
+
+.m-4 {
+  margin: $spacingLevel3;
+}
+.ml-4 {
+  margin-left: $spacingLevel3;
+}
+.mr-4 {
+  margin-right: $spacingLevel3;
+}
+.mt-4 {
+  margin-top: $spacingLevel3;
+}
+.mb-4 {
+  margin-bottom: $spacingLevel3;
+}
+.mx-4 {
+  margin: 0 $spacingLevel3;
+}
+.my-4 {
+  margin: $spacingLevel3 0;
+}
+
+.m-3 {
+  margin: $spacingLevel2;
+}
+.ml-3 {
+  margin-left: $spacingLevel2;
+}
+.mr-3 {
+  margin-right: $spacingLevel2;
+}
+.mt-3 {
+  margin-top: $spacingLevel2;
+}
+.mb-3 {
+  margin-bottom: $spacingLevel2;
+}
+.mx-3 {
+  margin: 0 $spacingLevel2;
+}
+.my-3 {
+  margin: $spacingLevel2 0;
+}
+
+.m-2 {
+  margin: $spacingLevel1;
+}
+.ml-2 {
+  margin-left: $spacingLevel1;
+}
+.mr-2 {
+  margin-right: $spacingLevel1;
+}
+.mt-2 {
+  margin-top: $spacingLevel1;
+}
+.mb-2 {
+  margin-bottom: $spacingLevel1;
+}
+.mx-2 {
+  margin: 0 $spacingLevel1;
+}
+.my-2 {
+  margin: 8px 0;
+}
+
+.m-0 {
+  margin: 0px !important;
+}
+.ml-0 {
+  margin-left: 0px !important;
+}
+.mr-0 {
+  margin-right: 0px !important;
+}
+.mt-0 {
+  margin-top: 0px !important;
+}
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+/* #endregion Spacing */
+
+/* #region Typography */
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-primary {
+  color: $primary;
+}
+.text-success {
+  color: $success;
+}
+.text-danger {
+  color: $danger;
+}
+.text-warning {
+  color: $warning;
+}
+.text-muted {
+  color: #999;
+}
+.text-secondary {
+  opacity: .5;
+}
+.text-xs {
+  font-size: 0.8rem;
+}
+.text-sm {
+  font-size: 0.9rem;
+}
+.text-lg {
+  font-size: 1.1rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-xxl {
+  font-size: 2.5rem;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.h3 {
+  font-size: 1.15rem;
+}
+.h4 {
+  font-size: 1.10rem;
+}
+.h5 {
+  font-size: 1.05rem;
+}
+.unselectable {
+  user-select: none;
+}
+
+/* #endregion Typography */
+
+/* #region Flex */
+
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* #endregion Flex */
+
+/* #region Buttons */
+
+.btn {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  border: 0;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
+    var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  transition-duration: 0.2s;
+  color: white;
+}
+.btn:hover {
+  filter: brightness(92.5%);
+}
+.btn:active {
+  filter: brightness(85%);
+}
+.btn:disabled {
+  opacity: .7;
+  cursor: default;
+}
+.btn:disabled:hover{
+  filter: brightness(100%);
+}
+.btn-primary {
+  background: $primary;
+}
+.btn-success {
+  background: $success;
+}
+.btn-danger {
+  background: $danger;
+}
+.btn-default {
+  background: $default;
+}
+.btn-gradient {
+  background: linear-gradient(90deg, $primary -30%, $secondary 130%);
+}
+.btn-disabled {
+  opacity: 0.65;
+}
+
+/* #endregion Buttons */
+
+/* #region Borders */
+
+.border-bottom {
+  border-bottom: 1px solid $primary !important;
+}
+.border-top {
+  border-top: 1px solid $primary !important;
+}
+.border-left {
+  border-left: 1px solid $primary !important;
+}
+.border-right {
+  border-right: 1px solid $primary !important;
+}
+.border {
+  border: 1px solid $primary !important;
+}
+
+/* #endregion Borders */
+
+/* #region Animations */
+
+.fadeIn {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+}
+
+.fadeInDown {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+}
+/* #endregion Animations */
+
+/* #region Shapes and sizing */
+
+.rounded-circle {
+  border-radius: 100%;
+}
+.square36 {
+  height: 36px;
+  width: 36px;
+}
+.square48 {
+  height: 48px;
+  width: 48px;
+}
+.w-100 {
+  width: 100%;
+}
+
+/* #endregion Shapes and sizing */
+
+/* #region Interactions */
+
+.pointer {
+  cursor: pointer;
+  transition: 0.15s;
+  user-select: none;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+/* #endregion Intercattions */
+
+/* #region Background colors */
+
+.bg-primary { background: $primary !important; }
+.bg-secondary { background: $secondary !important; }
+.bg-success { background: $success !important; }
+.bg-danger { background: $danger !important; }
+.bg-warning { background: $warning !important; }
+.bg-default { background: $default !important; }
+.bg-orange { background: $orange !important; }
+
+/* #endregion Background colors */

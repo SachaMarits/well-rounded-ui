@@ -1,0 +1,702 @@
+/* This file describes elements styles */
+@import './variables';
+@import './animations';
+
+/* #region Card */
+
+.card, .modal-content {
+  padding: 16px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 0.375rem;
+  border-color: transparent;
+  background: white;
+
+  .card-header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+  }
+
+  .card-footer {
+    margin: 16px -16px -16px -16px;
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    background: #f0f5f7;
+  }
+}
+
+.card-compact {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* #endregion Card */
+
+/* #region Form */
+
+.form-control,
+.form-control:focus-visible {
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-shadow);
+  width: 100%;
+  font-size: 100%;
+  border-radius: 0.375rem;
+  margin-top: 8px;
+  padding: 0.5rem 0.75rem;
+  outline: 0;
+  border: 1px solid rgb(226, 232, 240);
+
+  &::placeholder {
+    font-weight: 500;
+  }
+  &:focus {
+    border: 1px solid $primary;
+  }
+}
+
+.error-input {
+  border-color: $danger !important;
+  border-width: 1px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: auto;
+
+  input[type='checkbox'] {
+    --active: $primary;
+    --active-inner: $primary;
+    --focus: 1px #1e5594;
+    --border: #BBC1E1;
+    --border-hover: $primary;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 21px;
+    width: 21px;
+    padding: 0;
+    outline: none;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    margin-right: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--tw-shadow);
+    background: var(--b, var(--background));
+    transition: background .3s, border-color .3s, box-shadow .2s;
+    &:after {
+      content: '';
+      display: block;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
+    }
+    &:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: .3s;
+      --d-t: .6s;
+    }
+    &:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: .9;
+      &:checked {
+        --b: var(--disabled-inner);
+        --bc: var(--border);
+      }
+      & + label {
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      &:not(:checked) {
+        &:not(:disabled) {
+          --bc: var(--border-hover);
+        }
+      }
+    }
+
+    &:not(.switch) {
+      width: 21px;
+      &:after {
+        opacity: var(--o, 0);
+      }
+      &:checked {
+        --o: 1;
+      }
+    }
+  }
+  input[type='checkbox'] {
+    &:not(.switch) {
+      border-radius: 7px;
+      &:after {
+        width: 5px;
+        height: 9px;
+        border: 2px solid $primary;
+        border-top: 0;
+        border-left: 0;
+        left: 7px;
+        top: 4px;
+        transform: rotate(var(--r, 20deg));
+      }
+      &:checked {
+        --r: 43deg;
+      }
+    }
+  }
+}
+
+/* #endregion Form */
+
+/* #region Spinner */
+
+.spinner {
+  animation: rotation 1.4s linear infinite;
+}
+
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite;
+}
+.path-primary {
+  stroke: $primary;
+}
+.path-success {
+  stroke: $success;
+}
+.path-danger {
+  stroke: $danger;
+}
+.path-white {
+  stroke: white;
+}
+.path-black {
+  stroke: black;
+}
+
+/* #endregion Spinner */
+
+/* #region Table */
+
+.table {
+  text-align: center;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  .columns th {
+    padding: 8px 0;
+  }
+  .rows {
+    width: 100%;
+    box-sizing: border-box;
+    tr {
+      padding: 8px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.04);
+      animation: fadeInDown 0.3s ease-in-out forwards;
+      opacity: 0;
+    }
+    td {
+      padding: 12px 0;
+      vertical-align: middle;
+      background-color: white;
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      &:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+    .actions {
+      display: inline-block;
+    }
+  }
+}
+
+@for $i from 1 through 20 {
+  .rows tr:nth-child(#{$i}) {
+    -webkit-animation-delay: 50ms * $i;
+    animation-delay: 50ms * $i;
+  }
+}
+
+/* #endregion Table */
+
+/* #region Pagination */
+
+ul {
+  list-style-type: none;
+}
+
+.items-list {
+  max-width: 90vw;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 3rem;
+  justify-content: center;
+  align-content: center;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: darken($primary, 70%);
+  cursor: pointer;
+
+  span {
+    background: #ffffff;
+    box-shadow: 0 0.8rem 2rem rgba(#5a6181, 0.05);
+    border-radius: 0.6rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    span {
+      transform: scale(1.2);
+      color: $primary;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: darken($primary, 90%);
+  }
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__numbers,
+  &__btn,
+  &__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__dots {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: darken($primary, 90%);
+    cursor: initial;
+  }
+
+  &__numbers {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.4rem;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.active {
+      color: #ffffff;
+      background: $primary;
+      font-weight: 600;
+      border: 1px solid $primary;
+    }
+  }
+
+  &__btn {
+    color: darken($primary, 90%);
+    cursor: pointer;
+    padding: .5rem .25rem;
+
+    &.active {
+      color: darken($primary, 70%);
+      pointer-events: initial;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/* #endregion Pagination */
+
+/* #region User Profile */
+
+.user-profile .profile-details {
+  display: flex;
+  align-items: center;
+
+  .profile-content {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+  }
+  .name-class .class {
+    font-size: small;
+    opacity: 0.8;
+  }
+}
+
+/* #endregion User Profile */
+
+/* #region List */
+
+.list {
+  a {
+    text-decoration: none !important;
+    color: black;
+    opacity: 0.78;
+    transition: 0.15s;
+    &:hover {
+      color: $primary;
+    }
+    li {
+      text-decoration: none;
+      padding: 8px;
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    color: $primary;
+  }
+}
+
+/* #endregion List */
+
+/* #region Alert */
+
+#alert-container {
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.301);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  transition: 250ms;
+  z-index: 500;
+
+  .alert-modal {
+    width: 30%;
+    max-width: 600px;
+    min-width: 300px;
+    background: whitesmoke;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+
+    svg {
+      width: 88px;
+    }
+    h2 {
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+/* #endregion Alert */
+
+/* #region Floating Sidebar */
+
+.floating-sidebar {
+  position: fixed;
+  height: 100vh;
+  right: -500px;
+  top: 0;
+  width: 500px;
+  background: whitesmoke;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 100;
+  .mdi-close {
+    position: absolute;
+    top: 0; left: 0;
+    padding: 20px 16px 10px 16px;
+    line-height: 20px;
+  }
+}
+
+.floating-sidebar.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+  right: 0;
+}
+.floating-sidebar.exit {
+  opacity: 0;
+  right: -500px;
+}
+
+/* #endregion Floating Sidebar */
+
+/* #region Modal */
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal.exit {
+  opacity: 0;
+}
+
+.modal-content {
+  width: 500px;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-200px);
+}
+
+.modal.enter-done .modal-content {
+  transform: translateY(0);
+}
+
+.modal.exit .modal-content {
+  transform: translateY(-200px);
+}
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* #endregion Modal */
+
+/* #region Empty line placeholder */
+
+.empty-line-placeholder {
+  border: 2px dashed rgba($primary, .5);
+  background: rgba($primary, .15);
+  color: rgba($primary, 1);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* #endregion Empty line placeholder */
+
+/* #region Tabs */
+
+.tab-header {
+  list-style: none;
+  line-height: 25px;
+  margin-bottom: 2px;
+}
+.tab-header li {
+  display: inline;
+  padding: 10px 20px;
+  line-height: 42px;
+  cursor: pointer;
+  border-right: 1px solid #eeeef1;
+  &:last-child {
+    border-right-width: 0;
+  }
+}
+
+.tab-header li.disabled {
+  opacity: 0.5;
+  cursor: initial;
+  pointer-events: none;
+  &:hover {
+    border-bottom-width: 0;
+  }
+}
+.tab-header li:hover {
+  border-bottom: 2px solid rgba($primary, .5);
+}
+.tab-header li.active {
+  border-bottom: 2px solid $primary;
+}
+
+.tab-content {
+  height: auto;
+  border: 1px solid #dedeed;
+  padding: 16px;
+  width: 100%;
+  position: relative;
+}
+
+/* #endregion Tabs */
+
+/* #region Login */
+
+.login {
+  --panel-width: calc(50% - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from($primary),
+    to($secondary)
+  );
+  background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+
+  .welcome {
+    height: 100vh;
+    width: var(--panel-width);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .curve-separator {
+    width: 100px;
+    height: 100vh;
+    svg {
+      .curve {
+        fill: #FFF;
+      }
+    }
+  }
+  .login-form {
+    --inner-width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: var(--panel-width);
+    padding: 32px;
+    background: #FFF;
+
+    form {
+      min-width: 250px;
+      max-width: 500px;
+      width: var(--inner-width);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    min-height: 100vh;
+
+    .welcome {
+      height: auto;
+    }
+    .curve-separator {
+      display: none;
+    }
+    .login-form {
+      height: auto;
+      width: 60%;
+      min-width: 300px;
+      border-radius: 8px;
+
+      form {
+        min-width: 0;
+        max-width: auto;
+        width: auto;
+      }
+    }
+  }
+}
+
+/* #endregion Login */
+
+/* #region Badges */
+
+.badge {
+  border-radius: 16px;
+  padding: 2px 12px;
+  font-size: small;
+  color: white;
+  display: inline-block;
+}
+
+.badge-primary { background: $primary }
+.badge-secondary { background: $secondary }
+.badge-warning { background: $warning }
+.badge-default { background: $default }
+.badge-success { background: $success }
+.badge-danger { background: $danger }
+
+/* #endregion Badges */
+
+/* #region Progress */
+
+.progress {
+  display: flex;
+  height: 6px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  background-color: #f3f7fa;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: $primary;
+  transition: width 0.6s ease;
+}
+
+/* #endregion Progress */

@@ -1,0 +1,32 @@
+/* This file describes overriding styles for html default behaviour */
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.15em;
+}
+hr {
+  border-top: 0px solid #eeeeee;
+}
+textarea {
+  resize: vertical;
+}
