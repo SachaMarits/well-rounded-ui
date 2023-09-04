@@ -1,4 +1,5 @@
 import "./scss/app.scss";
+
 import {
   Input,
   Button,
@@ -8,4 +9,16 @@ import {
   Table,
 } from "./components/inputs";
 
-export { Input, Button, MultiSelect, Pagination, Select, Table };
+import { Alert, FloatingSidebar, Modal } from "./components/interactions";
+
+export {
+  Input,
+  Button,
+  MultiSelect,
+  Pagination,
+  Select,
+  Table,
+  Alert,
+  FloatingSidebar,
+  Modal,
+};

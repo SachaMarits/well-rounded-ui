@@ -5,6 +5,14 @@ import { Success } from "./Success";
 import { Warning } from "./Warning";
 
 const Alert = (title = null, text = null, icon = null) => {
+  const doesAlertDomExist = document.getElementById("alert-dom");
+
+  if (!doesAlertDomExist) {
+    const divElement = document.createElement("div");
+    divElement.id = "alert-dom";
+    document.body.insertBefore(divElement, document.body.lastChild);
+  }
+
   const renderIcon = () => {
     if (icon === "success") return <Success />;
     if (icon === "warning") return <Warning />;
