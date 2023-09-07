@@ -20,7 +20,7 @@
     "bootstrap"
   ],
   "author": "Sacha Marits",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SachaMarits/well-rounded-ui/issues"
   },
