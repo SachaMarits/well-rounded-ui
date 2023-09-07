@@ -29,8 +29,6 @@ These libraries are not bundled with Well Rounded UI and required at runtime:
   * [**react**](https://www.npmjs.com/package/react)
   * [**react-dom**](https://www.npmjs.com/package/react-dom)
   * [**react-transition-group**](https://www.npmjs.com/package/react-transition-group)
-  * [**node-sass**](https://www.npmjs.com/package/node-sass)
-  * [**sass**](https://www.npmjs.com/package/sass)
 
 ## About Well Rounded
 
