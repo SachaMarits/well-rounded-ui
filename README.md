@@ -32,7 +32,7 @@ These libraries are not bundled with Well Rounded UI and required at runtime:
 
 ## About Well Rounded
 
-Comptact yet powerful package meaning you won't have to spend many hours to understand how simple it is to use !
+Compact yet powerful package meaning you won't have to spend many hours to understand how simple it is to use !
 
 ### Reusable Components
 
