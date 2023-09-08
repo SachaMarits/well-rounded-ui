@@ -71,12 +71,131 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | ------------- |:---------:| ---------|
 | className     | string    | Button's classNames |
 | **text***     | string    | Button's text |
-| **color***    | string    | Button's color (primary, success, danger, default, disabled)|
+| **color***    | string    | Button's color (primary, success, danger, default, disabled) |
 | **onClick***  | function  | Button's function when clicked |
 | submit        | bool      | Make this button the submit button of parent form |
 | action        | string    | Add an icon (add, delete, edit, upload, donwload, send, navigate) |
 | animate       | bool      | Animate the button when appearing |
-| isSubmitting  | bool      | Disable the input while true (prevents multiple click) |
-| disabled      | bool      | Disable the input |
+| isSubmitting  | bool      | Disable the button while true (prevents multiple click) |
+| disabled      | bool      | Disable the button |
+
+*Required prop(s).
+
+### MultiSelect
+
+#### Usage
+
+```jsx
+<MultiSelect
+  label="User selection"
+  name="users"
+  options={options} // [{ id: 1, text: "Item Text" }, ...]
+  onClick={(selection) => yourFunction(selection)}
+/>
+```
+
+#### Props
+
+| Prop          | Type      | Purpose  |
+| ------------- |:---------:| ---------|
+| **name***     | string    | MultiSelect's html name (used for label) |
+| **label***    | string    | MultiSelect's label |
+| options       | array of objects    | List of avalaible options [{ id: 1, text: "Item Text" }, ...] |
+| **onChange*** | function  | Callback function when selection changed |
+
+*Required prop(s).
+
+### Pagination
+
+#### Usage
+
+```jsx
+<Pagination
+  totalItems={5}
+  itemsPerPage={1}
+  activePage={activePage}
+  onChange={(page) => setActivePage(page)}
+/>
+```
+
+#### Props
+
+| Prop              | Type      | Purpose  |
+| ----------------- |:---------:| ---------|
+| **totalItems***   | number    | Pagination total items |
+| **itemsPerPage*** | number    | Pagination items per page |
+| **activePage***   | number    | Pagination's active page |
+| **onChange***     | function  | Callback function when changing page |
+
+*Required prop(s).
+
+### Select
+
+#### Usage
+
+```jsx
+<Select
+  name="role"
+  defaultOption="Filter by role"
+  onChange={(e) => setRole(e.target.value)}
+>
+  <option value="-1">All roles</option>
+  <option value="Admin">Admin</option>
+  <option value="Moderator">Moderator</option>
+  <option value="User">User</option>
+</Select>
+```
+
+#### Props
+
+| Prop          | Type             | Purpose  |
+| ------------- |:----------------:| ---------|
+| className     | string           | Select's classNames |
+| **name***     | string           | Select's name (used for label) |
+| label         | string           | Select's label |
+| register      | function         | Register function of `react-hook-form` |
+| required      | bool             | Makes the Select required when using `<form />` |
+| **children*** | html options     | List of html options to shown inside the Select |
+| defaultOption | string           | Text of the first option |
+| defaultValue  | string           | Defines the default selected option |
+
+*Required prop(s).
+
+### Table
+
+#### Usage
+
+```jsx
+<Table
+  keyColumn="name"
+  columns={["Profile picture", "Name", "Role", "Active"]}
+  data={data.map((d) => ({ ...d, role: returnRole(d.role) }))}
+  layout={[{ type: "image" }, { type: "text" }, { type: "raw" }, { type: "boolean" }]}
+  actions={[
+    {
+      action: "edit",
+      iconOnly: false,
+      onClick: (keyColumn) =>
+          Alert("Edit Action", `Edit action on "${keyColumn}" detected.`),
+    },
+    {
+      action: "delete",
+      iconOnly: false,
+      onClick: (keyColumn) =>
+          Alert("Delete Action", `Delete action on "${keyColumn}" detected.`),
+    }
+  ]}
+/>
+```
+
+#### Props
+
+| Prop           | Type             | Purpose  |
+| -------------- |:----------------:| ---------|
+| **keyColumn*** | string | Key column name, used as the identifier of each row |
+| **columns***   | array of strings | Column names |
+| **data***      | array of objects | Display value in object order |
+| **layout***    | array of objects | Type of each columns (image, text, raw or boolean) |
+| **actions***   | array of objects | Create and action column with edit and/or delete buttons |
 
 *Required prop(s).
