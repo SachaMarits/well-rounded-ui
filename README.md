@@ -20,6 +20,22 @@ import { Button } from 'well-rounded-ui';
 
 Now you are ready to use the imported Well Rounded UI components ! 🔥
 
+### Displaying MDI Icons
+
+To use Material Design Icons import them inside your index.html:
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+```
+or
+```html
+<script src="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/scripts/verify.min.js"></script>
+```
+> Import the latest version of the icons: https://www.jsdelivr.com/package/npm/@mdi/font
+
+Now you will see all latest mdi icons !
+
+---
+
 ## Dependencies
 
 ### Required Peer Dependencies
@@ -29,6 +45,8 @@ These libraries are not bundled with Well Rounded UI and required at runtime:
   * [**react**](https://www.npmjs.com/package/react)
   * [**react-dom**](https://www.npmjs.com/package/react-dom)
   * [**react-transition-group**](https://www.npmjs.com/package/react-transition-group)
+
+---
 
 ## About Well Rounded
 
@@ -64,6 +82,8 @@ Free to use popular icons with many new icons being added monthly. <br />
 I have been using this icon library for many years always finding the perfect icon to use.
 
 https://materialdesignicons.com/
+
+---
 
 ## [Documentation](https://sachamarits.github.io/well-rounded-ui)
 
