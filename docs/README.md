@@ -3,6 +3,7 @@
 ## Inputs
 
 ### Input Field
+![Well Rounded UI Inputs](https://i.postimg.cc/QxYMXBK6/Well-Rounded-Ui-Inputs.png)
 
 #### Usage
 
@@ -53,6 +54,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ### Button
 
+![Well Rounded UI Buttons](https://i.postimg.cc/Xq6SQbh6/Well-Rounded-Ui-Buttons.png)
+
 #### Usage
 
 ```jsx
@@ -83,6 +86,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ### MultiSelect
 
+![Well Rounded UI MultiSelect](https://i.postimg.cc/LXGrCpJ3/Well-Rounded-Ui-Multi-Select.png)
+
 #### Usage
 
 ```jsx
@@ -107,6 +112,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ### Pagination
 
+![Well Rounded UI Pagination](https://i.postimg.cc/65Z9NHwQ/Well-Rounded-Ui-Pagination.png)
+
 #### Usage
 
 ```jsx
@@ -130,6 +137,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 *Required prop(s).
 
 ### Select
+
+![Well Rounded UI Select](https://i.postimg.cc/HLyKrNZJ/Well-Rounded-Ui-Select.png)
 
 #### Usage
 
@@ -162,6 +171,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 *Required prop(s).
 
 ### Table
+
+![Well Rounded UI Table](https://i.postimg.cc/W408LqbK/Well-Rounded-Ui-Table.png)
 
 #### Usage
 
