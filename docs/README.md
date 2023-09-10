@@ -52,6 +52,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 *Required prop(s).
 
+---
+
 ### Button
 
 ![Well Rounded UI Buttons](https://i.postimg.cc/Xq6SQbh6/Well-Rounded-Ui-Buttons.png)
@@ -84,6 +86,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 *Required prop(s).
 
+---
+
 ### MultiSelect
 
 ![Well Rounded UI MultiSelect](https://i.postimg.cc/LXGrCpJ3/Well-Rounded-Ui-Multi-Select.png)
@@ -110,6 +114,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 *Required prop(s).
 
+---
+
 ### Pagination
 
 ![Well Rounded UI Pagination](https://i.postimg.cc/65Z9NHwQ/Well-Rounded-Ui-Pagination.png)
@@ -135,6 +141,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | **onChange***     | function  | Callback function when changing page |
 
 *Required prop(s).
+
+---
 
 ### Select
 
@@ -169,6 +177,8 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | defaultValue  | string           | Defines the default selected option |
 
 *Required prop(s).
+
+---
 
 ### Table
 
@@ -210,3 +220,114 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | **actions***   | array of objects | Create and action column with edit and/or delete buttons |
 
 *Required prop(s).
+
+---
+
+## Interactions
+
+### Alert
+
+![Well Rounded UI Alert](https://i.postimg.cc/BvF0wXNX/Well-Rounded-Ui-Alert.png)
+
+#### Usage
+
+```jsx
+Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
+```
+
+#### Props
+
+| Prop    | Type    | Purpose  |
+| ------- |:-------:| ---------|
+| title   | string  | Alert's title |
+| text    | string  | Alert's text |
+| icon    | string  | Alert's icon (success, warning or error) |
+
+---
+
+### FloatingSidebar
+
+![Well Rounded UI FloatingSidebar](https://i.postimg.cc/MGQ9fy39/Well-Rounded-Ui-Floating-Sidebar.png)
+
+#### Usage
+
+```jsx
+<FloatingSidebar
+  onClose={() => setIsFloatingSidebarOpen(false)}
+  show={isFloatingSidebarOpen}
+  title="Floating sidebar"
+>
+  <div className="p-3">
+    <p>This is floating sidebar</p>
+  </div>
+</FloatingSidebar>
+```
+
+#### Props
+
+| Prop      | Type     | Purpose  |
+| --------- |:--------:| ---------|
+| onClose   | function | Callback function to close the sidebar |
+| show      | bool     | Determine if the sidebar is open or not |
+| children  | dom      | Anything you want to display inside your sidebar |
+| className | string   | Sidebar's classNames |
+| title     | string   | Sidbar's title (shown at the top) |
+
+---
+
+### Modal
+
+![Well Rounded UI Modal](https://i.postimg.cc/QdP6M6mB/Well-Rounded-Ui-Modal.png)
+
+#### Usage
+
+```jsx
+<Modal onClose={() => setIsModalOpen(false)} show={isModalOpen}>
+  <ModalHeader>
+    <h3>Modal title</h3>
+  </ModalHeader>
+  <p>This is modal body</p>
+  <ModalFooter>
+    <Button
+      text="Cancel"
+      color="danger"
+      onClick={() => setIsModalOpen(false)}
+    />
+  </ModalFooter>
+</Modal>
+```
+
+Feel free to use `<ModalHeader />` and `<ModalFooter />` to enhance your modals !
+
+#### Props
+
+| Prop      | Type     | Purpose  |
+| --------- |:--------:| ---------|
+| onClose   | function | Callback function to close the modal |
+| show      | bool     | Determine if the modal is open or not |
+| children  | dom      | Anything you want to display inside your modal |
+
+---
+
+## Layout
+
+### Badge
+
+![Well Rounded UI Badge](https://i.postimg.cc/Y9gyHFmm/Well-Rounded-Ui-Badge.png)
+
+#### Usage
+
+```jsx
+<Badge color="primary">
+  Badge text
+</Badge>
+```
+
+#### Props
+
+| Prop      | Type        | Purpose  |
+| --------- |:-----------:| ---------|
+| className | string      | Badge's classNames |
+| children  | dom (text)  | Badge's content (mostly used for text) |
+| color     | string      | Badge's color (primary, secondary, warning, default, success, danger) |
+

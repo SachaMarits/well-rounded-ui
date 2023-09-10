@@ -8,6 +8,10 @@
     background-image: linear-gradient(120deg, #358fd9, #974de2);
 }
 
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+.main-content h1, .main-content h2 {
     color: #358fd9;
+}
+
+.main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    color: #974de2;
 }

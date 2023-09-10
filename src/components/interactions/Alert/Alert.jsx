@@ -30,7 +30,7 @@ const Alert = (title = null, text = null, icon = null) => {
         {icon && renderIcon()}
         {title && <h2>{title}</h2>}
         {text && <p>{text}</p>}
-        <Button text="Fermer" color="primary" onClick={() => hide()} />
+        <Button text="Close" color="primary" onClick={() => hide()} />
       </div>
     </div>
   );
