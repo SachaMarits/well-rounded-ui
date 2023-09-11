@@ -64,17 +64,17 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop        | Type      | Purpose  |
-| ----------- |:---------:| ---------|
-| className   | string    | Input and label classNames |
-| **name***    | string    | Input's html name |
-| type        | string    | Input's type (for example "textarea") |
-| placeholder | string    | Input's placeholder |
-| register    | function  | Register function of `react-hook-form` |
-| errors      | string or object | Display errors when they occur |
-| required    | bool      | Makes the input required when using `<form />` |
-| minLength   | number    | Minimum input length |
-| maxLength   | number    | Maximum input length |
+| Prop        | Type             | Purpose                                        |
+| ----------- |:----------------:| -----------------------------------------------|
+| className   | string           | Input and label classNames                     |
+| **name***   | string           | Input's html name                              |
+| type        | string           | Input's type (for example "textarea")          |
+| placeholder | string           | Input's placeholder                            |
+| register    | function         | Register function of `react-hook-form`         |
+| errors      | string or object | Display errors when they occur                 |
+| required    | bool             | Makes the input required when using `<form />` |
+| minLength   | number           | Minimum input length                           |
+| maxLength   | number           | Maximum input length                           |
 
 *Required prop(s).
 
@@ -98,17 +98,17 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop          | Type      | Purpose  |
-| ------------- |:---------:| ---------|
-| className     | string    | Button's classNames |
-| **text***     | string    | Button's text |
-| **color***    | string    | Button's color (primary, success, danger, default, disabled) |
-| **onClick***  | function  | Button's function when clicked |
-| submit        | bool      | Make this button the submit button of parent form |
+| Prop          | Type      | Purpose                                                           |
+| ------------- |:---------:| ------------------------------------------------------------------|
+| className     | string    | Button's classNames                                               |
+| **text***     | string    | Button's text                                                     |
+| **color***    | string    | Button's color (primary, success, danger, default, disabled)      |
+| **onClick***  | function  | Button's function when clicked                                    |
+| submit        | bool      | Make this button the submit button of parent form                 |
 | action        | string    | Add an icon (add, delete, edit, upload, donwload, send, navigate) |
-| animate       | bool      | Animate the button when appearing |
-| isSubmitting  | bool      | Disable the button while true (prevents multiple click) |
-| disabled      | bool      | Disable the button |
+| animate       | bool      | Animate the button when appearing                                 |
+| isSubmitting  | bool      | Disable the button while true (prevents multiple click)           |
+| disabled      | bool      | Disable the button                                                |
 
 *Required prop(s).
 
@@ -131,12 +131,12 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop          | Type      | Purpose  |
-| ------------- |:---------:| ---------|
-| **name***     | string    | MultiSelect's html name (used for label) |
-| **label***    | string    | MultiSelect's label |
-| options       | array of objects    | List of avalaible options [{ id: 1, text: "Item Text" }, ...] |
-| **onChange*** | function  | Callback function when selection changed |
+| Prop          | Type              | Purpose                                                       |
+| ------------- |:-----------------:| --------------------------------------------------------------|
+| **name***     | string            | MultiSelect's html name (used for label)                      |
+| **label***    | string            | MultiSelect's label                                           |
+| options       | array of objects  | List of avalaible options [{ id: 1, text: "Item Text" }, ...] |
+| **onChange*** | function          | Callback function when selection changed                      |
 
 *Required prop(s).
 
@@ -159,11 +159,11 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop              | Type      | Purpose  |
-| ----------------- |:---------:| ---------|
-| **totalItems***   | number    | Pagination total items |
-| **itemsPerPage*** | number    | Pagination items per page |
-| **activePage***   | number    | Pagination's active page |
+| Prop              | Type      | Purpose                              |
+| ----------------- |:---------:| -------------------------------------|
+| **totalItems***   | number    | Pagination total items               |
+| **itemsPerPage*** | number    | Pagination items per page            |
+| **activePage***   | number    | Pagination's active page             |
 | **onChange***     | function  | Callback function when changing page |
 
 *Required prop(s).
@@ -191,16 +191,16 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop          | Type             | Purpose  |
-| ------------- |:----------------:| ---------|
-| className     | string           | Select's classNames |
-| **name***     | string           | Select's name (used for label) |
-| label         | string           | Select's label |
-| register      | function         | Register function of `react-hook-form` |
+| Prop          | Type             | Purpose                                         |
+| ------------- |:----------------:| ------------------------------------------------|
+| className     | string           | Select's classNames                             |
+| **name***     | string           | Select's name (used for label)                  |
+| label         | string           | Select's label                                  |
+| register      | function         | Register function of `react-hook-form`          |
 | required      | bool             | Makes the Select required when using `<form />` |
 | **children*** | html options     | List of html options to shown inside the Select |
-| defaultOption | string           | Text of the first option |
-| defaultValue  | string           | Defines the default selected option |
+| defaultOption | string           | Text of the first option                        |
+| defaultValue  | string           | Defines the default selected option             |
 
 *Required prop(s).
 
@@ -237,12 +237,12 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop           | Type             | Purpose  |
-| -------------- |:----------------:| ---------|
-| **keyColumn*** | string | Key column name, used as the identifier of each row |
-| **columns***   | array of strings | Column names |
-| **data***      | array of objects | Display value in object order |
-| **layout***    | array of objects | Type of each columns (image, text, raw or boolean) |
+| Prop           | Type             | Purpose                                                  |
+| -------------- |:----------------:| ---------------------------------------------------------|
+| **keyColumn*** | string           | Key column name, used as the identifier of each row      |
+| **columns***   | array of strings | Column names                                             |
+| **data***      | array of objects | Display value in object order                            |
+| **layout***    | array of objects | Type of each columns (image, text, raw or boolean)       |
 | **actions***   | array of objects | Create and action column with edit and/or delete buttons |
 
 *Required prop(s).
@@ -263,10 +263,10 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 
 #### Props
 
-| Prop    | Type    | Purpose  |
-| ------- |:-------:| ---------|
-| title   | string  | Alert's title |
-| text    | string  | Alert's text |
+| Prop    | Type    | Purpose                                  |
+| ------- |:-------:| -----------------------------------------|
+| title   | string  | Alert's title                            |
+| text    | string  | Alert's text                             |
 | icon    | string  | Alert's icon (success, warning or error) |
 
 ---
@@ -291,13 +291,13 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 
 #### Props
 
-| Prop      | Type     | Purpose  |
-| --------- |:--------:| ---------|
-| onClose   | function | Callback function to close the sidebar |
-| show      | bool     | Determine if the sidebar is open or not |
+| Prop      | Type     | Purpose                                          |
+| --------- |:--------:| -------------------------------------------------|
+| onClose   | function | Callback function to close the sidebar           |
+| show      | bool     | Determine if the sidebar is open or not          |
 | children  | dom      | Anything you want to display inside your sidebar |
-| className | string   | Sidebar's classNames |
-| title     | string   | Sidbar's title (shown at the top) |
+| className | string   | Sidebar's classNames                             |
+| title     | string   | Sidbar's title (shown at the top)                |
 
 ---
 
@@ -327,10 +327,10 @@ Feel free to use [`<ModalHeader />`](#modal-header) and [`<ModalFooter />`](#mod
 
 #### Props
 
-| Prop      | Type     | Purpose  |
-| --------- |:--------:| ---------|
-| onClose   | function | Callback function to close the modal |
-| show      | bool     | Determine if the modal is open or not |
+| Prop      | Type     | Purpose                                        |
+| --------- |:--------:| -----------------------------------------------|
+| onClose   | function | Callback function to close the modal           |
+| show      | bool     | Determine if the modal is open or not          |
 | children  | dom      | Anything you want to display inside your modal |
 
 ---
@@ -351,10 +351,10 @@ Feel free to use [`<ModalHeader />`](#modal-header) and [`<ModalFooter />`](#mod
 
 #### Props
 
-| Prop      | Type        | Purpose  |
-| --------- |:-----------:| ---------|
-| className | string      | Badge's classNames |
-| children  | dom (text)  | Badge's content (mostly used for text) |
+| Prop      | Type        | Purpose                                                               |
+| --------- |:-----------:| ----------------------------------------------------------------------|
+| className | string      | Badge's classNames                                                    |
+| children  | dom (text)  | Badge's content (mostly used for text)                                |
 | color     | string      | Badge's color (primary, secondary, warning, default, success, danger) |
 
 ---
@@ -380,10 +380,10 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 
 #### Props
 
-| Prop      | Type     | Purpose  |
-| --------- |:--------:| ---------|
-| className | string   | Card's classNames |
-| **children**  | dom      | Card's content |
+| Prop          | Type     | Purpose           |
+| ------------- |:--------:| ------------------|
+| className     | string   | Card's classNames |
+| **children**  | dom      | Card's content    |
 
 ---
 
@@ -399,8 +399,8 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 
 #### Props
 
-| Prop      | Type     | Purpose  |
-| --------- |:--------:| ---------|
+| Prop          | Type     | Purpose               |
+| --------------|:--------:| ----------------------|
 | **children**  | dom      | Card Header's content |
 
 ---
@@ -417,8 +417,8 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 
 #### Props
 
-| Prop      | Type     | Purpose  |
-| --------- |:--------:| ---------|
+| Prop          | Type     | Purpose               |
+| --------------|:--------:| ----------------------|
 | **children**  | dom      | Card Footer's content |
 
 ---
@@ -435,8 +435,8 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 
 #### Props
 
-| Prop          | Type     | Purpose  |
-| ------------- |:--------:| ---------|
+| Prop          | Type     | Purpose                |
+| ------------- |:--------:| -----------------------|
 | **children**  | dom      | Modal Header's content |
 
 ---
@@ -453,19 +453,20 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 
 #### Props
 
-| Prop          | Type     | Purpose  |
-| ------------- |:--------:| ---------|
+| Prop          | Type     | Purpose                |
+| ------------- |:--------:| -----------------------|
 | **children**  | dom      | Modal Footer's content |
 
 ---
 
 ### Row
 
+![Well Rounded UI Row](https://i.postimg.cc/YSwS4dx3/Well-Rounded-Ui-Row.png)
 #### Usage
 
 ```jsx
 <Row>
-  {/* Your row content*/}
+  {/* Your row content */}
 </Row>
 ```
 
@@ -481,6 +482,8 @@ Mostly used to display [`<Col />`](#col).
 ---
 
 ### Col
+
+![Well Rounded UI Col](https://i.postimg.cc/YCF9q5Q0/Well-Rounded-Ui-Col.png)
 
 #### Usage
 
@@ -510,6 +513,8 @@ Meaning in this example the col will take the maximum width available on "xs" sc
 
 ### Empty Line Placeholder
 
+![Well Rounded UI Empty Line Placeholder](https://i.postimg.cc/HL4kbbZC/Well-Rounded-Ui-Empty-Line-Placeholder.png)
+
 #### Usage
 
 ```jsx
@@ -533,6 +538,8 @@ Meaning in this example the col will take the maximum width available on "xs" sc
 ---
 
 ### Progress
+
+![Well Rounded UI Progress](https://i.postimg.cc/cHF1b0G9/Well-Rounded-Ui-Progress.png)
 
 #### Usage
 
@@ -560,6 +567,8 @@ Meaning in this example the col will take the maximum width available on "xs" sc
 
 ### Spinner
 
+![Well Rounded UI Spinner](https://i.postimg.cc/s2pvKk2q/Well-Rounded-Ui-Spinner.png)
+
 #### Usage
 
 ```jsx
@@ -577,6 +586,8 @@ Meaning in this example the col will take the maximum width available on "xs" sc
 ---
 
 ### Tabs
+
+![Well Rounded UI Tas](https://i.postimg.cc/gJzksrQL/Well-Rounded-Ui-Tabs.png)
 
 #### Usage
 
