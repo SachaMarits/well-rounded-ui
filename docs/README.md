@@ -1,4 +1,4 @@
-## Table of Contents
+## Table of contents
 
 - [Inputs](#inputs)
   - [Input field](#input-field)
@@ -15,6 +15,8 @@
   - [Card](#card)
   - [CardHeader](#card-header)
   - [CardFooter](#card-footer)
+  - [ModalHeader](#modal-header)
+  - [ModalFooter](#modal-footer)
   - [Row](#row)
   - [Col](#col)
   - [EmptyLinePlaceholder](#empty-line-placeholder)
@@ -22,9 +24,6 @@
   - [Spinner](#spinner)
   - [Tabs](#tabs)
   - [TabPane](#tab-pane)
-  <!-- - [TreeViewItem](#treeview-item) -->
-  <!-- - [ModalHeader](#modal-header) -->
-  <!-- - [ModalFooter](#modal-footer) -->
 
 ---
 ## Inputs
@@ -358,8 +357,11 @@ Feel free to use [`<ModalHeader />`](#modal-header) and [`<ModalFooter />`](#mod
 | children  | dom (text)  | Badge's content (mostly used for text) |
 | color     | string      | Badge's color (primary, secondary, warning, default, success, danger) |
 
+---
+
 ### Card
 
+![Well Rounded UI Card](https://i.postimg.cc/gjNJqT58/Well-Rounded-Ui-Card.png)
 #### Usage
 
 ```jsx
@@ -418,6 +420,42 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 | Prop      | Type     | Purpose  |
 | --------- |:--------:| ---------|
 | **children**  | dom      | Card Footer's content |
+
+---
+
+### Modal Header
+
+#### Usage
+
+```jsx
+<ModalHeader>
+  <h3>Any title</h3>
+</ModalHeader>
+```
+
+#### Props
+
+| Prop          | Type     | Purpose  |
+| ------------- |:--------:| ---------|
+| **children**  | dom      | Modal Header's content |
+
+---
+
+### Modal Footer
+
+#### Usage
+
+```jsx
+<ModalFooter>
+  {/* Any modal footer content like buttons, etc */}
+</ModalFooter>
+```
+
+#### Props
+
+| Prop          | Type     | Purpose  |
+| ------------- |:--------:| ---------|
+| **children**  | dom      | Modal Footer's content |
 
 ---
 
@@ -585,5 +623,3 @@ Tabs component needs to be used with [`<TabPane />`](#tab-pane).
 | name      | string  | Tab's title displayed   |
 | children  | dom     | Tab's content           |
 | disabled  | bool    | Disable the tab         |
-
----
