@@ -1,5 +1,13 @@
 [![Well Rounded UI Banner](https://i.postimg.cc/dVjkGvFK/Well-Rounded-Ui-Banner.png)](https://github.com/SachaMarits/well-rounded-ui)
 
+## Table of contents
+
+- [Getting started](#getting-started)
+- [Dependencies](#dependencies)
+- [About](#about-well-rounded)
+- [Documentation](#documentation)
+- [Live Demo]({#live-demo})
+
 ## Getting Started
 
 ### Adding Package
@@ -14,7 +22,7 @@ npm i well-rounded-ui
 
 Import required Well Rounded UI components within your files:
 
-```js
+```jsx
 import { Button } from 'well-rounded-ui';
 ```
 
@@ -87,4 +95,11 @@ https://materialdesignicons.com/
 
 ## [Documentation](https://sachamarits.github.io/well-rounded-ui)
 
-https://sachamarits.github.io/well-rounded-ui (Work in progress)
+https://sachamarits.github.io/well-rounded-ui
+
+---
+
+## [Live Demo](https://well-rounded-react-template.sachamarits.be/)
+
+Live demo: https://well-rounded-react-template.sachamarits.be/ <br/>
+Most components can be seen within: `Template > Components` and `Template > Crud Table`.
