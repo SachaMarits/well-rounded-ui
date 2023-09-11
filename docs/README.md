@@ -1,5 +1,32 @@
-# Well Rounded UI Documentation
+## Table of Contents
 
+- [Inputs](#inputs)
+  - [Input field](#input-field)
+  - [Button](#button)
+  - [MultiSelect](#multiselect)
+  - [Pagination](#pagination)
+  - [Table](#table)
+- [Interactions](#interactions)
+  - [Alert](#alert)
+  - [Floating Sidebar](#floating-sidebar)
+  - [Modal](#modal)
+- [Layout](#layout)
+  - [Badge](#badge)
+  - [Card](#card)
+  - [CardHeader](#card-header)
+  - [CardFooter](#card-footer)
+  - [Row](#row)
+  - [Col](#col)
+  - [EmptyLinePlaceholder](#empty-line-placeholder)
+  - [Progress](#progress)
+  - [Spinner](#spinner)
+  - [Tabs](#tabs)
+  - [TabPane](#tab-pane)
+  <!-- - [TreeViewItem](#treeview-item) -->
+  <!-- - [ModalHeader](#modal-header) -->
+  <!-- - [ModalFooter](#modal-footer) -->
+
+---
 ## Inputs
 
 ### Input Field
@@ -245,7 +272,7 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 
 ---
 
-### FloatingSidebar
+### Floating Sidebar
 
 ![Well Rounded UI FloatingSidebar](https://i.postimg.cc/MGQ9fy39/Well-Rounded-Ui-Floating-Sidebar.png)
 
@@ -297,7 +324,7 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 </Modal>
 ```
 
-Feel free to use `<ModalHeader />` and `<ModalFooter />` to enhance your modals !
+Feel free to use [`<ModalHeader />`](#modal-header) and [`<ModalFooter />`](#modal-footer) to enhance your modals !
 
 #### Props
 
@@ -331,3 +358,232 @@ Feel free to use `<ModalHeader />` and `<ModalFooter />` to enhance your modals 
 | children  | dom (text)  | Badge's content (mostly used for text) |
 | color     | string      | Badge's color (primary, secondary, warning, default, success, danger) |
 
+### Card
+
+#### Usage
+
+```jsx
+<Card>
+  <CardHeader>
+    <h3>Any title</h3>
+  </CardHeader>
+  {/* Your card content */}
+  <CardFooter>
+    {/* Any card footer content like buttons, etc */}
+  </CardFooter>
+</Card>
+```
+
+Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-footer) to enhance your modals !
+
+#### Props
+
+| Prop      | Type     | Purpose  |
+| --------- |:--------:| ---------|
+| className | string   | Card's classNames |
+| **children**  | dom      | Card's content |
+
+---
+
+### Card Header
+
+#### Usage
+
+```jsx
+<CardHeader>
+  <h3>Any title</h3>
+</CardHeader>
+```
+
+#### Props
+
+| Prop      | Type     | Purpose  |
+| --------- |:--------:| ---------|
+| **children**  | dom      | Card Header's content |
+
+---
+
+### Card Footer
+
+#### Usage
+
+```jsx
+<CardFooter>
+  {/* Any card footer content like buttons, etc */}
+</CardFooter>
+```
+
+#### Props
+
+| Prop      | Type     | Purpose  |
+| --------- |:--------:| ---------|
+| **children**  | dom      | Card Footer's content |
+
+---
+
+### Row
+
+#### Usage
+
+```jsx
+<Row>
+  {/* Your row content*/}
+</Row>
+```
+
+Mostly used to display [`<Col />`](#col).
+
+#### Props
+
+| Prop      |  Type    | Purpose          |
+| --------- |:--------:| -----------------|
+| className | string   | Row's classNames |
+| children  | dom      | Row's content    |
+
+---
+
+### Col
+
+#### Usage
+
+```jsx
+<Col lg={4} md={4} sm={6} xs={12}>
+  {/* Your col content */}
+</Col>
+```
+
+The column layout work the same as Bootstrap on a basis of 12 columns. <br/>
+Meaning in this example the col will take the maximum width available on "xs" screens (12/12), half on "sm" screens (6/12), one third on md and lg columns (4/12).
+
+#### Props
+
+| Prop       | Type    | Purpose                                                |
+| ---------- |:-------:| ------------------------------------------------------ |
+| className  | string  | Col's classNames                                       |
+| children   | dom     | Col's content                                          |
+| lg*        | number  | Space taken over 12 units on large screens (lg)        |
+| md*        | number  | Space taken over 12 units on medium screens (md)       |
+| sm*        | number  | Space taken over 12 units on small screens (sm)        |
+| xs*        | number  | Space taken over 12 units on extra small screens (xs)  |
+
+*Values available: 1 to 12.
+
+---
+
+### Empty Line Placeholder
+
+#### Usage
+
+```jsx
+<EmptyLinePlaceholder
+  style={{ marginLeft: 40, marginBottom: 20 }}
+  onClick={() => setFloatingSidebarOpen(true)}
+  text="Add a new chapter"
+  action="add"
+/>
+```
+
+#### Props
+
+| Prop    | Type        | Purpose                                                                 |
+| ------- |:-----------:| ----------------------------------------------------------------------- |
+| style   | styleObject | EmptyLinePlaceholder's inline styles                                    |
+| onClick | function    | Callback function when clicking the placeholder                         |
+| text    | string      | Text inside the placeholder                                             |
+| action  | string      | Add and icon to the right of the text (only "add" value is supported)   |
+
+---
+
+### Progress
+
+#### Usage
+
+```jsx
+<Progress
+  className="mt-2"
+  value={passwordValidation.progress}
+  min={0}
+  max={5}
+  color={passwordValidation.color}
+/>
+```
+
+#### Props
+
+| Prop      | Type   | Purpose                    |
+| --------- |:------:| -------------------------- |
+| className | string | Progress bar's classNames  |
+| value     | number | Progress bar value         |
+| min       | number | Progress bar min value     |
+| max       | number | Progress bar max value     |
+| color     | string | Progress bar color         |
+
+---
+
+### Spinner
+
+#### Usage
+
+```jsx
+<Spinner className="mb-2" color="primary" size="lg" />
+```
+
+#### Props
+
+| Prop      | Type    | Purpose                                                           |
+| --------- |:-------:| ----------------------------------------------------------------- |
+| className | string  | Spinner's classNames                                              |
+| color     | string  | Spinner's color (can be: primary, success, danger, white, black)  |
+| size      | string  | Spinner's size (can be: lg, md, sm, xs)                           |
+
+---
+
+### Tabs
+
+#### Usage
+
+```jsx
+<Tabs>
+  <TabPane name="Tab 1" key="1">
+    Content of Tab Pane 1
+  </TabPane>
+  <TabPane name="Tab 2" key="2">
+    Content of Tab Pane 2
+  </TabPane>
+  <TabPane name="Tab 3" key="3">
+    Content of Tab Pane 3
+  </TabPane>
+</Tabs>
+```
+
+Tabs component needs to be used with [`<TabPane />`](#tab-pane).
+
+#### Props
+
+| Prop      | Type    | Purpose                                                           |
+| --------- |:-------:| ----------------------------------------------------------------- |
+| children  | dom     | Tabs content, should be one or many [`<TabPane />`](#tab-pane)    |
+
+---
+
+### Tab Pane
+
+#### Usage
+
+```jsx
+<TabPane name="Tab 1" key="1">
+  Content of Tab Pane 1
+</TabPane>
+```
+
+Tabs component needs to be used with [`<TabPane />`](#tab-pane).
+
+#### Props
+
+| Prop      | Type    | Purpose                 |
+| --------- |:-------:| ----------------------- |
+| name      | string  | Tab's title displayed   |
+| children  | dom     | Tab's content           |
+| disabled  | bool    | Disable the tab         |
+
+---
