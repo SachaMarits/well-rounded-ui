@@ -7,6 +7,7 @@ import {
   Pagination,
   Select,
   Table,
+  Calendar,
 } from "./components/inputs";
 
 import { Alert, FloatingSidebar, Modal } from "./components/interactions";
@@ -52,4 +53,5 @@ export {
   TabPane,
   Tabs,
   TreeViewItem,
+  Calendar,
 };

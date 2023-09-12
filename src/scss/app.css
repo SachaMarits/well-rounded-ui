@@ -2407,6 +2407,51 @@ ul {
 }
 
 /* #endregion Progress */
+/* #region Calendar */
+.calendar-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-header .mdi-chevron-left, .calendar-header .mdi-chevron-right {
+  padding: 0 16px;
+  color: #2e94d8;
+  font-size: xx-large;
+}
+
+.calendar {
+  width: 100%;
+}
+.calendar .day-names, .calendar .week {
+  display: flex;
+}
+.calendar .day-names div, .calendar .week div {
+  flex: 1;
+  border: 1px solid #ddd;
+}
+.calendar .day-names {
+  text-align: center;
+}
+.calendar .week {
+  height: 100px;
+  text-align: right;
+}
+.calendar .day {
+  padding: 8px;
+}
+.calendar .day:not(.disabled) {
+  transition: 0.25s;
+  cursor: pointer;
+}
+.calendar .day:not(.disabled):hover {
+  background: #e0ebf0;
+}
+.calendar .day.disabled {
+  background: #eeeeee;
+}
+
+/* #endregion Calendar */
 /* #region Colors */
 /* Exporting variables to be used in jsx files */
 :export {

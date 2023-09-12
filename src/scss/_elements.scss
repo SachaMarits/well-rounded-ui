@@ -700,3 +700,53 @@ ul {
 }
 
 /* #endregion Progress */
+
+/* #region Calendar */
+
+.calendar-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .mdi-chevron-left, .mdi-chevron-right {
+    padding: 0 16px;
+    color: $primary;
+    font-size: xx-large;
+  }
+}
+
+.calendar {
+  width: 100%;
+  .day-names, .week {
+    display: flex;
+    div {
+      flex: 1;
+      border: 1px solid #ddd;
+    }
+  }
+
+  .day-names {
+    text-align: center;
+  }
+
+  .week {
+    height: 100px;
+    text-align: right;
+  }
+
+  .day {
+    padding: 8px;
+    &:not(.disabled) {
+      transition: .25s;
+      cursor: pointer;
+      &:hover {
+        background: #e0ebf0;
+      }
+    }
+    &.disabled {
+      background: #eeeeee;
+    }
+  }
+}
+
+/* #endregion Calendar */
