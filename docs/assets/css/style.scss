@@ -8,10 +8,39 @@
     background-image: linear-gradient(120deg, #358fd9, #974de2);
 }
 
+.main-content h1 {
+    display: none;
+}
+
 .main-content h1, .main-content h2 {
     color: #358fd9;
 }
 
 .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
     color: #974de2;
+}
+
+a[href="#table-of-contents"] {
+    border-radius: 100%;
+    background-image: linear-gradient(120deg, #358fd9, #974de2);
+    height: 48px;
+    width: 48px;
+    color: white;
+    display: flex;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    cursor: pointer;
+    padding-top: 2px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: .25s;
+    &:hover {
+        text-decoration: none;
+        height: 52px;
+        width: 52px;
+        bottom: 30px;
+        right: 30px;
+    }
 }

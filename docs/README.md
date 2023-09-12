@@ -1,3 +1,5 @@
+# Well Rounded Ui Documentation
+
 ## Table of contents
 
 - [Inputs](#inputs)
@@ -634,3 +636,5 @@ Tabs component needs to be used with [`<TabPane />`](#tab-pane).
 | name      | string  | Tab's title displayed   |
 | children  | dom     | Tab's content           |
 | disabled  | bool    | Disable the tab         |
+
+[^](#table-of-contents)
