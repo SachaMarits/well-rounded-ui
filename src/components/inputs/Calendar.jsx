@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export default function Calendar({ year, month, showWeekends }) {
+export default function Calendar({ year, month, showWeekends, onDayClick }) {
+  const responsiveWeekDays = (d) => {
+    if (window.innerWidth < 400) return d.substring(0, 1);
+    if (window.innerWidth < 700) return d.substring(0, 3) + ".";
+    return d;
+  };
+
   const daysInWeek = showWeekends ? 7 : 5;
   const weekDays = [
     "Monday",
@@ -11,7 +17,9 @@ export default function Calendar({ year, month, showWeekends }) {
     "Friday",
     "Saturday",
     "Sunday",
-  ].slice(0, daysInWeek);
+  ]
+    .map(responsiveWeekDays)
+    .slice(0, daysInWeek);
 
   const [currentMonth, setCurrentMonth] = useState(month);
   const [currentYear, setCurrentYear] = useState(year);
@@ -24,8 +32,8 @@ export default function Calendar({ year, month, showWeekends }) {
   };
 
   const calendar = () => {
-    const firstDayOfMonth = new Date(year, currentMonth, 1);
-    const lastDayOfMonth = new Date(year, currentMonth + 1, 0);
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+    const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
     const daysInMonth = lastDayOfMonth.getDate();
     const startDayOfWeek = firstDayOfMonth.getDay();
     const endDayOfWeek = lastDayOfMonth.getDay();
@@ -95,6 +103,9 @@ export default function Calendar({ year, month, showWeekends }) {
                 <div
                   key={day + i}
                   className={`day${day === "" ? " disabled" : ""}`}
+                  onClick={() =>
+                    onDayClick(new Date(currentYear, currentMonth, day))
+                  }
                 >
                   {day}
                 </div>
@@ -111,10 +122,12 @@ Calendar.propTypes = {
   year: PropTypes.number,
   month: PropTypes.number,
   showWeekends: PropTypes.bool,
+  onDayClick: PropTypes.func,
 };
 
 Calendar.defaultProps = {
   year: new Date().getFullYear(),
   month: new Date().getMonth(),
   showWeekends: true,
+  onDayClick: () => {},
 };
