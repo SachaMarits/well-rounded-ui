@@ -69,6 +69,16 @@ export default function Calendar({ year, month, showWeekends, onDayClick }) {
     setCurrentYear(newDate.getFullYear());
   };
 
+  const dateObject = (day) => new Date(currentYear, currentMonth, day);
+
+  const dayClassNames = (day) => {
+    let className = "day";
+    if (day === "") className += " disabled";
+    if (new Date().toDateString() === dateObject(day).toDateString())
+      className += " active";
+    return className;
+  };
+
   return (
     <div className="calendar-wrapper">
       <link
@@ -91,7 +101,7 @@ export default function Calendar({ year, month, showWeekends, onDayClick }) {
 
       <div className="calendar">
         <div className="day-names">
-          {weekDays.map((day, i) => (
+          {weekDays.map((day) => (
             <div key={day}>{day}</div>
           ))}
         </div>
@@ -102,12 +112,10 @@ export default function Calendar({ year, month, showWeekends, onDayClick }) {
               {week.slice(0, daysInWeek).map((day, i) => (
                 <div
                   key={day + i}
-                  className={`day${day === "" ? " disabled" : ""}`}
-                  onClick={() =>
-                    onDayClick(new Date(currentYear, currentMonth, day))
-                  }
+                  className={dayClassNames(day)}
+                  onClick={() => onDayClick(dateObject(day))}
                 >
-                  {day}
+                  <p className="day-number">{day}</p>
                 </div>
               ))}
             </div>

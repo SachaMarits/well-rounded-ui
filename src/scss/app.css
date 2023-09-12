@@ -2440,6 +2440,9 @@ ul {
 .calendar .day {
   padding: 8px;
 }
+.calendar .day .day-number {
+  display: inline-block;
+}
 .calendar .day:not(.disabled) {
   transition: 0.25s;
   cursor: pointer;
@@ -2449,6 +2452,14 @@ ul {
 }
 .calendar .day.disabled {
   background: #eeeeee;
+}
+.calendar .day.active .day-number {
+  background: #2e94d8;
+  color: white;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
 }
 
 /* #endregion Calendar */

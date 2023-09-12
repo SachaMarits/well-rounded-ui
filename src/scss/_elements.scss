@@ -717,8 +717,10 @@ ul {
 
 .calendar {
   width: 100%;
+
   .day-names, .week {
     display: flex;
+
     div {
       flex: 1;
       border: 1px solid #ddd;
@@ -736,15 +738,31 @@ ul {
 
   .day {
     padding: 8px;
+
+    .day-number {
+      display: inline-block;
+    }
+
     &:not(.disabled) {
       transition: .25s;
       cursor: pointer;
+
       &:hover {
         background: #e0ebf0;
       }
     }
+
     &.disabled {
       background: #eeeeee;
+    }
+
+    &.active .day-number {
+      background: $primary;
+      color: white;
+      border-radius: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-align: center;
     }
   }
 }
