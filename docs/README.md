@@ -1,5 +1,9 @@
 # Well Rounded Ui Documentation
 
+## Patch note
+
+Added a new [Calendar](#calendar) component.
+
 ## Table of contents
 
 - [Inputs](#inputs)
@@ -8,6 +12,7 @@
   - [MultiSelect](#multiselect)
   - [Pagination](#pagination)
   - [Table](#table)
+  - [Calendar](#calendar)
 - [Interactions](#interactions)
   - [Alert](#alert)
   - [Floating Sidebar](#floating-sidebar)
@@ -248,6 +253,35 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | **actions***   | array of objects | Create and action column with edit and/or delete buttons |
 
 *Required prop(s).
+
+---
+
+### Calendar
+
+![Well Rounded UI Table](https://i.postimg.cc/kMZxqLz6/Well-Rounded-Ui-Calendar.png)
+
+#### Usage
+
+```jsx
+<Calendar 
+  data={[{ date: new Date(2023, 8, 2), id: 1, text: "Doctor's appointment" }]}
+  onDayClick={(d) => Alert("A day has been clicked", d.toDateString(), "success")} 
+  onDataClick={(d) => Alert("A data has been clicked", d.text, "warning")}
+/>
+```
+
+#### Props
+
+| Prop          | Type             | Purpose                                                      |
+| ------------- |:----------------:| -------------------------------------------------------------|
+| year          | number           | Set Calendar's year, current year by default                 |
+| month         | number           | Set Calendar's month, current month by default               |
+| showWeekends  | bool             | Hide weekends day if set to false, shown by default          |
+| onDayClick    | function         | Callback function when clicking on a day (return day date)   |
+| onDataClick   | function         | Callback function when clicking on data (return data object) |
+| data*         | array of objects | Data displayed inside the Calendar                           |
+
+*[{ date: new Date(), id: 1, text: "Text shown"}] 
 
 ---
 
