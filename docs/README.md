@@ -637,4 +637,4 @@ Tabs component needs to be used with [`<TabPane />`](#tab-pane).
 | children  | dom     | Tab's content           |
 | disabled  | bool    | Disable the tab         |
 
-[^](#table-of-contents)
+<a href="#table-of-contents">^</a>
