@@ -27,6 +27,7 @@ import {
   TreeViewItem,
   ModalHeader,
   ModalFooter,
+  TextEditor,
 } from "./components/layout";
 
 export {
@@ -54,4 +55,5 @@ export {
   Tabs,
   TreeViewItem,
   Calendar,
+  TextEditor,
 };

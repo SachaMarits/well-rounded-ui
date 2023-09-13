@@ -2473,6 +2473,34 @@ ul {
 }
 
 /* #endregion Calendar */
+/* #region Text Editor */
+.text-editor .text-editor-document {
+  background: #ddd;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-editor .text-editor-content, .text-editor .text-editor-content {
+  background: white;
+  width: 600px;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-shadow);
+  outline: 0;
+}
+.text-editor .text-editor-content::-moz-placeholder, .text-editor .text-editor-content::-moz-placeholder {
+  font-weight: 500;
+}
+.text-editor .text-editor-content::placeholder, .text-editor .text-editor-content::placeholder {
+  font-weight: 500;
+}
+.text-editor .btn-option {
+  color: black;
+  font-size: large;
+  background: transparent;
+}
+
+/* #endregion Text Editor */
 /* #region Colors */
 /* Exporting variables to be used in jsx files */
 :export {
