@@ -721,7 +721,7 @@ ul {
   .day-names, .week {
     display: flex;
 
-    div {
+    > div {
       flex: 1;
       border: 1px solid #ddd;
     }
@@ -732,7 +732,8 @@ ul {
   }
 
   .week {
-    height: 100px;
+    flex: 1;
+    min-height: 100px;
     text-align: right;
   }
 
@@ -763,6 +764,15 @@ ul {
       width: 1.5rem;
       height: 1.5rem;
       text-align: center;
+    }
+
+    .day-data {
+      text-align: left;
+      background: $primary;
+      border-radius: 4px;
+      padding: 2px;
+      font-size: small;
+      margin-top: 5px;
     }
   }
 }

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export default function Calendar({ year, month, showWeekends, onDayClick }) {
+export default function Calendar({
+  year,
+  month,
+  showWeekends,
+  onDayClick,
+  onDataClick,
+  data,
+}) {
   const responsiveWeekDays = (d) => {
     if (window.innerWidth < 400) return d.substring(0, 1);
     if (window.innerWidth < 700) return d.substring(0, 3) + ".";
@@ -70,12 +77,12 @@ export default function Calendar({ year, month, showWeekends, onDayClick }) {
   };
 
   const dateObject = (day) => new Date(currentYear, currentMonth, day);
+  const sameDate = (d1, d2) => d1.toDateString() === d2.toDateString();
 
   const dayClassNames = (day) => {
     let className = "day";
     if (day === "") className += " disabled";
-    if (new Date().toDateString() === dateObject(day).toDateString())
-      className += " active";
+    if (sameDate(new Date(), dateObject(day))) className += " active";
     return className;
   };
 
@@ -116,6 +123,20 @@ export default function Calendar({ year, month, showWeekends, onDayClick }) {
                   onClick={() => onDayClick(dateObject(day))}
                 >
                   <p className="day-number">{day}</p>
+                  {data
+                    .filter((d) => sameDate(d.date, dateObject(day)))
+                    .map((d) => (
+                      <div
+                        key={day + d.id + d.text}
+                        className="day-data pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onDataClick(d);
+                        }}
+                      >
+                        {d.text}
+                      </div>
+                    ))}
                 </div>
               ))}
             </div>
@@ -131,6 +152,8 @@ Calendar.propTypes = {
   month: PropTypes.number,
   showWeekends: PropTypes.bool,
   onDayClick: PropTypes.func,
+  onDataClick: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 Calendar.defaultProps = {
@@ -138,4 +161,6 @@ Calendar.defaultProps = {
   month: new Date().getMonth(),
   showWeekends: true,
   onDayClick: () => {},
+  onDataClick: () => {},
+  data: [],
 };

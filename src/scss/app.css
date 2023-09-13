@@ -2426,7 +2426,7 @@ ul {
 .calendar .day-names, .calendar .week {
   display: flex;
 }
-.calendar .day-names div, .calendar .week div {
+.calendar .day-names > div, .calendar .week > div {
   flex: 1;
   border: 1px solid #ddd;
 }
@@ -2434,7 +2434,8 @@ ul {
   text-align: center;
 }
 .calendar .week {
-  height: 100px;
+  flex: 1;
+  min-height: 100px;
   text-align: right;
 }
 .calendar .day {
@@ -2460,6 +2461,14 @@ ul {
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
+}
+.calendar .day .day-data {
+  text-align: left;
+  background: #2e94d8;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: small;
+  margin-top: 5px;
 }
 
 /* #endregion Calendar */
