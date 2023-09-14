@@ -8,6 +8,8 @@ import {
   Select,
   Table,
   Calendar,
+  Dropdown,
+  Tooltip,
 } from "./components/inputs";
 
 import { Alert, FloatingSidebar, Modal } from "./components/interactions";
@@ -56,4 +58,6 @@ export {
   TreeViewItem,
   Calendar,
   TextEditor,
+  Dropdown,
+  Tooltip,
 };

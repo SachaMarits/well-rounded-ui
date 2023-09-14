@@ -12,4 +12,4 @@ export { default as Progress } from "./Progress";
 export { default as TabPane } from "./TabPane";
 export { default as Tabs } from "./Tabs";
 export { default as TreeViewItem } from "./TreeViewItem";
-export { default as TextEditor } from "./TextEditor";
+export { default as TextEditor } from "./TextEditor/TextEditor";

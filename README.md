@@ -34,10 +34,6 @@ To use Material Design Icons import them inside your index.html:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
 ```
-or
-```html
-<script src="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/scripts/verify.min.js"></script>
-```
 > Import the latest version of the icons: https://www.jsdelivr.com/package/npm/@mdi/font
 
 Now you will see all latest mdi icons !

@@ -783,6 +783,11 @@ ul {
 /* #region Text Editor */
 
 .text-editor {
+  .text-editor-toolbar {
+    display: flex;
+    justify-content: center;
+  }
+
   .text-editor-document {
     background: #ddd;
     padding: 20px;
@@ -802,13 +807,64 @@ ul {
       font-weight: 500;
     }
   }
-
+  
   .btn-option {
     color: black;
     font-size: large;
     background: transparent;
   }
+
+  .icon-collapse {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    i {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-bottom: -5px;
+    }
+  }
 }
 
-
 /* #endregion Text Editor */
+
+
+/* #region Dropdown/Tooltip */
+
+.dropdown {
+  position: relative;
+
+  .options {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+
+    li {
+      color: black;
+      padding: 6px 10px;
+      font-size: .95rem;
+      display: block;
+
+      &:first-child { border-radius: 8px 8px 0 0; }
+      &:last-child { border-radius: 0 0 8px 8px; }
+      &:hover { background-color: #f1f1f1 }
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 2px 4px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+  }
+}
+
+/* #endregion Dropdown/Tooltip */

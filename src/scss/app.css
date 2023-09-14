@@ -2474,6 +2474,10 @@ ul {
 
 /* #endregion Calendar */
 /* #region Text Editor */
+.text-editor .text-editor-toolbar {
+  display: flex;
+  justify-content: center;
+}
 .text-editor .text-editor-document {
   background: #ddd;
   padding: 20px;
@@ -2499,8 +2503,58 @@ ul {
   font-size: large;
   background: transparent;
 }
+.text-editor .icon-collapse {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+.text-editor .icon-collapse i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-bottom: -5px;
+}
 
 /* #endregion Text Editor */
+/* #region Dropdown/Tooltip */
+.dropdown {
+  position: relative;
+}
+.dropdown .options {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+}
+.dropdown .options li {
+  color: black;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  display: block;
+}
+.dropdown .options li:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.dropdown .options li:last-child {
+  border-radius: 0 0 8px 8px;
+}
+.dropdown .options li:hover {
+  background-color: #f1f1f1;
+}
+.dropdown .tooltip {
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 2px 4px;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+}
+
+/* #endregion Dropdown/Tooltip */
 /* #region Colors */
 /* Exporting variables to be used in jsx files */
 :export {
