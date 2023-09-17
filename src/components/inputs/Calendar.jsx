@@ -88,10 +88,6 @@ export default function Calendar({
 
   return (
     <div className="calendar-wrapper">
-      <link
-        rel="stylesheet"
-        href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
-      />
       <div className="calendar-header">
         <i
           className="mdi mdi-chevron-left pointer"

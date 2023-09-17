@@ -2477,6 +2477,22 @@ ul {
 .text-editor .text-editor-toolbar {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.text-editor .text-editor-toolbar .tool-group {
+  border-right: 1px solid #ddd;
+}
+.text-editor .text-editor-toolbar .tool-group:first-of-type {
+  border-left: 1px solid #ddd;
+}
+.text-editor .text-editor-toolbar .tool-group .tool-group-icons {
+  display: flex;
+  justify-content: center;
+}
+.text-editor .text-editor-toolbar .tool-group .tool-group-title {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 .text-editor .text-editor-document {
   background: #ddd;
@@ -2485,18 +2501,13 @@ ul {
   align-items: center;
   justify-content: center;
 }
-.text-editor .text-editor-content, .text-editor .text-editor-content {
+.text-editor .text-editor-content {
   background: white;
+  min-height: 1.5em;
   width: 600px;
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-shadow);
   outline: 0;
-}
-.text-editor .text-editor-content::-moz-placeholder, .text-editor .text-editor-content::-moz-placeholder {
-  font-weight: 500;
-}
-.text-editor .text-editor-content::placeholder, .text-editor .text-editor-content::placeholder {
-  font-weight: 500;
 }
 .text-editor .btn-option {
   color: black;
@@ -2513,6 +2524,31 @@ ul {
   left: 0;
   bottom: 0;
   margin-bottom: -5px;
+}
+.text-editor .text-editor-spacing {
+  display: flex;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+.text-editor .text-editor-spacing .spacing-input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  width: 80px;
+}
+.text-editor .text-editor-spacing .spacing-input i {
+  margin-right: 5px;
+}
+.text-editor .text-editor-spacing .spacing-input .form-control {
+  margin-top: 0;
+}
+.text-editor .resizable-image {
+  cursor: se-resize;
+  max-width: 100%;
+}
+.text-editor .selected-image {
+  outline: 1px dotted #212121;
+  outline: 5px auto -webkit-focus-ring-color;
 }
 
 /* #endregion Text Editor */
