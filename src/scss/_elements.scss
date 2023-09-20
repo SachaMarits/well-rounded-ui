@@ -824,6 +824,8 @@ ul {
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-shadow);
     outline: 0;
+
+   * { font-family: "Verdana", sans-serif; }
   }
   
   .btn-option {
@@ -898,15 +900,10 @@ ul {
   }
 }
 
-@media (max-width: 712px) {
-  .text-editor {
-    
-    .text-editor-toolbar {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      justify-content: start;
-    }
-  }
+.text-editor-toolbar-wrap {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  justify-content: start !important;
 }
 
 /* #endregion Text Editor */

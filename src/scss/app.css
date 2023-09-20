@@ -2509,6 +2509,9 @@ ul {
   box-shadow: var(--tw-shadow);
   outline: 0;
 }
+.text-editor .text-editor-content *, .text-editor-vertical .text-editor-content * {
+  font-family: "Verdana", sans-serif;
+}
 .text-editor .btn-option, .text-editor-vertical .btn-option {
   color: black;
   font-size: large;
@@ -2572,13 +2575,12 @@ ul {
   display: none;
 }
 
-@media (max-width: 712px) {
-  .text-editor .text-editor-toolbar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: start;
-  }
+.text-editor-toolbar-wrap {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  justify-content: start !important;
 }
+
 /* #endregion Text Editor */
 /* #region Dropdown/Tooltip */
 .dropdown {

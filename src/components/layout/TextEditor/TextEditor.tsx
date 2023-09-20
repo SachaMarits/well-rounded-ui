@@ -9,6 +9,7 @@ interface TextEditorProps {
   options?: string[];
   vertical?: boolean;
   textWidth?: string;
+  textHeight?: string;
 }
 
 export default function TextEditor({
@@ -17,7 +18,8 @@ export default function TextEditor({
   hideGroupNames = false,
   options = ["text", "color", "image", "layout"],
   vertical = false,
-  textWidth = "600px"
+  textWidth = "600px",
+  textHeight = "auto"
 }: TextEditorProps) {
   const text = useRef(null);
 
@@ -54,7 +56,7 @@ export default function TextEditor({
           <div
             contentEditable
             className="text-editor-content"
-            style={{ width: textWidth }}
+            style={{ width: textWidth, height: textHeight }}
             ref={text}
             dangerouslySetInnerHTML={{
               __html: `<div style="width: ${textWidth}">${initialValue || ""}</div>`,

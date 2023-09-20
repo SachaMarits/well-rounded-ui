@@ -16,18 +16,26 @@ const settings: Setting[] = [
   { style: "justifyRight", icon: "align-right" },
 ];
 
-type FontSizeOption = {
+type Option = {
   id: number;
   text: string;
 };
 
-const fontSizeOptions: FontSizeOption[] = [
+const fontSizeOptions: Option[] = [
   { id: 1, text: "Smaller" },
   { id: 2, text: "Small" },
   { id: 3, text: "Medium" },
   { id: 4, text: "Large" },
   { id: 5, text: "Larger" },
   { id: 6, text: "Extra Large" },
+];
+
+const fontOptions = [
+  { id: "Arial, sans-serif", text: "Arial" },
+  { id: "Times New Roman, serif", text: "Times New Roman" },
+  { id: "Verdana, sans-serif", text: "Verdana" },
+  { id: "Georgia, serif", text: "Georgia" },
+  { id: "Courier New, monospace", text: "Courier New" },
 ];
 
 type ToolbarTextProps = {
@@ -42,6 +50,15 @@ export default function ToolbarText({ handleStyle }: ToolbarTextProps) {
 
   const capitalizeFirstLetter = (text: string) =>
     text.charAt(0).toUpperCase() + text.slice(1);
+
+  const overrideFontFaces = () => {
+    const fontElements = document.querySelectorAll('font');
+
+    fontElements.forEach((fontElement) => {
+      const fontFaceValue = fontElement.getAttribute('face');
+      if (fontFaceValue) fontElement.style.fontFamily = fontFaceValue;
+    });
+  }
 
   return (
     <div className="tool-group">
@@ -63,11 +80,28 @@ export default function ToolbarText({ handleStyle }: ToolbarTextProps) {
               className="btn btn-option btn-collapse"
               title={hideTitles ? "" : "Font size"}
             >
-              <i className={`mdi mdi-format-font`} />
+              <i className={`mdi mdi-format-size`} />
               <i className={`mdi mdi-chevron-down`} />
             </button>
           }
           onClick={(id) => handleStyle("fontSize", id)}
+          closeOnLeave
+        />
+        <Dropdown
+          options={fontOptions}
+          toggle={
+            <button
+              className="btn btn-option btn-collapse"
+              title={hideTitles ? "" : "Font"}
+            >
+              <i className={`mdi mdi-format-font`} />
+              <i className={`mdi mdi-chevron-down`} />
+            </button>
+          }
+          onClick={(id) => {
+            handleStyle("fontName", id);
+            overrideFontFaces();
+          }}
           closeOnLeave
         />
       </div>

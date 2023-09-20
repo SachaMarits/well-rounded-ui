@@ -1,4 +1,4 @@
-import React, { useContext, } from "react";
+import React, { useContext, useEffect } from "react";
 import ToolbarText from "./ToolbarText";
 import ToolbarColor from "./ToolbarColor";
 import ToolbarImage from "./ToolbarImage";
@@ -14,6 +14,16 @@ const TextEditorToolbar  = ({ text } : ToolbarColorProps) => {
 
   const handleStyle = (style: string, value: string | undefined = undefined) =>
     document.execCommand(style, false, value);
+
+  useEffect(() => {
+    const toolbar = document.querySelector(".text-editor-toolbar") as HTMLElement;
+    if (!toolbar) return;
+    if (toolbar.offsetWidth <= 761) {
+      toolbar.classList.add("text-editor-toolbar-wrap");
+    } else {
+      toolbar.classList.remove("text-editor-toolbar-wrap");
+    }
+  }, []);
 
   return (
     <div className="text-editor-toolbar">
