@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ToolbarIconGroup from "./ToolbarIconGroup";
+import { TextEditorContext } from "./TextEditorContext";
 
-export default function ToolbarColor({ handleStyle }) {
+interface ToolbarColorProps {
+  handleStyle: (style: string, value: string | undefined) => void;
+}
+
+const ToolbarColor = ({ handleStyle } : ToolbarColorProps) => {
+  const { hideTitles, hideGroupNames } = useContext(TextEditorContext);
   const [fontColor, setFontColor] = useState("#ff0000");
   const [highlightColor, setHighlightColor] = useState("#ffff00");
   const [fillColor, setFillColor] = useState("#00ff00");
@@ -16,6 +22,7 @@ export default function ToolbarColor({ handleStyle }) {
             setFontColor(v);
             handleStyle("foreColor", v);
           }}
+          title={hideTitles ? "" : "Font color"}
         />
         <ToolbarIconGroup
           icon="highlight"
@@ -24,6 +31,7 @@ export default function ToolbarColor({ handleStyle }) {
             setHighlightColor(v);
             handleStyle("hiliteColor", v);
           }}
+          title={hideTitles ? "" : "Font highlight color"}
         />
         <ToolbarIconGroup
           icon="fill"
@@ -32,9 +40,12 @@ export default function ToolbarColor({ handleStyle }) {
             setFillColor(v);
             handleStyle("backColor", v);
           }}
+          title={hideTitles ? "" : "Background color"}
         />
       </div>
-      <p className="tool-group-title">Color</p>
+      {!hideGroupNames && <p className="tool-group-title">Color</p>}
     </div>
   );
-}
+};
+
+export default ToolbarColor;

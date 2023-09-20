@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dropdown } from "../../inputs";
+import { TextEditorContext } from "./TextEditorContext";
 
-const settings = [
+type Setting = {
+  style: string;
+  icon: string;
+};
+
+const settings: Setting[] = [
   { style: "bold", icon: "bold" },
   { style: "italic", icon: "italic" },
   { style: "underline", icon: "underline" },
@@ -10,7 +16,12 @@ const settings = [
   { style: "justifyRight", icon: "align-right" },
 ];
 
-const fontSizeOptions = [
+type FontSizeOption = {
+  id: number;
+  text: string;
+};
+
+const fontSizeOptions: FontSizeOption[] = [
   { id: 1, text: "Smaller" },
   { id: 2, text: "Small" },
   { id: 3, text: "Medium" },
@@ -19,7 +30,19 @@ const fontSizeOptions = [
   { id: 6, text: "Extra Large" },
 ];
 
-export default function ToolbarText({ handleStyle }) {
+type ToolbarTextProps = {
+  handleStyle: (style: string, value?: string | undefined) => void;
+};
+
+
+export default function ToolbarText({ handleStyle }: ToolbarTextProps) {
+  const { hideTitles, hideGroupNames } = useContext(TextEditorContext);
+
+  const title = (text: string) => capitalizeFirstLetter(text.replace(/-/g, " "));
+
+  const capitalizeFirstLetter = (text: string) =>
+    text.charAt(0).toUpperCase() + text.slice(1);
+
   return (
     <div className="tool-group">
       <div className="tool-group-icons">
@@ -28,6 +51,7 @@ export default function ToolbarText({ handleStyle }) {
             key={icon}
             className="btn btn-option"
             onClick={() => handleStyle(style)}
+            title={hideTitles ? "" : title(icon)}
           >
             <i className={`mdi mdi-format-${icon}`} />
           </button>
@@ -35,7 +59,10 @@ export default function ToolbarText({ handleStyle }) {
         <Dropdown
           options={fontSizeOptions}
           toggle={
-            <button className="btn btn-option">
+            <button
+              className="btn btn-option btn-collapse"
+              title={hideTitles ? "" : "Font size"}
+            >
               <i className={`mdi mdi-format-font`} />
               <i className={`mdi mdi-chevron-down`} />
             </button>
@@ -44,7 +71,7 @@ export default function ToolbarText({ handleStyle }) {
           closeOnLeave
         />
       </div>
-      <p className="tool-group-title">Text</p>
+      {!hideGroupNames && <p className="tool-group-title">Text</p>}
     </div>
   );
 }

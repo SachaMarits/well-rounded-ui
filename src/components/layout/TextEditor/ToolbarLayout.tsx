@@ -1,33 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Input, Tooltip } from "../../inputs";
+import { TextEditorContext } from "./TextEditorContext";
 
-export default function ToolbarLayout({ text }) {
+interface ToolbarLayoutProps {
+  text: React.RefObject<HTMLDivElement>;
+}
+
+const ToolbarLayout: React.FC<ToolbarLayoutProps> = ({ text }) => {
+  const { hideTitles, hideGroupNames } = useContext(TextEditorContext);
+
   const saveSelection = () => {
     const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-    return range.cloneRange();
+    const range = selection?.getRangeAt(0);
+    if (range) return range.cloneRange();
+    return document.createRange();
   };
 
   const restoreSelection = () => {
     const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(savedSelection);
+    selection?.removeAllRanges();
+    selection?.addRange(savedSelection);
   };
 
-  let savedSelection;
+  let savedSelection: Range = document.createRange();
 
-  const handleSpacing = (e) => {
+  const handleSpacing = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     if (savedSelection) restoreSelection();
     const selection = window.getSelection();
-    let selectedElement = selection.focusNode.parentNode;
+    let selectedElement = selection?.focusNode?.parentNode as HTMLElement;
 
     while (selectedElement && selectedElement.localName !== "div") {
-      selectedElement = selectedElement.parentNode;
+      selectedElement = selectedElement.parentNode as HTMLElement;
     }
 
-    const styles = [];
+    const styles: string[] = [];
 
     if (name === "horizontalPadding")
       styles.push("paddingLeft", "paddingRight");
@@ -38,8 +46,10 @@ export default function ToolbarLayout({ text }) {
   };
 
   const handleExportClick = () => {
-    const htmlContent = text.current.innerHTML;
-    console.log(htmlContent);
+    const htmlContent = text.current?.innerHTML;
+    const newTab = window.open("");
+    newTab?.document.write(htmlContent);
+    newTab?.document.close();
   };
 
   return (
@@ -48,8 +58,9 @@ export default function ToolbarLayout({ text }) {
         <Tooltip
           toggle={
             <button
-              className="btn btn-option"
+              className="btn btn-option btn-collapse"
               onClick={() => (savedSelection = saveSelection())}
+              title={hideTitles ? "" : "Margin and padding"}
             >
               <i className={`mdi mdi-move-resize`} />
               <i className={`mdi mdi-chevron-down`} />
@@ -61,6 +72,7 @@ export default function ToolbarLayout({ text }) {
                 <p>Padding</p>
                 <div className="spacing-input">
                   <i className="mdi mdi-arrow-expand-horizontal" />
+                  {/* @ts-ignore */}
                   <Input
                     name="horizontalPadding"
                     type="number"
@@ -70,6 +82,7 @@ export default function ToolbarLayout({ text }) {
                 </div>
                 <div className="spacing-input">
                   <i className="mdi mdi-arrow-expand-vertical" />
+                  {/* @ts-ignore */}
                   <Input
                     name="verticalPadding"
                     type="number"
@@ -82,6 +95,7 @@ export default function ToolbarLayout({ text }) {
                 <p>Margin</p>
                 <div className="spacing-input">
                   <i className="mdi mdi-arrow-left-right" />
+                  {/* @ts-ignore */}
                   <Input
                     name="horizontalMargin"
                     type="number"
@@ -91,6 +105,7 @@ export default function ToolbarLayout({ text }) {
                 </div>
                 <div className="spacing-input">
                   <i className="mdi mdi-arrow-up-down" />
+                  {/* @ts-ignore */}
                   <Input
                     name="verticalMargin"
                     type="number"
@@ -103,11 +118,13 @@ export default function ToolbarLayout({ text }) {
           }
           closeOnLeave
         />
-        <button className="btn btn-option" onClick={handleExportClick}>
+        <button className="btn btn-option" onClick={handleExportClick} title={hideTitles ? "" : "Preview in new tab"}>
           <i className={`mdi mdi-file-find`} />
         </button>
       </div>
-      <p className="tool-group-title">Layout</p>
+      {!hideGroupNames && <p className="tool-group-title">Layout</p>}
     </div>
   );
-}
+};
+
+export default ToolbarLayout;

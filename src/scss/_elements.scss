@@ -782,7 +782,7 @@ ul {
 
 /* #region Text Editor */
 
-.text-editor {
+.text-editor, .text-editor-vertical {
 
   .text-editor-toolbar {
     display: flex;
@@ -815,12 +815,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   
   .text-editor-content {
     background: white;
     min-height: 1.5em;
-    width: 600px;
     --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     box-shadow: var(--tw-shadow);
     outline: 0;
@@ -830,6 +830,12 @@ ul {
     color: black;
     font-size: large;
     background: transparent;
+    box-shadow: none;
+  }
+
+  .btn-collapse {
+    padding-right: 2px;
+    padding-left: 12px;
   }
 
   .icon-collapse {
@@ -872,8 +878,38 @@ ul {
   }
 }
 
-/* #endregion Text Editor */
+.text-editor-vertical {
+  display: flex;
 
+  .text-editor-toolbar {
+    flex-direction: column;
+
+    .tool-group {
+      border: none !important;
+  
+      .tool-group-icons {
+        flex-direction: column;
+      }
+  
+      .tool-group-title {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 712px) {
+  .text-editor {
+    
+    .text-editor-toolbar {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: start;
+    }
+  }
+}
+
+/* #endregion Text Editor */
 
 /* #region Dropdown/Tooltip */
 

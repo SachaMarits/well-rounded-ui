@@ -1,32 +1,38 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
+import { TextEditorContext } from "./TextEditorContext";
 
-export default function ToolbarImage({ text }) {
+interface ToolbarImageProps {
+  text: HTMLDivElement;
+}
+
+const ToolbarImage = ({ text }: ToolbarImageProps) => {
+  const { hideTitles, hideGroupNames } = useContext(TextEditorContext);
   const imageInputRef = useRef(null);
 
   useEffect(() => {
-    document.querySelectorAll(".selected-image-option").forEach((button) => {
+    document.querySelectorAll(".selected-image-option").forEach((button: any) => {
       button.disabled = true;
     });
   }, []);
 
-  const handleAlignment = (float) => {
-    const selectedImage = document.getElementsByClassName("selected-image");
-    console.log(selectedImage);
-    if (selectedImage[0]) selectedImage[0].style.float = float;
+  const handleAlignment = (float: string) => {
+    const selectedImage = document.querySelector(".selected-image") as HTMLImageElement;
+    if (selectedImage) selectedImage.style.float = float;
   };
 
-  const handleInsertImage = () => imageInputRef.current.click();
+  const handleInsertImage = () => imageInputRef.current?.click();
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
+  const handleImageUpload = (e: any) => {
+    const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = (event) => {
-        const imageUrl = event.target.result;
+      reader.onload = (event: ProgressEvent<FileReader>) => {
+        const imageUrl = event.target?.result as string;
         document.execCommand("insertImage", false, imageUrl);
-        text.current.querySelectorAll("img").forEach((img) => {
+        // @ts-ignore
+        text.current?.querySelectorAll("img").forEach((img: HTMLImageElement) => {
           img.classList.add("resizable-image");
-          img.addEventListener("mousedown", (e) => {
+          img.addEventListener("mousedown", (e: MouseEvent) => {
             if (e.target === img) {
               e.preventDefault();
               const originalWidth = img.offsetWidth;
@@ -39,7 +45,7 @@ export default function ToolbarImage({ text }) {
                 document.removeEventListener("mousemove", resizeImage);
               });
 
-              function resizeImage(e) {
+              function resizeImage(e: MouseEvent) {
                 const newWidth = originalWidth + (e.clientX - startX);
                 const newHeight = originalHeight + (e.clientY - startY);
                 img.style.width = newWidth + "px";
@@ -56,7 +62,7 @@ export default function ToolbarImage({ text }) {
   return (
     <div className="tool-group">
       <div className="tool-group-icons">
-        <button className="btn btn-option" onClick={handleInsertImage}>
+        <button className="btn btn-option" onClick={handleInsertImage} title={hideTitles ? "" : "Insert image"}>
           <i className={`mdi mdi-image-plus`} />
         </button>
         <input
@@ -68,24 +74,26 @@ export default function ToolbarImage({ text }) {
         />
         <button
           className="btn btn-option selected-image-option"
-          onClick={() => handleAlignment("left")}
+          onClick={() => handleAlignment("left")} title={hideTitles ? "" : "Align left"}
         >
           <i className="mdi mdi-align-horizontal-left" />
         </button>
         <button
           className="btn btn-option selected-image-option"
-          onClick={() => handleAlignment("right")}
+          onClick={() => handleAlignment("right")} title={hideTitles ? "" : "Align right"}
         >
           <i className="mdi mdi-align-horizontal-right" />
         </button>
         <button
           className="btn btn-option selected-image-option"
-          onClick={() => handleAlignment("none")}
+          onClick={() => handleAlignment("none")} title={hideTitles ? "" : "Remove alignment"}
         >
           <i className="mdi mdi-signature-image" />
         </button>
       </div>
-      <p className="tool-group-title">Image</p>
+      {!hideGroupNames && <p className="tool-group-title">Image</p>}
     </div>
   );
-}
+};
+
+export default ToolbarImage;

@@ -2474,83 +2474,111 @@ ul {
 
 /* #endregion Calendar */
 /* #region Text Editor */
-.text-editor .text-editor-toolbar {
+.text-editor .text-editor-toolbar, .text-editor-vertical .text-editor-toolbar {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.text-editor .text-editor-toolbar .tool-group {
+.text-editor .text-editor-toolbar .tool-group, .text-editor-vertical .text-editor-toolbar .tool-group {
   border-right: 1px solid #ddd;
 }
-.text-editor .text-editor-toolbar .tool-group:first-of-type {
+.text-editor .text-editor-toolbar .tool-group:first-of-type, .text-editor-vertical .text-editor-toolbar .tool-group:first-of-type {
   border-left: 1px solid #ddd;
 }
-.text-editor .text-editor-toolbar .tool-group .tool-group-icons {
+.text-editor .text-editor-toolbar .tool-group .tool-group-icons, .text-editor-vertical .text-editor-toolbar .tool-group .tool-group-icons {
   display: flex;
   justify-content: center;
 }
-.text-editor .text-editor-toolbar .tool-group .tool-group-title {
+.text-editor .text-editor-toolbar .tool-group .tool-group-title, .text-editor-vertical .text-editor-toolbar .tool-group .tool-group-title {
   text-align: center;
   font-size: 0.9rem;
   opacity: 0.7;
 }
-.text-editor .text-editor-document {
+.text-editor .text-editor-document, .text-editor-vertical .text-editor-document {
   background: #ddd;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
-.text-editor .text-editor-content {
+.text-editor .text-editor-content, .text-editor-vertical .text-editor-content {
   background: white;
   min-height: 1.5em;
-  width: 600px;
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-shadow);
   outline: 0;
 }
-.text-editor .btn-option {
+.text-editor .btn-option, .text-editor-vertical .btn-option {
   color: black;
   font-size: large;
   background: transparent;
+  box-shadow: none;
 }
-.text-editor .icon-collapse {
+.text-editor .btn-collapse, .text-editor-vertical .btn-collapse {
+  padding-right: 2px;
+  padding-left: 12px;
+}
+.text-editor .icon-collapse, .text-editor-vertical .icon-collapse {
   position: relative;
   width: 1rem;
   height: 1rem;
 }
-.text-editor .icon-collapse i {
+.text-editor .icon-collapse i, .text-editor-vertical .icon-collapse i {
   position: absolute;
   left: 0;
   bottom: 0;
   margin-bottom: -5px;
 }
-.text-editor .text-editor-spacing {
+.text-editor .text-editor-spacing, .text-editor-vertical .text-editor-spacing {
   display: flex;
   padding: 10px;
   font-size: 0.95rem;
 }
-.text-editor .text-editor-spacing .spacing-input {
+.text-editor .text-editor-spacing .spacing-input, .text-editor-vertical .text-editor-spacing .spacing-input {
   display: flex;
   align-items: center;
   margin-top: 10px;
   width: 80px;
 }
-.text-editor .text-editor-spacing .spacing-input i {
+.text-editor .text-editor-spacing .spacing-input i, .text-editor-vertical .text-editor-spacing .spacing-input i {
   margin-right: 5px;
 }
-.text-editor .text-editor-spacing .spacing-input .form-control {
+.text-editor .text-editor-spacing .spacing-input .form-control, .text-editor-vertical .text-editor-spacing .spacing-input .form-control {
   margin-top: 0;
 }
-.text-editor .resizable-image {
+.text-editor .resizable-image, .text-editor-vertical .resizable-image {
   cursor: se-resize;
   max-width: 100%;
 }
-.text-editor .selected-image {
+.text-editor .selected-image, .text-editor-vertical .selected-image {
   outline: 1px dotted #212121;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+.text-editor-vertical {
+  display: flex;
+}
+.text-editor-vertical .text-editor-toolbar {
+  flex-direction: column;
+}
+.text-editor-vertical .text-editor-toolbar .tool-group {
+  border: none !important;
+}
+.text-editor-vertical .text-editor-toolbar .tool-group .tool-group-icons {
+  flex-direction: column;
+}
+.text-editor-vertical .text-editor-toolbar .tool-group .tool-group-title {
+  display: none;
+}
+
+@media (max-width: 712px) {
+  .text-editor .text-editor-toolbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: start;
+  }
+}
 /* #endregion Text Editor */
 /* #region Dropdown/Tooltip */
 .dropdown {
