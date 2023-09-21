@@ -7,6 +7,7 @@ export default function Dropdown({
   onClick,
   openOnHover,
   closeOnLeave,
+  width,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   let hoverTimeout = null;
@@ -28,7 +29,7 @@ export default function Dropdown({
     >
       <div onClick={() => setIsOpen(!isOpen)}>{toggle}</div>
       {isOpen && (
-        <ul className="options">
+        <ul className="options" style={{ width }}>
           {options.map(({ id, text }) => (
             <li
               key={id}
@@ -53,10 +54,12 @@ Dropdown.propTypes = {
   onClick: PropTypes.func.isRequired,
   openOnHover: PropTypes.bool,
   closeOnLeave: PropTypes.bool,
+  width: PropTypes.number,
 };
 
 Dropdown.defaultProps = {
   options: [],
   openOnHover: false,
   closeOnLeave: false,
+  width: 160,
 };
