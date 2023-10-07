@@ -6,7 +6,7 @@
 - [Dependencies](#dependencies)
 - [About](#about-well-rounded)
 - [Documentation](#documentation)
-- [Live Demo]({#live-demo})
+- [Live Demo](#live-demo)
 
 ## Getting Started
 
