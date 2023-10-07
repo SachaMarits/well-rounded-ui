@@ -102,6 +102,7 @@ export default function ToolbarText({ handleStyle }: ToolbarTextProps) {
             handleStyle("fontName", id);
             overrideFontFaces();
           }}
+          width={200}
           closeOnLeave
         />
       </div>
