@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import React from "react"
 import PropTypes from "prop-types";
 
 export default function Pagination({ itemsPerPage, totalItems, activePage, onChange }) {

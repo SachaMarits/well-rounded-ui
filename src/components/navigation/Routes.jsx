@@ -1,3 +1,4 @@
+import React from "react"
 import PropTypes from "prop-types";
 import { lazy, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";

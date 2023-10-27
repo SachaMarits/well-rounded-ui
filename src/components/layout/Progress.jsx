@@ -1,3 +1,4 @@
+import React from "react"
 import PropTypes from "prop-types";
 
 export default function Progress({ className, value, min, max, color }) {
