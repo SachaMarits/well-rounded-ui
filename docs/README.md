@@ -3,9 +3,11 @@
 ## Patch note
 
 Added a new [Calendar](#calendar) component.
+Updated Well Rounded UI usage using [Well Rounded UI Styles](#well-rounded-ui-styles) component.
 
 ## Table of contents
 
+- [Well Rounded UI Styles](#well-rounded-ui-styles)
 - [Inputs](#inputs)
   - [Input field](#input-field)
   - [Button](#button)
@@ -31,6 +33,25 @@ Added a new [Calendar](#calendar) component.
   - [Spinner](#spinner)
   - [Tabs](#tabs)
   - [TabPane](#tab-pane)
+
+---
+## Well Rounded UI Styles
+
+To use Well Rounded Ui's styles you have to wrap your app into `WellRoundedUI` component:
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+import { WellRoundedUI } from 'well-rounded-ui';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <WellRoundedUI>
+      <App />
+    </WellRoundedUI>
+  </React.StrictMode>,
+)
+```
 
 ---
 ## Inputs

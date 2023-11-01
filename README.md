@@ -8,6 +8,8 @@
 - [Documentation](#documentation)
 - [Live Demo](#live-demo)
 
+---
+
 ## Getting Started
 
 ### Adding Package
@@ -16,6 +18,24 @@ Install Well Rounded UI from NPM:
 
 ```
 npm i well-rounded-ui
+```
+
+### Adding Well Rounded UI's styles
+
+To use Well Rounded Ui's styles you have to wrap your app into `WellRoundedUI` component:
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+import { WellRoundedUI } from 'well-rounded-ui';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <WellRoundedUI>
+      <App />
+    </WellRoundedUI>
+  </React.StrictMode>,
+)
 ```
 
 ### Importing Components
