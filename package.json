@@ -1,6 +1,6 @@
 {
   "name": "well-rounded-ui",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Well Rounded UI Inputs to beautify your web projects !",
   "main": "src/index.js",
   "scripts": {
