@@ -1,5 +1,3 @@
-import "./scss/app.css";
-
 import {
   Input,
   Button,
@@ -30,6 +28,7 @@ import {
   ModalHeader,
   ModalFooter,
   TextEditor,
+  WellRoundedUI
 } from "./components/layout";
 
 export {
@@ -60,4 +59,5 @@ export {
   TextEditor,
   Dropdown,
   Tooltip,
+  WellRoundedUI
 };
