@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function InteractionBarIcon() {
    const toggleInteractionBar = () => {
       const sidebar = document.getElementsByClassName("sidebar");

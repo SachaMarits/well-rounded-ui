@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 const FloatingSidebar = ({ onClose, show, children, className, title }) => {
