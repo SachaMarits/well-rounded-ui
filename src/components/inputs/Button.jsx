@@ -57,7 +57,7 @@ Button.propTypes = {
    className: PropTypes.string,
    text: PropTypes.string.isRequired,
    color: PropTypes.string.isRequired,
-   onClick: PropTypes.func.isRequired,
+   onClick: PropTypes.func,
    submit: PropTypes.bool,
    action: PropTypes.string,
    animate: PropTypes.bool,
@@ -72,4 +72,5 @@ Button.defaultProps = {
    animate: false,
    isSubmitting: false,
    disabled: false,
+   onClick: () => {}
 };
