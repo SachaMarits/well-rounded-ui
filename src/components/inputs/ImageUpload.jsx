@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Button from "./Button";
 
 export default function ImageUpload({
   allowedExtensions,
@@ -79,7 +78,7 @@ export default function ImageUpload({
             </div>
           ))}
         <div
-          className={`flex-center flex-column p-1 text-sm unselectable pointer p-1 text-sm empty-line-placeholder${
+          className={`flex-center flex-column p-1 text-sm unselectable pointer mb-3 p-1 text-sm empty-line-placeholder${
             isDragOver ? "-success" : ""
           }`}
           style={{ height, width }}
