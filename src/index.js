@@ -30,7 +30,8 @@ import {
   ModalHeader,
   ModalFooter,
   TextEditor,
-  WellRoundedUI
+  WellRoundedUI,
+  ModalBody
 } from "./components/layout";
 
 export {
@@ -63,5 +64,6 @@ export {
   Tooltip,
   WellRoundedUI,
   FileUpload,
-  ImageUpload
+  ImageUpload,
+  ModalBody
 };

@@ -14,3 +14,4 @@ export { default as Tabs } from "./Tabs";
 export { default as TreeViewItem } from "./TreeViewItem";
 export { default as TextEditor } from "./TextEditor/TextEditor";
 export { default as WellRoundedUI } from './WellRoundedUI';
+export { default as ModalBody } from './ModalBody';
