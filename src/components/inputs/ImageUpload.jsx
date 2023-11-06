@@ -57,7 +57,7 @@ export default function ImageUpload({
 
   return (
     <div className="image-upload">
-      <div className="d-flex">
+      <div className="d-flex flex-wrap">
         {files
           .filter((f) => f.name)
           .map(({ base64Data, name }) => (
