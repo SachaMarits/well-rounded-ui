@@ -532,6 +532,15 @@ ul {
   border-radius: 4px;
 }
 
+.empty-line-placeholder-success {
+  border: 2px dashed rgba($success, .5);
+  background: rgba($success, .15);
+  color: rgba($success, 1);
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
 /* #endregion Empty line placeholder */
 
 /* #region Tabs */
@@ -946,3 +955,58 @@ ul {
 }
 
 /* #endregion Dropdown/Tooltip */
+
+/* #region FileUpload/ImageUpload */
+
+.file-upload {
+  .file-preview {
+    background: aliceblue;
+    color: $primary;
+    margin: 8px;
+    border-radius: 16px;
+    padding: 4px 8px;
+    transition: 250ms;
+    user-select: none;
+    word-wrap: none;
+    text-wrap: nowrap;
+  
+    &:hover {
+      background: darken(aliceblue, 4%);
+    }
+  }
+}
+
+.image-upload {
+
+  .image-uploaded {
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 13px, rgba(17, 17, 26, 0.04) 0px 8px 28px;
+
+    .mdi-close {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      padding: 5px;
+      margin: 5px;
+      font-size: larger;
+      color: $danger;
+      background: rgba(0,0,0, 0.2);
+      border-radius: 100%;
+      height: 28px;
+      width: 28px;
+      transition: 333ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover {
+      .mdi-close {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* #endregion FileUpload/ImageUpload */

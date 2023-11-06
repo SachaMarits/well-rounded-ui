@@ -2,8 +2,13 @@
 
 ## Patch note
 
-Added a new [Calendar](#calendar) component.
-Updated Well Rounded UI usage using [Well Rounded UI Styles](#well-rounded-ui-styles) component.
+### 1.2.5
+
+- Added new [FileUpload](#file-upload) and [ImageUpload](#image-upload) component.
+
+### 1.2.4
+- Added new [Calendar](#calendar) component.
+- Updated Well Rounded UI usage using [Well Rounded UI Styles](#well-rounded-ui-styles) component.
 
 ## Table of contents
 
@@ -15,6 +20,8 @@ Updated Well Rounded UI usage using [Well Rounded UI Styles](#well-rounded-ui-st
   - [Pagination](#pagination)
   - [Table](#table)
   - [Calendar](#calendar)
+  - [FileUpload](#file-upload)
+  - [ImageUpload](#image-upload)
 - [Interactions](#interactions)
   - [Alert](#alert)
   - [Floating Sidebar](#floating-sidebar)
@@ -279,7 +286,7 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ### Calendar
 
-![Well Rounded UI Table](https://i.postimg.cc/kMZxqLz6/Well-Rounded-Ui-Calendar.png)
+![Well Rounded UI Calendar](https://i.postimg.cc/kMZxqLz6/Well-Rounded-Ui-Calendar.png)
 
 #### Usage
 
@@ -303,6 +310,60 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 | data*         | array of objects | Data displayed inside the Calendar                           |
 
 *[{ date: new Date(), id: 1, text: "Text shown"}] 
+
+---
+
+### File Upload
+
+![Well Rounded UI File Upload](https://i.postimg.cc/zfqmxQMv/Well-Rounded-Ui-File-Upload.png)
+
+#### Usage
+
+```jsx
+<FileUpload 
+  allowedExtensions={["jpg", "jpeg", "png"]}
+  dragAndDrop
+  multiple
+  onChange={(test) => console.log(test)}
+/>
+```
+
+#### Props
+
+| Prop              | Type             | Purpose                                                      |
+| ----------------- |:----------------:| -------------------------------------------------------------|
+| allowedExtensions | array            | Extensions allowed to upload                                 |
+| dragAndDrop       | bool             | Create a drag and drop zone                                  |
+| multiple          | bool             | Allow to upload multiple files                               |
+| onChange          | function         | Callback function when changing files (adding or deleting actions)   |
+
+---
+
+### Image Upload
+
+![Well Rounded UI Image Upload](https://i.postimg.cc/3w4NJPLN/Capture-d-cran-2023-11-06-155844.png)
+
+#### Usage
+
+```jsx
+<ImageUpload 
+  allowedExtensions={["jpg", "jpeg", "png"]}
+  dragAndDrop
+  multiple
+  onChange={(test) => console.log(test)}
+/>
+```
+
+#### Props
+
+| Prop              | Type             | Purpose                                                      |
+| ----------------- |:----------------:| -------------------------------------------------------------|
+| allowedExtensions | array            | Extensions allowed to upload                                 |
+| dragAndDrop       | bool             | Create a drag and drop zone (recommanded)                    |
+| multiple          | bool             | Allow to upload multiple files                               |
+| onChange          | function         | Callback function when changing files (adding or deleting actions)   |
+| height            | number           | Height of preview image and upload zone                      |
+| width             | number           | Width of preview image and upload zone                       |
 
 ---
 

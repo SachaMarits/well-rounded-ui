@@ -8,6 +8,8 @@ import {
   Calendar,
   Dropdown,
   Tooltip,
+  FileUpload,
+  ImageUpload
 } from "./components/inputs";
 
 import { Alert, FloatingSidebar, Modal } from "./components/interactions";
@@ -59,5 +61,7 @@ export {
   TextEditor,
   Dropdown,
   Tooltip,
-  WellRoundedUI
+  WellRoundedUI,
+  FileUpload,
+  ImageUpload
 };

@@ -270,6 +270,9 @@
 .justify-content-between {
   justify-content: space-between;
 }
+.justify-content-around {
+  justify-content: space-around;
+}
 .flex-row {
   flex-direction: row;
 }
@@ -280,6 +283,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 /* #endregion Flex */
