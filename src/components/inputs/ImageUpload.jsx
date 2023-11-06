@@ -60,7 +60,7 @@ export default function ImageUpload({
         {files
           .filter((f) => f.name)
           .map(({ base64Data, name }) => (
-            <div className="position-relative">
+            <div key={name} className="position-relative">
               <div
                 className="mr-3 mb-3 image-uploaded"
                 style={{
