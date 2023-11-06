@@ -430,7 +430,9 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
   <ModalHeader>
     <h3>Modal title</h3>
   </ModalHeader>
-  <p>This is modal body</p>
+  <ModalBody>
+    <p>This is modal body</p>
+  </ModalBody>
   <ModalFooter>
     <Button
       text="Cancel"
@@ -441,7 +443,7 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 </Modal>
 ```
 
-Feel free to use [`<ModalHeader />`](#modal-header) and [`<ModalFooter />`](#modal-footer) to enhance your modals !
+Feel free to use [`<ModalHeader />`](#modal-header), [`<ModalBody />`]({#modal-body}) and [`<ModalFooter />`](#modal-footer) to enhance your modals !
 
 #### Props
 
@@ -556,6 +558,24 @@ Feel free to use [`<CardHeader />`](#card-header) and [`<CardFooter />`](#card-f
 | Prop          | Type     | Purpose                |
 | ------------- |:--------:| -----------------------|
 | **children**  | dom      | Modal Header's content |
+
+---
+
+### Modal Body
+
+#### Usage
+
+```jsx
+<ModalBody>
+  <p>Any content</p>
+</ModalBody>
+```
+
+#### Props
+
+| Prop          | Type     | Purpose                |
+| ------------- |:--------:| -----------------------|
+| **children**  | dom      | Modal Body's content |
 
 ---
 
