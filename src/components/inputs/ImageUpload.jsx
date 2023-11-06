@@ -63,7 +63,7 @@ export default function ImageUpload({
           .map(({ base64Data, name }) => (
             <div className="position-relative">
               <div
-                className="mr-3 image-uploaded"
+                className="mr-3 mb-3 image-uploaded"
                 style={{
                   width,
                   height,
