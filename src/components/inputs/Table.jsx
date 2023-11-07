@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types";
-import NoDataPlaceholder from "../utils/NoDataPlaceholder";
+import NoDataPlaceholder from "../layout/NoDataPlaceholder";
 
 export default function Table({ keyColumn, columns, data, layout, actions }) {
    if (data.length === 0) return <NoDataPlaceholder icon="table-off" text="Nothing to show !" />;

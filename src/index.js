@@ -31,7 +31,8 @@ import {
   ModalFooter,
   TextEditor,
   WellRoundedUI,
-  ModalBody
+  ModalBody,
+  NoDataPlaceholder
 } from "./components/layout";
 
 export {
@@ -65,5 +66,6 @@ export {
   WellRoundedUI,
   FileUpload,
   ImageUpload,
-  ModalBody
+  ModalBody,
+  NoDataPlaceholder
 };

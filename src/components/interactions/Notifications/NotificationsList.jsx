@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import PropTypes from "prop-types";
-import NoDataPlaceholder from "../../utils/NoDataPlaceholder";
+import NoDataPlaceholder from "../../layout/NoDataPlaceholder";
 import Notification from "./Notification";
 
 export default function NotificationsList({ isOpen, notifications, close }) {
