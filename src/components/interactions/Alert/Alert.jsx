@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 import { Button } from "../../inputs";
 import { Error } from "./Error";
 import { Success } from "./Success";
@@ -7,13 +8,14 @@ import { Warning } from "./Warning";
 
 const Alert = (title = null, text = null, icon = null) => {
   const doesAlertDomExist = document.getElementById("alert-dom");
-
+  
   if (!doesAlertDomExist) {
     const divElement = document.createElement("div");
     divElement.id = "alert-dom";
     document.body.insertBefore(divElement, document.body.lastChild);
   }
-
+  
+  const root = createRoot(document.getElementById("alert-dom"));
   const renderIcon = () => {
     if (icon === "success") return <Success />;
     if (icon === "warning") return <Warning />;
@@ -22,7 +24,7 @@ const Alert = (title = null, text = null, icon = null) => {
   };
 
   const hide = () => {
-    ReactDOM.unmountComponentAtNode(document.getElementById("alert-dom"));
+    root.unmount(document.getElementById("alert-dom"));
   };
 
   const dom = (
@@ -36,7 +38,7 @@ const Alert = (title = null, text = null, icon = null) => {
     </div>
   );
 
-  ReactDOM.render(dom, document.getElementById("alert-dom"));
+  root.render(dom);
 };
 
 export default Alert;
