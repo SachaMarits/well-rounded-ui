@@ -59,7 +59,7 @@ export default function ImageUpload({
     <div className="image-upload">
       <div className="d-flex flex-wrap">
         {files
-          .map(({ base64Data, name }, i) => (
+          .map(({ base64Data }, i) => (
             <div key={i} className="position-relative">
               <div
                 className="mr-3 mb-3 image-uploaded"
@@ -72,7 +72,7 @@ export default function ImageUpload({
               >
                 <i
                   className="mdi mdi-close pointer"
-                  onClick={() => setFiles(files.filter((f) => f.name !== name))}
+                  onClick={() => setFiles(files.filter((_, fileIndex) => fileIndex !== i))}
                 />
               </div>
             </div>
