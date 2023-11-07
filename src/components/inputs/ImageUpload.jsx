@@ -7,9 +7,10 @@ export default function ImageUpload({
   onChange,
   height = 150,
   width = 150,
+  defaultValue = []
 }) {
   const [isDragOver, setIsDragOver] = useState(false);
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState(defaultValue);
   const fileInputRef = useRef();
 
   const handleDragEnter = (e) => {
@@ -58,9 +59,8 @@ export default function ImageUpload({
     <div className="image-upload">
       <div className="d-flex flex-wrap">
         {files
-          .filter((f) => f.name)
-          .map(({ base64Data, name }) => (
-            <div key={name} className="position-relative">
+          .map(({ base64Data, name }, i) => (
+            <div key={i} className="position-relative">
               <div
                 className="mr-3 mb-3 image-uploaded"
                 style={{
