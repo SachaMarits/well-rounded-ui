@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types";
+import { Spinner } from "../layout"
 
 export default function Button({
    className,
@@ -48,7 +49,7 @@ export default function Button({
          onClick={() => onClick()}
          disabled={isSubmitting || disabled}
       >
-         {text} {action && <i className={`ml-2 ${icon()}`} />}
+         {isSubmitting ? <Spinner size="xs" /> : text} {action && <i className={`ml-2 ${icon()}`} />}
       </button>
    );
 }
