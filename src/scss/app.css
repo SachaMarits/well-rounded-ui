@@ -2191,7 +2191,6 @@ ul {
 .floating-sidebar {
   position: fixed;
   height: 100vh;
-  right: -500px;
   top: 0;
   width: 500px;
   background: whitesmoke;
@@ -2208,16 +2207,32 @@ ul {
   padding: 20px 16px 10px 16px;
   line-height: 20px;
 }
+.floating-sidebar.right {
+  right: -500px;
+}
+.floating-sidebar.left {
+  left: -500px;
+}
 
 .floating-sidebar.enter-done {
   opacity: 1;
   pointer-events: visible;
+}
+.floating-sidebar.enter-done.right {
   right: 0;
+}
+.floating-sidebar.enter-done.left {
+  left: 0;
 }
 
 .floating-sidebar.exit {
   opacity: 0;
+}
+.floating-sidebar.exit.right {
   right: -500px;
+}
+.floating-sidebar.exit.left {
+  left: -500px;
 }
 
 /* #endregion Floating Sidebar */

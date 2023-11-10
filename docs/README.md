@@ -416,6 +416,7 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 | children  | dom      | Anything you want to display inside your sidebar |
 | className | string   | Sidebar's classNames                             |
 | title     | string   | Sidbar's title (shown at the top)                |
+| direction | string   | Sidbar's direction, can be "left" or "right      |
 
 ---
 
