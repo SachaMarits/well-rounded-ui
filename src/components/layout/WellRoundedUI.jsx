@@ -1,11 +1,11 @@
-import "../../scss/app.css";
+import "../../scss/app.scss";
 import React from 'react'
 import PropTypes from "prop-types";
-
 export default function WellRoundedUI({ children }) {
-  return (
+    return (
     <>
         {children}
+        <div id='toasts-container' />
     </>
   )
 }
