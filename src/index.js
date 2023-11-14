@@ -12,7 +12,7 @@ import {
   ImageUpload
 } from "./components/inputs";
 
-import { Alert, FloatingSidebar, Modal } from "./components/interactions";
+import { Alert, FloatingSidebar, Modal, Toast } from "./components/interactions";
 
 import {
   Badge,
@@ -67,5 +67,6 @@ export {
   FileUpload,
   ImageUpload,
   ModalBody,
-  NoDataPlaceholder
+  NoDataPlaceholder,
+  Toast
 };

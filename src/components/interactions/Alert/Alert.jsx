@@ -1,10 +1,7 @@
 import React from "react"
-import ReactDOM from "react-dom";
 import { createRoot } from 'react-dom/client';
 import { Button } from "../../inputs";
-import { Error } from "./Error";
-import { Success } from "./Success";
-import { Warning } from "./Warning";
+import { ErrorIcon, SuccessIcon, WarningIcon } from "../Icons/Icons";
 
 const Alert = (title = null, text = null, icon = null) => {
   const doesAlertDomExist = document.getElementById("alert-dom");
@@ -17,9 +14,9 @@ const Alert = (title = null, text = null, icon = null) => {
   
   const root = createRoot(document.getElementById("alert-dom"));
   const renderIcon = () => {
-    if (icon === "success") return <Success />;
-    if (icon === "warning") return <Warning />;
-    if (icon === "error") return <Error />;
+    if (icon === "success") return <SuccessIcon />;
+    if (icon === "warning") return <WarningIcon />;
+    if (icon === "error") return <ErrorIcon />;
     return null;
   };
 
