@@ -12,6 +12,7 @@ export default function Button({
   animate,
   isSubmitting,
   disabled,
+  children,
 }) {
   const styles = () => {
     let classNames = `${className} btn${animate ? " fadeIn" : ""} ${
@@ -37,6 +38,11 @@ export default function Button({
         return "mdi mdi-send";
       case "navigate":
         return "mdi mdi-chevron-right";
+      case "cart":
+      case "shop":
+        return "mdi mdi-cart";
+      case "pay":
+        return "mdi mdi-currency-eur";
       default:
         return action;
     }
@@ -52,10 +58,12 @@ export default function Button({
       {isSubmitting ? (
         <Spinner size="xs" />
       ) : (
-        <>
-          {text}
-          {action && <i className={`ml-2 ${icon()}`} />}
-        </>
+        children || (
+          <>
+            {text}
+            {action && <i className={`${text ? "ml-2": ""} ${icon()}`} />}
+          </>
+        )
       )}
     </button>
   );
@@ -63,7 +71,7 @@ export default function Button({
 
 Button.propTypes = {
   className: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   color: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   submit: PropTypes.bool,
@@ -71,14 +79,17 @@ Button.propTypes = {
   animate: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   disabled: PropTypes.bool,
+  children: PropTypes.node
 };
 
 Button.defaultProps = {
   className: "",
+  text: "",
   submit: false,
   action: "",
   animate: false,
   isSubmitting: false,
   disabled: false,
   onClick: () => {},
+  children: null
 };

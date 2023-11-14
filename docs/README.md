@@ -119,7 +119,7 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ![Well Rounded UI Buttons](https://i.postimg.cc/Xq6SQbh6/Well-Rounded-Ui-Buttons.png)
 
-#### Usage
+#### Basic usage
 
 ```jsx
 <Button
@@ -131,16 +131,29 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 />
 ```
 
+#### Custom dom usage
+
+```jsx
+<Button
+  color="primary"
+  onClick={() => yourFunction()}
+  animate
+>
+  Any desired dom
+</Button>
+```
+
 #### Props
 
 | Prop          | Type      | Purpose                                                           |
 | ------------- |:---------:| ------------------------------------------------------------------|
 | className     | string    | Button's classNames                                               |
-| **text***     | string    | Button's text                                                     |
+| text          | string    | Button's text                                                     |
+| children      | dom       | Button's content                                                  |
 | **color***    | string    | Button's color (primary, success, danger, default, disabled)      |
 | **onClick***  | function  | Button's function when clicked                                    |
 | submit        | bool      | Make this button the submit button of parent form                 |
-| action        | string    | Add an icon (add, delete, edit, upload, donwload, send, navigate) |
+| action        | string    | Add an icon (add, delete, edit, upload, donwload, send, navigate, shop, cart, pay) |
 | animate       | bool      | Animate the button when appearing                                 |
 | isSubmitting  | bool      | Disable the button while true (prevents multiple click)           |
 | disabled      | bool      | Disable the button                                                |
