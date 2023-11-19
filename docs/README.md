@@ -2,6 +2,10 @@
 
 ## Patch note
 
+### 1.3.5
+- Added new [AlertMessage](#alert-messsage) component.
+- Added confirmation usage to [Alert](#alert).
+
 ### 1.3.4
 - [FloatingSidebar](#floating-sidebar) can be set to left with new "direction" prop.
 - [Button](#button) "isSubmitting" prop now render a <Spinner /> while true.
@@ -45,6 +49,7 @@
   - [Spinner](#spinner)
   - [Tabs](#tabs)
   - [TabPane](#tab-pane)
+  - [AlertMessage](#alert-message)
 
 ---
 ## Well Rounded UI Styles
@@ -391,10 +396,21 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 ![Well Rounded UI Alert](https://i.postimg.cc/BvF0wXNX/Well-Rounded-Ui-Alert.png)
 
-#### Usage
+#### Basic Usage
 
 ```jsx
-Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
+Alert("My pretty title", "My cozy little text", "success");
+```
+
+#### Confirmation Usage
+
+```jsx
+Alert("Are you sure?", "You will delete this entry", "warning", [
+  { color: "danger", text: "Cancel", value: false },
+  { color: "success", text: "Delete", value: true },
+]).then((result) => {
+  console.log(result); // Equals value from clicked button.
+});
 ```
 
 #### Props
@@ -403,7 +419,8 @@ Alert("Edit Action", `Edit action on "${keyColumn}" detected.`);
 | ------- |:-------:| -----------------------------------------|
 | title   | string  | Alert's title                            |
 | text    | string  | Alert's text                             |
-| icon    | string  | Alert's icon (success, warning or error) |
+| icon    | string  | Alert's icon (success, warning, error)   |
+| buttons | array of objects  | Alert's button ({ color, text, value})  |
 
 ---
 
@@ -745,7 +762,7 @@ Meaning in this example the col will take the maximum width available on "xs" sc
 
 ### Tabs
 
-![Well Rounded UI Tas](https://i.postimg.cc/gJzksrQL/Well-Rounded-Ui-Tabs.png)
+![Well Rounded UI Tabs](https://i.postimg.cc/gJzksrQL/Well-Rounded-Ui-Tabs.png)
 
 #### Usage
 
@@ -792,5 +809,27 @@ Tabs component needs to be used with [`<TabPane />`](#tab-pane).
 | name      | string  | Tab's title displayed   |
 | children  | dom     | Tab's content           |
 | disabled  | bool    | Disable the tab         |
+
+---
+
+### Alert Messsage
+
+![Well Rounded UI Alert Message](https://i.postimg.cc/8525J7Wz/Well-Rounded-Ui-Alert-Message.png)
+
+#### Usage
+
+```jsx
+<AlertMessage color="primary">
+  Your text
+</AlertMessage>
+```
+
+#### Props
+
+| Prop          | Type    | Purpose                                                     |
+| ------------- |:-------:| ----------------------------------------------------------- |
+| **color**     | string  | Alert Message's color (primary, success, warning, danger)   |
+| **children**  | dom     | Alert Message's content                                     |
+| className     | string  | Alert Message's classNames                                  |
 
 <a href="#table-of-contents">^</a>
