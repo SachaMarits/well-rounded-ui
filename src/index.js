@@ -32,7 +32,8 @@ import {
   TextEditor,
   WellRoundedUI,
   ModalBody,
-  NoDataPlaceholder
+  NoDataPlaceholder,
+  AlertMessage
 } from "./components/layout";
 
 export {
@@ -68,5 +69,6 @@ export {
   ImageUpload,
   ModalBody,
   NoDataPlaceholder,
-  Toast
+  Toast,
+  AlertMessage
 };

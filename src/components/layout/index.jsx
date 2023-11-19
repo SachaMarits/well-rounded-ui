@@ -16,4 +16,5 @@ export { default as TextEditor } from "./TextEditor/TextEditor";
 export { default as WellRoundedUI } from './WellRoundedUI';
 export { default as ModalBody } from './ModalBody';
 export { default as NoDataPlaceholder } from './NoDataPlaceholder';
+export { default as AlertMessage } from './AlertMessage';
 

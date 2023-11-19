@@ -1074,3 +1074,38 @@ ul {
 }
 
 /* #endregion FileUpload/ImageUpload */
+
+/* #region AlertMessage */
+
+.alert-message {
+  $brightness: 30%;
+  padding: 8px 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+
+  &.alert-message-primary {
+    color: darken($primary, $brightness);
+    background: lighten($primary, $brightness);
+    border-color: $primary;
+  }
+  &.alert-message-success {
+    color: darken($success, $brightness);
+    background: lighten($success, $brightness);
+    border-color: $success;
+  }
+  &.alert-message-danger {
+    color: darken($danger, $brightness);
+    background: lighten($danger, $brightness);
+    border-color: $danger;
+  }
+  &.alert-message-warning {
+    color: darken($warning, $brightness);
+    background: lighten($warning, $brightness);
+    border-color: $warning;
+  }
+}
+
+
+
+/* #endregion AlertMessage */
