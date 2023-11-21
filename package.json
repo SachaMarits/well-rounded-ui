@@ -16,8 +16,6 @@
     "well rounded",
     "ui",
     "inputs",
-
-    
     "bootstrap"
   ],
   "author": "Sacha Marits",
@@ -32,6 +30,10 @@
     "react-transition-group": "4.4.5"
   },
   "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-transition-group": "^4.4.9",
     "sass": "^1.69.5",
     "typescript": "^5.2.2"
   }

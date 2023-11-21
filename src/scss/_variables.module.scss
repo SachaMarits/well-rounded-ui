@@ -19,6 +19,7 @@ $main-colors: (
 );
 
 /* Exporting variables to be used in jsx files */
+
 :export {
   @each $key, $value in $main-colors {
     #{unquote($key)}: $value;

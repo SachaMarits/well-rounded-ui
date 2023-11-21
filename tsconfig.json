@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es6", "dom", "es2016"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "typeRoots": ["../"],
+    "types": [],
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "reactstrap": ["lib"]
+    }
+  }
+}

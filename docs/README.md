@@ -27,6 +27,7 @@
   - [Button](#button)
   - [MultiSelect](#multiselect)
   - [Pagination](#pagination)
+  - [Select](#select)
   - [Table](#table)
   - [Calendar](#calendar)
   - [FileUpload](#file-upload)
@@ -183,7 +184,7 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
   label="User selection"
   name="users"
   options={options} // [{ id: 1, text: "Item Text" }, ...]
-  onClick={(selection) => yourFunction(selection)}
+  onChange={(selection) => yourFunction(selection)}
 />
 ```
 
@@ -353,12 +354,14 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop              | Type             | Purpose                                                      |
-| ----------------- |:----------------:| -------------------------------------------------------------|
-| allowedExtensions | array            | Extensions allowed to upload                                 |
-| dragAndDrop       | bool             | Create a drag and drop zone                                  |
-| multiple          | bool             | Allow to upload multiple files                               |
-| onChange          | function         | Callback function when changing files (adding or deleting actions)   |
+| Prop                  | Type             | Purpose                                                      |
+| --------------------- |:----------------:| -------------------------------------------------------------|
+| className?            | string           | FileUpload container's className                             |
+| allowedExtensions?    | array            | Extensions allowed to upload                                 |
+| dragAndDrop?          | bool             | Create a drag and drop zone                                  |
+| multiple?             | bool             | Allow to upload multiple files                               |
+| onChange              | function         | Callback function when changing files (adding or deleting actions)   |
+| showAllowedExtensions?| boolean          | Display allowed extensions                                   |
 
 ---
 
@@ -379,14 +382,16 @@ Where `register`, `control` and `errors` comes from `useForm()` used by `react-h
 
 #### Props
 
-| Prop              | Type             | Purpose                                                      |
-| ----------------- |:----------------:| -------------------------------------------------------------|
-| allowedExtensions | array            | Extensions allowed to upload                                 |
-| dragAndDrop       | bool             | Create a drag and drop zone (recommanded)                    |
-| multiple          | bool             | Allow to upload multiple files                               |
-| onChange          | function         | Callback function when changing files (adding or deleting actions)   |
-| height            | number           | Height of preview image and upload zone                      |
-| width             | number           | Width of preview image and upload zone                       |
+| Prop                  | Type             | Purpose                                                      |
+| --------------------- |:----------------:| -------------------------------------------------------------|
+| className?            | string           | ImageUpload container's className                            |
+| allowedExtensions?    | array            | Extensions allowed to upload                                 |
+| dragAndDrop?          | bool             | Create a drag and drop zone (recommanded)                    |
+| multiple?             | bool             | Allow to upload multiple files                               |
+| onChange              | function         | Callback function when changing files (adding or deleting actions)   |
+| height                | number           | Height of preview image and upload zone                      |
+| width                 | number           | Width of preview image and upload zone                       |
+| showAllowedExtensions?| boolean          | Display allowed extensions                                   |
 
 ---
 
@@ -786,6 +791,7 @@ Tabs component needs to be used with [`<TabPane />`](#tab-pane).
 
 | Prop      | Type    | Purpose                                                           |
 | --------- |:-------:| ----------------------------------------------------------------- |
+| className?| string  | Tabs className                                                    |
 | children  | dom     | Tabs content, should be one or many [`<TabPane />`](#tab-pane)    |
 
 ---
