@@ -1,6 +1,9 @@
 import React from "react";
 
 interface CardHeaderProps {
+  /**
+   * CardHeader's content, mostly used for titles
+   */
   children: React.ReactNode;
 }
 

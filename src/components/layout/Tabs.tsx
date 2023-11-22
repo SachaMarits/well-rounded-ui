@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import TabPane from "./TabPane";
 
 interface Tab {
   name: string;
@@ -8,6 +7,9 @@ interface Tab {
 
 interface TabsProps {
   className?: string;
+  /**
+   * Should be a list of <TabPane />
+   */
   children: typeof React.Children;
 }
 

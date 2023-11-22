@@ -1,6 +1,9 @@
 import React from "react";
 
 interface CardFooterProps {
+  /**
+   * CardFooter's content, mostly used for buttons and actions
+   */
   children: React.ReactNode;
 }
 

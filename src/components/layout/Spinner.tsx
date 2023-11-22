@@ -1,24 +1,12 @@
 import React from "react";
-import { CompleteColor } from "../../types/Colors";
-
-export enum SpinnerSize {
-  Lg = "lg",
-  Md = "md",
-  Sm = "sm",
-  Xs = "xs"
-}
 
 interface SpinnerProps {
   className?: string;
-  color?: CompleteColor;
-  size: SpinnerSize;
+  color?: "primary" | "success" | "warning" | "danger" | "black" | "white";
+  size: "lg" | "md" | "sm" | "xs";
 }
 
-export default function Spinner({
-  className = "",
-  color = CompleteColor.Primary,
-  size = SpinnerSize.Sm
-}: SpinnerProps) {
+export default function Spinner({ className = "", color = "primary", size = "sm" }: SpinnerProps) {
   const sizeInPx = () => {
     switch (size) {
       case "lg":

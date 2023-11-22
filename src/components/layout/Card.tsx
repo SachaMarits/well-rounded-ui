@@ -2,7 +2,10 @@ import React from "react";
 
 interface CardProps {
   className?: string;
-  children?: React.ReactNode;
+  /**
+   * Card's content, mostly used for <CardHeader /> and <CardFooter />
+   */
+  children: React.ReactNode;
   onClick?: () => void;
 }
 

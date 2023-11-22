@@ -1,6 +1,5 @@
 import React from "react";
 import { Spinner } from "../layout";
-import { SpinnerSize } from "../layout/Spinner";
 
 interface ButtonProps {
   className?: string;
@@ -67,7 +66,7 @@ export default function Button({
       disabled={isSubmitting || disabled}
     >
       {isSubmitting ? (
-        <Spinner size={SpinnerSize.Xs} />
+        <Spinner size="xs" />
       ) : (
         children || (
           <>

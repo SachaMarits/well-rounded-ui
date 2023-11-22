@@ -13,12 +13,3 @@ export enum ThemeColor {
   Danger = "danger",
   Default = "default"
 }
-
-export enum CompleteColor {
-  Primary = "primary",
-  Success = "success",
-  Warning = "warning",
-  Danger = "danger",
-  Black = "black",
-  White = "white"
-}

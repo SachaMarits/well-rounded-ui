@@ -3,6 +3,9 @@ import React from "react";
 interface TabPaneProps {
   name?: string;
   children: React.ReactNode;
+  /**
+   * Disabled the tab click
+   */
   disabled?: boolean;
 }
 
