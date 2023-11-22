@@ -1,2 +1,0 @@
-import{S as o}from"./index-ce627a7d.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./index-8d47fad6.js";const n={title:"Layout/Spinner",component:o,parameters:{layout:"centered"},tags:["autodocs"],argTypes:{}},e={};var r,t,a;e.parameters={...e.parameters,docs:{...(r=e.parameters)==null?void 0:r.docs,source:{originalSource:"{}",...(a=(t=e.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const i=["Default"];export{e as Default,i as __namedExportsOrder,n as default};
-//# sourceMappingURL=Spinner.stories-e872a83d.js.map
