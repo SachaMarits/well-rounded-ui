@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { TabPane } from "../components/layout";
+import { TabPane } from "../../components/layout";
 
 const meta = {
   title: "Layout/Tabs/TabPane",

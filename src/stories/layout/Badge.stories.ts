@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Badge } from "../components/layout";
-import { ThemeColor } from "../types/Colors";
+import { Badge } from "../../components/layout";
+import { ThemeColor } from "../../types/Colors";
 
 const meta = {
   title: "Layout/Badge",

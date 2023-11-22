@@ -1,10 +1,10 @@
-import "./assets/mdi.min.css";
+import "../assets/mdi.min.css";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";
-import { NoDataPlaceholder } from "../components/layout";
-import { Button } from "../components/inputs";
+import { NoDataPlaceholder } from "../../components/layout";
+import { Button } from "../../components/inputs";
 
 const meta = {
   title: "Layout/NoDataPlaceholder",

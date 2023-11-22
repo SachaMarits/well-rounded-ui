@@ -1,22 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Col } from "../components/layout";
+import { Spinner } from "../../components/layout";
 
 const meta = {
-  title: "Layout/Col/Col",
-  component: Col,
+  title: "Layout/Spinner",
+  component: Spinner,
   parameters: {
     layout: "centered"
   },
   tags: ["autodocs"],
   argTypes: {}
-} satisfies Meta<typeof Col>;
+} satisfies Meta<typeof Spinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    children: "Any col content"
-  }
-};
+export const Default: Story = {};

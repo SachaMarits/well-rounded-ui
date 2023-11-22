@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Row } from "../components/layout";
+import { Row } from "../../components/layout";
 
 const meta = {
   title: "Layout/Col/Row",

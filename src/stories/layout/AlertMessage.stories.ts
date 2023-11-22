@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { AlertMessage } from "../components/layout";
-import { StatusColor } from "../types/Colors";
+import { AlertMessage } from "../../components/layout";
+import { StatusColor } from "../../types/Colors";
 
 const meta = {
   title: "Layout/AlertMessage",

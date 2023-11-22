@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Progress } from "../components/layout";
+import { CardFooter } from "../../components/layout";
 
 const meta = {
-  title: "Layout/Progress",
-  component: Progress,
+  title: "Layout/Card/CardFooter",
+  component: CardFooter,
   parameters: {
-    layout: "padded"
+    layout: "centered"
   },
   tags: ["autodocs"],
   argTypes: {}
-} satisfies Meta<typeof Progress>;
+} satisfies Meta<typeof CardFooter>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    value: 50
+    children: "Any card footer content"
   }
 };

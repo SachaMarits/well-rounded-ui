@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { CardFooter } from "../components/layout";
+import { Col } from "../../components/layout";
 
 const meta = {
-  title: "Layout/Card/CardFooter",
-  component: CardFooter,
+  title: "Layout/Col/Col",
+  component: Col,
   parameters: {
     layout: "centered"
   },
   tags: ["autodocs"],
   argTypes: {}
-} satisfies Meta<typeof CardFooter>;
+} satisfies Meta<typeof Col>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: "Any card footer content"
+    children: "Any col content"
   }
 };
