@@ -1,17 +1,25 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 
 interface ModalProps {
   onClose: () => void;
+  /**
+   * Show toggle button in the top right of the modal
+   */
+  toggle: boolean;
   show: boolean;
   children: React.ReactNode;
 }
 
-const Modal = ({ onClose, show, children }: ModalProps) => {
+const Modal = ({ onClose, show, toggle = true, children }: ModalProps) => {
   const nodeRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(show);
   const closeOnEscapeKeyDown = (e: any) => {
-    if ((e.charCode || e.keyCode) === 27) onClose();
+    if ((e.charCode || e.keyCode) === 27) {
+      setIsOpen(false);
+      onClose();
+    }
   };
 
   useEffect(() => {
@@ -21,10 +29,13 @@ const Modal = ({ onClose, show, children }: ModalProps) => {
     };
   }, []);
 
+  useEffect(() => setIsOpen(show), [show]);
+
   return ReactDOM.createPortal(
-    <CSSTransition in={show} unmountOnExit timeout={{ enter: 0, exit: 300 }} nodeRef={nodeRef}>
+    <CSSTransition in={isOpen} unmountOnExit timeout={{ enter: 0, exit: 300 }} nodeRef={nodeRef}>
       <div ref={nodeRef} className="modal" role="alert" onClick={onClose}>
         <div className="modal-content" role="alert" onClick={(e) => e.stopPropagation()}>
+          {toggle && <i className="mdi mdi-close pointer" onClick={() => setIsOpen(false)} />}
           {children}
         </div>
       </div>

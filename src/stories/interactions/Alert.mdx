@@ -1,0 +1,35 @@
+import { Meta, Source } from "@storybook/blocks";
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert 
+
+Display Alerts to show any message. <br/>
+Alerts are used as functions.
+
+## Basic Usage:
+
+<Source
+  code={`Alert("Your title", "Any message you would like to show", "success")`}
+/>
+
+Display a basic title + message Alert.
+
+## Confirmation Usage:
+
+<Source
+  code={`const result = await Alert(
+    "Your title", 
+    "Any statement that needs an answer", 
+    "warning", 
+    [
+        { color: "primary", text: "Yes", value: true }, 
+        { color: "danger", text: "No", value: false}
+    ]
+);
+
+console.log(result); // Equals clicked button's value`}
+/>
+
+Display a confirmation Alert that display a list of buttons and return their values (any type of value).
