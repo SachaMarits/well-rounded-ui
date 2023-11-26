@@ -2,6 +2,9 @@
 
 ## Patch note
 
+### 1.3.6
+- Upgraded to TypeScript.
+
 ### 1.3.5
 - Added new [AlertMessage](#alert-messsage) component.
 - Added confirmation usage to [Alert](#alert).
