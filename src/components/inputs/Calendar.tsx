@@ -9,19 +9,19 @@ interface CalendarData {
 interface CalendarProps {
   year?: number;
   month?: number;
-  showWeekends: boolean;
-  onDayClick: (d: Date) => void;
-  onDataClick: (cd: CalendarData) => void;
-  data: CalendarData[];
+  showWeekends?: boolean;
+  onDayClick?: (d: Date) => void;
+  onDataClick?: (cd: CalendarData) => void;
+  data?: CalendarData[];
 }
 
 export default function Calendar({
   year = new Date().getFullYear(),
   month = new Date().getMonth(),
-  showWeekends,
-  onDayClick,
-  onDataClick,
-  data
+  showWeekends = false,
+  onDayClick = () => {},
+  onDataClick = () => {},
+  data = []
 }: CalendarProps) {
   const responsiveWeekDays = (d: string) => {
     if (window.innerWidth < 400) return d.substring(0, 1);

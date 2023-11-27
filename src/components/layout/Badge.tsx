@@ -10,6 +10,10 @@ interface BadgeProps {
   color?: ThemeColor;
 }
 
-export default function Badge({ className = "", children, color = ThemeColor.Primary }: BadgeProps) {
-  return <div className={`badge badge-${color} ${className || ""}`}>{children}</div>;
+export default function Badge({ className = "", children, color = ThemeColor.Primary, ...props }: BadgeProps) {
+  return (
+    <div className={`badge badge-${color} ${className || ""}`} {...props}>
+      {children}
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ import { Spinner } from "../layout";
 interface ButtonProps {
   className?: string;
   text?: string;
-  color: string;
+  color?: "primary" | "success" | "warning" | "danger" | "default" | "gradient";
   onClick?: () => void;
   submit?: boolean;
   action?: string;
@@ -24,7 +24,7 @@ export default function Button({
   disabled = false,
   onClick = () => {},
   children = null,
-  color
+  color = "primary"
 }: ButtonProps) {
   const styles = () => {
     let classNames = `${className} btn${animate ? " fadeIn" : ""} ${isSubmitting ? " btn-disabled" : ""}`;
