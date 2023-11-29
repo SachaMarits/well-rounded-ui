@@ -10,3 +10,4 @@ export { default as Dropdown } from "./Dropdown";
 export { default as Tooltip } from "./Tooltip";
 export { default as FileUpload } from "./FileUpload";
 export { default as ImageUpload } from "./ImageUpload";
+export { default as List } from "./List";
