@@ -3,18 +3,13 @@ import ReactDOM from "react-dom";
 import { useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
-enum Direction {
-  Left = "left",
-  Right = "right"
-}
-
 interface FloatingSidebarProps {
   onClose: () => void;
   show: boolean;
   children: React.ReactNode;
   className?: string;
-  title: string;
-  direction: Direction;
+  title?: string;
+  direction?: "left" | "right";
 }
 
 const FloatingSidebar = ({
@@ -22,8 +17,8 @@ const FloatingSidebar = ({
   show,
   children,
   className = "",
-  title,
-  direction = Direction.Right
+  title = "",
+  direction = "right"
 }: FloatingSidebarProps) => {
   const nodeRef = useRef(null);
   const closeOnEscapeKeyDown = (e: any) => {

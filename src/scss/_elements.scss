@@ -346,7 +346,7 @@ ul {
 }
 
 .items-list {
-  max-width: 90vw;
+  max-width: 100vw;
   margin: 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -649,6 +649,28 @@ ul {
   }
   &.left {
     left: -500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .floating-sidebar {
+    width: 100vw;
+    &.right {
+      right: -100vw;
+    }
+    &.left {
+      left: -100vw;
+    }
+  }
+  .floating-sidebar.exit {
+    opacity: 0;
+
+    &.right {
+      right: -100vw;
+    }
+    &.left {
+      left: -100vw;
+    }
   }
 }
 
