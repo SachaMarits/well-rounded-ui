@@ -10,7 +10,8 @@ import {
   Dropdown,
   Tooltip,
   FileUpload,
-  ImageUpload
+  ImageUpload,
+  List
 } from "./components/inputs";
 
 import { Alert, FloatingSidebar, Modal, Toast } from "./components/interactions";
@@ -72,5 +73,6 @@ export {
   ModalBody,
   NoDataPlaceholder,
   Toast,
-  AlertMessage
+  AlertMessage,
+  List
 };

@@ -20,6 +20,20 @@ export default function Table2({ keyColumn, data, layout, actions }: TableProps)
 
   if (data.length === 0) return <NoDataPlaceholder icon="table-off" text="Nothing to show !" />;
   const hasDetails = layout.some((l) => l.type === "details");
+  const hasDetailsData = (row) => {
+    const layoutDetails = layout.find((l) => l.type === "details");
+    if (!layoutDetails) return false;
+    return row[layoutDetails.key || layoutDetails.column.toLowerCase()].length > 0;
+  };
+
+  function normalizedData(array: any) {
+    return array.map((o: any) =>
+      Object.keys(o).reduce((newObject, key) => {
+        newObject[key.toLowerCase().replace(/[_-]/g, "")] = o[key];
+        return newObject;
+      }, {})
+    );
+  }
 
   return (
     <table className="table">
@@ -34,7 +48,7 @@ export default function Table2({ keyColumn, data, layout, actions }: TableProps)
         </tr>
       </thead>
       <tbody className="rows">
-        {data.map((row: any) => (
+        {normalizedData(data).map((row: any) => (
           <Fragment key={row[keyColumn]}>
             <tr>
               {layout
@@ -80,7 +94,7 @@ export default function Table2({ keyColumn, data, layout, actions }: TableProps)
                           )}
                         </Fragment>
                       ))}
-                      {hasDetails && (
+                      {hasDetails && hasDetailsData(row) && (
                         <p
                           className="text-primary px-2 pointer"
                           onClick={() => setOpenedDetails(openedDetails === row[keyColumn] ? null : row[keyColumn])}
