@@ -212,10 +212,13 @@
     }
     td {
       .td-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
         margin-top: 14px;
-        padding: 12px 0;
-        vertical-align: middle;
         background-color: white;
+        line-height: 50px;
         // box-shadow: 0 3px 20px rgba(0, 0, 0, 0.04);
       }
       &:first-child .td-content {
@@ -232,6 +235,9 @@
     }
 
     .table-row-details {
+      tr {
+        animation: none;
+      }
       td {
         .td-content {
           margin-top: 0;
