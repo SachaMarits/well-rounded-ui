@@ -10,7 +10,7 @@ interface ColProps {
   xs: number;
 }
 
-export default function Col({ className, children, xl = 3, lg = 4, md = 6, sm = 12, xs = 12 }: ColProps) {
+export default function Col({ className = "", children, xl = 3, lg = 4, md = 6, sm = 12, xs = 12 }: ColProps) {
   return (
     <div
       className={`${className}

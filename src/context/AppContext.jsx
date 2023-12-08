@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 
 const AppContext = createContext(null);
 
@@ -15,12 +15,16 @@ export function AppContextProvider({ children }) {
 
   const addToast = () => {
     setToasts([...toasts, { title, text }]);
-  }
+  };
 
   return (
     <AppContext.Provider value={{ toasts, setToasts, addToast }}>
       {children}
-      <div id="toasts-container">{toasts.map(({ title }) => <p>{title}</p>)}</div>
+      <div id="toasts-container">
+        {toasts.map(({ title }) => (
+          <p>{title}</p>
+        ))}
+      </div>
     </AppContext.Provider>
   );
 }

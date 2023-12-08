@@ -328,6 +328,11 @@
       padding: 8px;
     }
   }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @for $i from 1 through 20 {
@@ -712,8 +717,23 @@ ul {
   opacity: 0;
 }
 
-.modal-content {
+.modal-sm .modal-content {
   width: 500px;
+}
+
+.modal-md .modal-content {
+  width: 700px;
+}
+
+.modal-lg .modal-content {
+  width: 900px;
+}
+
+.modal-xl .modal-content {
+  width: 1100px;
+}
+
+.modal-content {
   transition: all 0.3s ease-in-out;
   transform: translateY(-200px);
 }
