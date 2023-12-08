@@ -64,9 +64,13 @@ export default function Table2({ keyColumn, data, layout, actions }: TableProps)
                         </p>
                       )}
                       {type === "boolean" && (
-                        <i
-                          className={`text-xl ${row[key] ? "mdi mdi-check text-success" : "mdi mdi-close text-danger"}`}
-                        />
+                        <p>
+                          <i
+                            className={`text-xl ${
+                              row[key] ? "mdi mdi-check text-success" : "mdi mdi-close text-danger"
+                            }`}
+                          />
+                        </p>
                       )}
                       {type === "raw" && row[key]}
                     </div>
@@ -95,7 +99,9 @@ export default function Table2({ keyColumn, data, layout, actions }: TableProps)
                           className="text-primary px-2 pointer"
                           onClick={() => setOpenedDetails(openedDetails === row[keyColumn] ? null : row[keyColumn])}
                         >
-                          <i className={`mdi mdi-chevron-${openedDetails === row[keyColumn] ? "up" : "down"}`} />
+                          <i
+                            className={`text-xl mdi mdi-chevron-${openedDetails === row[keyColumn] ? "up" : "down"}`}
+                          />
                         </p>
                       )}
                     </div>
