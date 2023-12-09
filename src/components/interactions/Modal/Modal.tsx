@@ -10,10 +10,11 @@ interface ModalProps {
   toggle: boolean;
   show: boolean;
   children: React.ReactNode;
-  size: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl";
+  closeOnClickOutside?: boolean;
 }
 
-const Modal = ({ onClose, show, toggle = true, children, size = "sm" }: ModalProps) => {
+const Modal = ({ onClose, show, toggle = true, children, size = "sm", closeOnClickOutside = false }: ModalProps) => {
   const nodeRef = useRef(null);
   const [isOpen, setIsOpen] = useState(show);
   const closeOnEscapeKeyDown = (e: any) => {
@@ -34,7 +35,12 @@ const Modal = ({ onClose, show, toggle = true, children, size = "sm" }: ModalPro
 
   return ReactDOM.createPortal(
     <CSSTransition in={isOpen} unmountOnExit timeout={{ enter: 0, exit: 300 }} nodeRef={nodeRef}>
-      <div ref={nodeRef} className={`modal modal-${size}`} role="alert" onClick={onClose}>
+      <div
+        ref={nodeRef}
+        className={`modal modal-${size}`}
+        role="alert"
+        onClick={closeOnClickOutside ? onClose : () => {}}
+      >
         <div className="modal-content" role="alert" onClick={(e) => e.stopPropagation()}>
           {toggle && <i className="mdi mdi-close pointer" onClick={() => setIsOpen(false)} />}
           {children}
