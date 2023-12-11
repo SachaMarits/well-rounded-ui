@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 interface Error {
   type: string;
@@ -15,6 +15,9 @@ interface InputProps {
   required?: boolean;
   minLength?: number | undefined;
   maxLength?: number | undefined;
+  showCharactersLeft?: boolean;
+  automaticTextareaHeight?: boolean;
+  defaultValue?: string | undefined;
 }
 
 export default function Input({
@@ -27,9 +30,23 @@ export default function Input({
   required = false,
   minLength = undefined,
   maxLength = undefined,
+  /**
+   * if true the number left of characters will be shown (if maxLength & label props are set)
+   */
+  showCharactersLeft = false,
+  /**
+   * if true the textarea will take his content's height automatically
+   */
+  automaticTextareaHeight = false,
+  defaultValue = undefined,
   name,
   ...props
 }: InputProps) {
+  const [inputLength, setInputLength] = useState(defaultValue?.length || 0);
+  const [textAreaValue, setTextAreaValue] = useState(defaultValue || "");
+
+  const randomId = Math.round(Math.random() * Math.random() * 10);
+
   const input = (
     <input
       id={name}
@@ -37,6 +54,10 @@ export default function Input({
       type={type}
       className={`form-control${errors ? " error-input" : ""}${!label ? ` ${className}` : ""}`}
       placeholder={placeholder}
+      minLength={minLength}
+      maxLength={maxLength}
+      onChange={(e) => setInputLength(e.target.value.length)}
+      defaultValue={defaultValue}
       {...(register && {
         ...register(name, {
           required: { value: required },
@@ -49,11 +70,19 @@ export default function Input({
   );
   const textarea = (
     <textarea
-      id={name}
+      id={name + randomId}
       name={name}
       type={type}
       className={`form-control${errors ? " error-input" : ""}${!label ? ` ${className}` : ""}`}
       placeholder={placeholder}
+      minLength={minLength}
+      maxLength={maxLength}
+      row={automaticTextareaHeight ? "1" : "3"}
+      onChange={(e) => {
+        setInputLength(e.target.value.length);
+        setTextAreaValue(e.target.value);
+      }}
+      defaultValue={defaultValue}
       {...(register && {
         ...register(name, {
           required: { value: required },
@@ -64,14 +93,36 @@ export default function Input({
       {...props}
     />
   );
+  const labelDom = showCharactersLeft ? (
+    <div className="d-flex align-items-center justify-content-between">
+      <p>{label}</p>
+      {maxLength && inputLength > 0 && (
+        <p className={maxLength * 0.1 >= maxLength - inputLength ? "text-danger" : ""}>{maxLength - inputLength}</p>
+      )}
+    </div>
+  ) : (
+    label
+  );
 
   const field = type === "textarea" ? textarea : input;
+
+  if (automaticTextareaHeight) {
+    const textAreaRef: string | HTMLElement = useMemo(() => {
+      const element = document.getElementById(name + randomId);
+      return element || name + randomId;
+    }, [textarea]);
+
+    useAutosizeTextArea(textAreaRef, textAreaValue);
+  }
 
   return (
     <>
       {label ? (
-        <label htmlFor={name} className={`${className}${type === "checkbox" ? " checkbox" : ""} d-block mb-3`}>
-          {label}
+        <label
+          htmlFor={textarea ? name + randomId : name}
+          className={`${className}${type === "checkbox" ? " checkbox" : ""} d-block mb-3`}
+        >
+          {labelDom}
           {field}
         </label>
       ) : (
@@ -88,3 +139,18 @@ export default function Input({
     </>
   );
 }
+
+const useAutosizeTextArea = (textAreaRef: string | HTMLElement, value: string) => {
+  useEffect(() => {
+    let ref = textAreaRef;
+    if (typeof textAreaRef === "string") {
+      const element = document.getElementById(textAreaRef);
+      if (element) ref = element;
+    }
+    if (typeof ref !== "string") {
+      ref.style.height = "0px";
+      const scrollHeight = ref.scrollHeight;
+      ref.style.height = scrollHeight + "px";
+    }
+  }, [textAreaRef, value]);
+};
