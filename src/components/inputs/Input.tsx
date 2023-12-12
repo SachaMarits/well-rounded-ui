@@ -41,6 +41,9 @@ export default function Input({
   automaticTextareaHeight = false,
   defaultValue = undefined,
   name,
+  /**
+   * Use watch from react-hook-form if you want showCharactersLeft prop to work
+   */
   watch = undefined,
   ...props
 }: InputProps) {
