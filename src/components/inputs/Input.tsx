@@ -18,6 +18,7 @@ interface InputProps {
   showCharactersLeft?: boolean;
   automaticTextareaHeight?: boolean;
   defaultValue?: string | undefined;
+  watch?: (names?: string | string[] | ((data, options) => void)) => unknown;
 }
 
 export default function Input({
@@ -40,12 +41,18 @@ export default function Input({
   automaticTextareaHeight = false,
   defaultValue = undefined,
   name,
+  watch = undefined,
   ...props
 }: InputProps) {
   const [inputLength, setInputLength] = useState(defaultValue?.length || 0);
   const [textAreaValue, setTextAreaValue] = useState(defaultValue || "");
 
   const randomId = Math.round(Math.random() * Math.random() * 10);
+  const watchInput = watch ? watch(name) : undefined;
+
+  useEffect(() => {
+    if (typeof watchInput === "string") setInputLength(watchInput.length);
+  }, [watchInput]);
 
   const input = (
     <input
@@ -93,13 +100,16 @@ export default function Input({
       {...props}
     />
   );
+
   const labelDom = showCharactersLeft ? (
-    <div className="d-flex align-items-center justify-content-between">
-      <p>{label}</p>
+    <>
+      {label}{" "}
       {maxLength && inputLength > 0 && (
-        <p className={maxLength * 0.1 >= maxLength - inputLength ? "text-danger" : ""}>{maxLength - inputLength}</p>
+        <span className={`text-sm ${maxLength * 0.1 >= maxLength - inputLength ? "text-danger" : "text-primary"}`}>
+          ({maxLength - inputLength})
+        </span>
       )}
-    </div>
+    </>
   ) : (
     label
   );
