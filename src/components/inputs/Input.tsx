@@ -18,7 +18,7 @@ interface InputProps {
   showCharactersLeft?: boolean;
   automaticTextareaHeight?: boolean;
   defaultValue?: string | undefined;
-  watch?: (names?: string | string[] | ((data, options) => void)) => unknown;
+  watch?: (names?: string | string[]) => unknown;
 }
 
 export default function Input({
@@ -132,7 +132,7 @@ export default function Input({
     <>
       {label ? (
         <label
-          htmlFor={textarea ? name + randomId : name}
+          htmlFor={type === "textarea" ? name + randomId : name}
           className={`${className}${type === "checkbox" ? " checkbox" : ""} d-block mb-3`}
         >
           {labelDom}
