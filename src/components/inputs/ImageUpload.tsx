@@ -86,6 +86,7 @@ export default function ImageUpload({
                 width,
                 height,
                 backgroundImage: `url(${base64Data})`,
+                backgroundPosition: "center",
                 backgroundSize: "cover"
               }}
             >
@@ -100,7 +101,7 @@ export default function ImageUpload({
           className={`flex-center flex-column p-1 text-sm unselectable pointer mb-3 p-1 text-sm empty-line-placeholder${
             isDragOver ? "-success" : ""
           }`}
-          style={{ height, width }}
+          style={{ flex: 1 }}
           onDragEnter={dragAndDrop ? handleDragEnter : undefined}
           onDragOver={dragAndDrop ? handleDragEnter : undefined}
           onDragLeave={dragAndDrop ? handleDragLeave : undefined}
