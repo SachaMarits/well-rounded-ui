@@ -35,7 +35,8 @@ import {
   WellRoundedUI,
   ModalBody,
   NoDataPlaceholder,
-  AlertMessage
+  AlertMessage,
+  Collapse
 } from "./components/layout";
 
 export {
@@ -74,5 +75,6 @@ export {
   NoDataPlaceholder,
   Toast,
   AlertMessage,
-  List
+  List,
+  Collapse
 };

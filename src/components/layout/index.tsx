@@ -17,3 +17,4 @@ export { default as WellRoundedUI } from "./WellRoundedUI";
 export { default as ModalBody } from "./ModalBody";
 export { default as NoDataPlaceholder } from "./NoDataPlaceholder";
 export { default as AlertMessage } from "./AlertMessage";
+export { default as Collapse } from "./Collapse";
