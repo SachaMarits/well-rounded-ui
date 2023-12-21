@@ -36,7 +36,10 @@ const FloatingSidebar = ({
 
   return ReactDOM.createPortal(
     <CSSTransition in={show} unmountOnExit timeout={{ enter: 0, exit: 300 }} nodeRef={nodeRef}>
-      <div ref={nodeRef} className={`floating-sidebar ${direction === "left" ? "left" : "right"} ${className || ""}`}>
+      <div
+        ref={nodeRef}
+        className={`well-rounded-ui floating-sidebar ${direction === "left" ? "left" : "right"} ${className || ""}`}
+      >
         <i className="mdi mdi-close text-xl pointer" onClick={() => onClose()} />
         <h3 className="pt-3 pb-2" style={{ marginLeft: "52px" }}>
           {title}

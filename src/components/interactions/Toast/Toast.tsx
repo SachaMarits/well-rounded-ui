@@ -40,7 +40,7 @@ const Toast = (
   if (delay > 0) setTimeout(hide, delay);
 
   const dom = (
-    <div className="toast-modal">
+    <div className="well-rounded-ui toast-modal">
       {icon && renderIcon()}
       <div className="toast-text">
         {title && <h3>{title}</h3>}

@@ -1,6 +1,6 @@
 /* This file describes helpers classes */
-@import './variables.module';
-@import './animations';
+@import "./variables.module";
+@import "./animations";
 
 /* #region Position */
 
@@ -171,6 +171,15 @@
   margin-bottom: 0px !important;
 }
 
+.gab-2 {
+  gap: $spacingLevel1;
+}
+.gab-3 {
+  gap: $spacingLevel2;
+}
+.gab-4 {
+  gap: $spacingLevel3;
+}
 
 .ml-auto {
   margin-left: auto;
@@ -191,22 +200,22 @@
   text-align: right;
 }
 .text-primary {
-  color: $primary;
+  color: var(--well-rounded-primary);
 }
 .text-success {
-  color: $success;
+  color: var(--well-rounded-success);
 }
 .text-danger {
-  color: $danger;
+  color: var(--well-rounded-danger);
 }
 .text-warning {
-  color: $warning;
+  color: var(--well-rounded-warning);
 }
 .text-muted {
   color: #999;
 }
 .text-secondary {
-  opacity: .5;
+  opacity: 0.5;
 }
 .text-xs {
   font-size: 0.8rem;
@@ -230,7 +239,7 @@
   font-size: 1.15rem;
 }
 .h4 {
-  font-size: 1.10rem;
+  font-size: 1.1rem;
 }
 .h5 {
   font-size: 1.05rem;
@@ -307,8 +316,7 @@
   font-weight: 500;
   border: 0;
   --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
-    var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent), var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
   transition-duration: 0.2s;
@@ -321,29 +329,29 @@
   filter: brightness(85%);
 }
 .btn:disabled {
-  opacity: .7;
+  opacity: 0.7;
   cursor: default;
 }
-.btn:disabled:hover{
+.btn:disabled:hover {
   filter: brightness(100%);
 }
 .btn-primary {
-  background: $primary;
+  background: var(--well-rounded-primary);
 }
 .btn-success {
-  background: $success;
+  background: var(--well-rounded-success);
 }
 .btn-danger {
-  background: $danger;
+  background: var(--well-rounded-danger);
 }
 .btn-warning {
-  background: $warning;
+  background: var(--well-rounded-warning);
 }
 .btn-default {
-  background: $default;
+  background: var(--well-rounded-default);
 }
 .btn-gradient {
-  background: linear-gradient(90deg, $primary -30%, $secondary 130%);
+  background: linear-gradient(90deg, var(--well-rounded-primary) -30%, var(--well-rounded-secondary) 130%);
 }
 .btn-disabled {
   opacity: 0.65;
@@ -354,19 +362,19 @@
 /* #region Borders */
 
 .border-bottom {
-  border-bottom: 1px solid $primary !important;
+  border-bottom: 1px solid var(--well-rounded-primary) !important;
 }
 .border-top {
-  border-top: 1px solid $primary !important;
+  border-top: 1px solid var(--well-rounded-primary) !important;
 }
 .border-left {
-  border-left: 1px solid $primary !important;
+  border-left: 1px solid var(--well-rounded-primary) !important;
 }
 .border-right {
-  border-right: 1px solid $primary !important;
+  border-right: 1px solid var(--well-rounded-primary) !important;
 }
 .border {
-  border: 1px solid $primary !important;
+  border: 1px solid var(--well-rounded-primary) !important;
 }
 
 /* #endregion Borders */
@@ -428,12 +436,26 @@
 
 /* #region Background colors */
 
-.bg-primary { background: $primary !important; }
-.bg-secondary { background: $secondary !important; }
-.bg-success { background: $success !important; }
-.bg-danger { background: $danger !important; }
-.bg-warning { background: $warning !important; }
-.bg-default { background: $default !important; }
-.bg-orange { background: $orange !important; }
+.bg-primary {
+  background: var(--well-rounded-primary) !important;
+}
+.bg-secondary {
+  background: var(--well-rounded-secondary) !important;
+}
+.bg-success {
+  background: var(--well-rounded-success) !important;
+}
+.bg-danger {
+  background: var(--well-rounded-danger) !important;
+}
+.bg-warning {
+  background: var(--well-rounded-warning) !important;
+}
+.bg-default {
+  background: var(--well-rounded-default) !important;
+}
+.bg-orange {
+  background: $orange !important;
+}
 
 /* #endregion Background colors */

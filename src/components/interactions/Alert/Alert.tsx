@@ -4,7 +4,7 @@ import { Button } from "../../inputs";
 import { ErrorIcon, SuccessIcon, WarningIcon } from "../Icons/Icons";
 
 interface Button {
-  color: string;
+  color: "primary" | "success" | "warning" | "danger" | "default" | "gradient";
   text: string;
   value: any;
 }
@@ -38,7 +38,7 @@ const Alert = (
     };
 
     const dom = (
-      <div id="alert-container">
+      <div id="alert-container well-rounded-ui">
         <div className="alert-modal">
           {icon && renderIcon()}
           {title && <h2>{title}</h2>}

@@ -37,7 +37,7 @@ const Modal = ({ onClose, show, toggle = true, children, size = "sm", closeOnCli
     <CSSTransition in={isOpen} unmountOnExit timeout={{ enter: 0, exit: 300 }} nodeRef={nodeRef}>
       <div
         ref={nodeRef}
-        className={`modal modal-${size}`}
+        className={`well-rounded-ui modal modal-${size}`}
         role="alert"
         onClick={closeOnClickOutside ? onClose : () => {}}
       >

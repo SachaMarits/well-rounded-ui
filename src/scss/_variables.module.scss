@@ -2,20 +2,29 @@
 
 $primary: #2e94d8;
 $secondary: #974de2;
-$success: rgb(145, 199, 20);
-$danger: rgb(211, 41, 41);
+$success: #91c714;
+$danger: #d32929;
 $orange: #ff891a;
-$warning: #FFBA1A;
+$warning: #ffba1a;
 $default: #c0c0c0;
 
-$selection: #7C9AEF;
+$selection: #7c9aef;
+
+:root {
+  --well-rounded-primary: #2e94d8;
+  --well-rounded-secondary: #974de2;
+  --well-rounded-success: #91c714;
+  --well-rounded-danger: #d32929;
+  --well-rounded-warning: #ffba1a;
+  --well-rounded-default: #c0c0c0;
+}
 
 $main-colors: (
   primary: $primary,
   secondary: $secondary,
   success: $success,
   danger: $danger,
-  warning: $warning,
+  warning: $warning
 );
 
 /* Exporting variables to be used in jsx files */
@@ -27,7 +36,6 @@ $main-colors: (
 }
 
 /* #endregion Colors */
-
 
 /* #region Layout */
 
