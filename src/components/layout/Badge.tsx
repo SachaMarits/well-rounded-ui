@@ -7,10 +7,10 @@ interface BadgeProps {
    * Badge's content, mostly used for text
    */
   children: React.ReactNode;
-  color?: ThemeColor;
+  color?: "primary" | "secondary" | "success" | "warning" | "danger" | "default";
 }
 
-export default function Badge({ className = "", children, color = ThemeColor.Primary, ...props }: BadgeProps) {
+export default function Badge({ className = "", children, color = "primary", ...props }: BadgeProps) {
   return (
     <div className={`badge badge-${color} ${className || ""}`} {...props}>
       {children}

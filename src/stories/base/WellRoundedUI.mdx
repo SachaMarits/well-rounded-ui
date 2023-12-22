@@ -1,0 +1,35 @@
+import { Meta, Source } from "@storybook/blocks";
+import * as WellRoundedUIStories from './WellRoundedUI.stories';
+
+<Meta of={WellRoundedUIStories} />
+
+# WellRoundedUI 
+
+Apply every Well Rounded's style.
+
+## Basic Usage:
+
+<Source
+  code={`<WellRoundedUI>
+    <App />
+</WellRoundedUI>`}
+/>
+
+## Custom Colors:
+
+<Source
+  code={`<WellRoundedUI 
+  options={{
+    colors: {
+      primary: "#2a9d8f",
+      secondary: "#264653",
+      success: "#a7c957",
+      warning: "#e9c46a",
+      danger: "#e76f51",
+      default: "#d6ccc2"
+    }
+  }}
+>
+  <App />
+</WellRoundedUI>`}
+/>

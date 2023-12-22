@@ -3,7 +3,7 @@ import { Button } from "../../components/inputs";
 import { Alert } from "../../components/interactions";
 
 interface Button {
-  color: string;
+  color: "primary" | "success" | "warning" | "danger" | "default" | "gradient";
   text: string;
   value: any;
 }
