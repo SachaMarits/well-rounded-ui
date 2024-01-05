@@ -38,7 +38,7 @@ const Alert = (
     };
 
     const dom = (
-      <div id="alert-container well-rounded-ui">
+      <div id="alert-container" className="well-rounded-ui">
         <div className="alert-modal">
           {icon && renderIcon()}
           {title && <h2>{title}</h2>}
