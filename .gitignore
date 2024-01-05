@@ -130,5 +130,5 @@ dist
 .pnp.*
 
 # Removing personal files like tests and todo list
-test
 TODO
+test/node_modules
