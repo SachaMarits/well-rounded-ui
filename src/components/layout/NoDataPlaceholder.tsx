@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 interface NoDataPlaceholderProps {
   /**
@@ -22,14 +21,3 @@ export default function NoDataPlaceholder({ icon = "", text, button = null }: No
     </div>
   );
 }
-
-NoDataPlaceholder.propTypes = {
-  icon: PropTypes.string,
-  text: PropTypes.string.isRequired,
-  button: PropTypes.node
-};
-
-NoDataPlaceholder.defaultProps = {
-  icon: "",
-  button: null
-};

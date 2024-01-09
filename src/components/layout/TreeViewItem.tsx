@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 interface TreeViewItemProps {
   setSelection: (id: number | null) => void;
