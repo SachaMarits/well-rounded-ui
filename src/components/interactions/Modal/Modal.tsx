@@ -7,7 +7,7 @@ interface ModalProps {
   /**
    * Show toggle button in the top right of the modal
    */
-  toggle: boolean;
+  toggle?: boolean;
   show: boolean;
   children: React.ReactNode;
   size?: "sm" | "md" | "lg" | "xl";

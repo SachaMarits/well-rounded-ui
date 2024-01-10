@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 interface EmptyLinePlaceholderProps {
   style?: React.CSSProperties;
@@ -28,15 +27,3 @@ export default function EmptyLinePlaceholder({
     </div>
   );
 }
-
-EmptyLinePlaceholder.propTypes = {
-  style: PropTypes.objectOf(PropTypes.number),
-  onClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-  action: PropTypes.string
-};
-
-EmptyLinePlaceholder.defaultProps = {
-  style: {},
-  action: ""
-};

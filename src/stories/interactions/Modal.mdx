@@ -1,0 +1,24 @@
+import { Meta, Source } from "@storybook/blocks";
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal 
+
+Display Modal to show any content.
+
+## Basic Usage:
+
+<Source
+  code={`<Modal show={isModalOpen} onClose={() => {}}>
+  <ModalHeader>
+    <h3>Modal title</h3>
+  </ModalHeader>
+  <ModalBody>
+    <p>This is modal body</p>
+  </ModalBody>
+  <ModalFooter>
+    <Button text="Cancel" color="danger" onClick={() => {}} />
+  </ModalFooter>
+</Modal>`}
+/>

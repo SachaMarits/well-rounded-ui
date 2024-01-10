@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Option } from "src/types/Options";
 
 interface DropdownProps {
@@ -46,19 +45,3 @@ export default function Dropdown({ toggle, options, onClick, openOnHover, closeO
     </div>
   );
 }
-
-Dropdown.propTypes = {
-  toggle: PropTypes.node.isRequired,
-  options: PropTypes.arrayOf(PropTypes.object),
-  onClick: PropTypes.func.isRequired,
-  openOnHover: PropTypes.bool,
-  closeOnLeave: PropTypes.bool,
-  width: PropTypes.number
-};
-
-Dropdown.defaultProps = {
-  options: [],
-  openOnHover: false,
-  closeOnLeave: false,
-  width: 160
-};
