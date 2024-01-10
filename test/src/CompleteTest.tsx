@@ -1,5 +1,5 @@
-// @ts-nocheck
 import { useState } from "react";
+
 import {
   Badge,
   Input,
@@ -22,7 +22,10 @@ import {
   ModalBody,
   ModalFooter,
   Collapse,
-  FloatingSidebar
+  FloatingSidebar,
+  ColorPalette,
+  ColorThemePalette
+  // @ts-ignore
 } from "well-rounded-ui";
 
 export default function CompleteTest() {
@@ -30,7 +33,7 @@ export default function CompleteTest() {
   const [isFloatingSidebarLeftOpen, setIsFloatingSidebarLeftOpen] = useState(false);
   const [isFloatingSidebarRightOpen, setIsFloatingSidebarRightOpen] = useState(false);
 
-  const Title = ({ text, nok = false }) => (
+  const Title = ({ text, nok = false }: { text: string; nok?: boolean }) => (
     <p>
       {text} <i className={`mdi ${nok ? "mdi-close text-danger" : "mdi-check text-success"}`} />
     </p>
@@ -39,6 +42,16 @@ export default function CompleteTest() {
   return (
     <div className="p-3" style={{ background: "whitesmoke" }}>
       <h2 className="mb-3">Inputs</h2>
+
+      <Collapse title="Color Palettes" className="mb-3">
+        <div className="flex-center gab-3">
+          <ColorPalette
+            defaultValue={["#2a9d8f", "#264653", "#a7c957", "#e9c46a", "#e76f51", "#d6ccc2"]}
+            onChange={(c: string[]) => console.log(c)}
+          />
+          <ColorThemePalette />
+        </div>
+      </Collapse>
 
       <Collapse title={<Title text="Badges" />} className="mb-3">
         <div className="flex-center gab-3">
@@ -128,7 +141,7 @@ export default function CompleteTest() {
           options={[{ id: 1, text: "Sacha" }]}
           onChange={(ids: number[]) => console.log(ids)}
         />
-        <Select name="role" defaultOption="Filter by role" onChange={(e) => console.log(e)}>
+        <Select name="role" defaultOption="Filter by role" onChange={(e: unknown) => console.log(e)}>
           <option value="-1">All roles</option>
           <option value="Admin">Admin</option>
           <option value="Moderator">Moderator</option>
@@ -142,9 +155,9 @@ export default function CompleteTest() {
           allowedExtensions={["jpg", "jpeg", "png"]}
           dragAndDrop
           multiple
-          onChange={(test) => console.log(test)}
+          onChange={(test: unknown) => console.log(test)}
         />
-        <ImageUpload className="mt-3" dragAndDrop multiple onChange={(test) => console.log(test)} />
+        <ImageUpload className="mt-3" dragAndDrop multiple onChange={(test: unknown) => console.log(test)} />
       </Collapse>
 
       <Collapse title="Calendar" className="mb-3">
@@ -156,8 +169,8 @@ export default function CompleteTest() {
               id,
               text: `#${_}${id + 1}`
             }))}
-          onDayClick={(d) => Alert("A day has been clicked", d.toDateString(), "success")}
-          onDataClick={(d) => Alert("A data has been clicked", d.text, "warning")}
+          onDayClick={(d: Date) => Alert("A day has been clicked", d.toDateString(), "success")}
+          onDataClick={({ text }: { text: string }) => Alert("A data has been clicked", text, "warning")}
         />
       </Collapse>
 

@@ -11,7 +11,10 @@ import {
   Tooltip,
   FileUpload,
   ImageUpload,
-  List
+  List,
+  ColorPalette,
+  ColorThemePalette,
+  Slider
 } from "./components/inputs";
 
 import { Alert, FloatingSidebar, Modal, Toast } from "./components/interactions";
@@ -76,5 +79,8 @@ export {
   Toast,
   AlertMessage,
   List,
-  Collapse
+  Collapse,
+  ColorPalette,
+  ColorThemePalette,
+  Slider
 };

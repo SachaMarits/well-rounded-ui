@@ -1341,3 +1341,123 @@ ul {
 }
 
 /* #endregion Collapse */
+
+/* #region Color Palette */
+
+.color-palette {
+  display: flex;
+}
+
+.color-palette input[type="color"] {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+
+  &::-moz-color-swatch {
+    border: none;
+  }
+  &::-webkit-color-swatch {
+    border: none;
+  }
+  &::-moz-color-swatch-wrapper {
+    padding: 0;
+  }
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  &::-moz-color-swatch,
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &::-webkit-color-swatch,
+  &::-webkit-focus-inner {
+    border: 0;
+  }
+  &::-moz-focus-inner {
+    padding: 0;
+  }
+  &::-webkit-focus-inner {
+    padding: 0;
+  }
+
+  &:first-child::-moz-color-swatch {
+    border-radius: 16px 0 0 16px !important;
+  }
+  &:last-child::-moz-color-swatch {
+    border-radius: 0 16px 16px 0 !important;
+  }
+  &:first-child::-webkit-color-swatch {
+    border-radius: 16px 0 0 16px !important;
+  }
+  &:last-child::-webkit-color-swatch {
+    border-radius: 0 16px 16px 0 !important;
+  }
+}
+
+/* #endregion Color Palette */
+
+/* #region Slider */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+  .slider-item {
+    position: absolute;
+    border-radius: 8px;
+    transition: 1s ease-in-out;
+  }
+
+  .previous-slide {
+    transform: translateX(-100%);
+  }
+
+  .current-slide {
+    z-index: 1;
+  }
+
+  .next-slide {
+    transform: translateX(100%);
+  }
+
+  .mdi-chevron-left,
+  .mdi-chevron-right {
+    position: absolute;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    font-size: large;
+    padding: 4px;
+    z-index: 3;
+  }
+
+  .mdi-chevron-left {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .mdi-chevron-right {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .sliding-right {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .sliding-left {
+    transform: translateX(0);
+    z-index: 2;
+  }
+
+  .current-slide ~ .sliding-right,
+  .current-slide ~ .sliding-left {
+    z-index: 2;
+  }
+}
+
+/* #endregion Slider */

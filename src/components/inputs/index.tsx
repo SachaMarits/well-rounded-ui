@@ -11,3 +11,6 @@ export { default as Tooltip } from "./Tooltip";
 export { default as FileUpload } from "./FileUpload";
 export { default as ImageUpload } from "./ImageUpload";
 export { default as List } from "./List";
+export { default as ColorPalette } from "./ColorPalette";
+export { default as ColorThemePalette } from "./ColorThemePalette";
+export { default as Slider } from "./Slider";
