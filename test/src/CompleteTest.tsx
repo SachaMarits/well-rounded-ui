@@ -24,7 +24,8 @@ import {
   Collapse,
   FloatingSidebar,
   ColorPalette,
-  ColorThemePalette
+  ColorThemePalette,
+  Slider
   // @ts-ignore
 } from "well-rounded-ui";
 
@@ -41,7 +42,8 @@ export default function CompleteTest() {
 
   return (
     <div className="p-3" style={{ background: "whitesmoke" }}>
-      <h2 className="mb-3">Inputs</h2>
+      <h2>Inputs</h2>
+      <h3 className="mb-3">Components that manipulates data</h3>
 
       <Collapse title="Color Palettes" className="mb-3">
         <div className="flex-center gab-3">
@@ -206,10 +208,30 @@ export default function CompleteTest() {
           </TabPane>
         </Tabs>
       </Collapse>
+      <hr className="my-3" />
+
+      <h2>Layout</h2>
+      <h3 className="mb-3">Components that fills space</h3>
+
+      <Collapse title="Slider" className="mb-3">
+        <Slider
+          height={400}
+          width={600}
+          delay={3000}
+          items={[
+            <img src="https://placehold.jp/24/0FC2C0/ffffff/600x400.png?text=1" />,
+            <img src="https://placehold.jp/24/0CABA8/ffffff/600x400.png?text=2" />,
+            <img src="https://placehold.jp/24/008F8C/ffffff/600x400.png?text=3" />,
+            <img src="https://placehold.jp/24/015958/ffffff/600x400.png?text=4" />,
+            <img src="https://placehold.jp/24/023535/ffffff/600x400.png?text=5" />
+          ]}
+        />
+      </Collapse>
 
       <hr className="my-3" />
 
-      <h2 className="mb-3">Interactions</h2>
+      <h2>Interactions</h2>
+      <h3 className="mb-3">Components or functions that create visual interactions with the user</h3>
 
       <div className="d-flex gap-3">
         <Button color="primary" className="mr-2" onClick={() => setIsModalOpen(true)} text="Open Modal" />

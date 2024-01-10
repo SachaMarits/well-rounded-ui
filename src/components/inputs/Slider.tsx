@@ -53,6 +53,7 @@ export function Slider({ items, delay, height, width }: SliderProps) {
       return () => clearInterval(intervalId);
     }
   }, [delay, currentSlide, items.length]);
+
   return (
     <div className="slider" style={{ height, width }}>
       <div className={`slider-item previous-slide ${slidingState(-1)}`}>{items[previousSlide]}</div>

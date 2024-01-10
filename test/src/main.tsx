@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SingleTest from "./SingleTest.tsx";
 // @ts-ignore
 import { WellRoundedUI } from "well-rounded-ui";
+import CompleteTest from "./CompleteTest.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         }
       }}
     >
-      <SingleTest />
+      <CompleteTest />
     </WellRoundedUI>
   </React.StrictMode>
 );
