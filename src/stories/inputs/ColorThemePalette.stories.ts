@@ -1,23 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { FileUpload } from "../../components/inputs";
+import { ColorThemePalette } from "../../components/inputs";
 
 const meta = {
-  title: "Inputs/FileUpload",
-  component: FileUpload,
+  title: "Inputs/ColorThemePalette",
+  component: ColorThemePalette,
   parameters: {
     layout: "centered"
   },
-  tags: ["autodocs"],
   argTypes: {}
-} satisfies Meta<typeof FileUpload>;
+} satisfies Meta<typeof ColorThemePalette>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    dragAndDrop: true,
-    multiple: true
-  }
+  args: {}
 };
