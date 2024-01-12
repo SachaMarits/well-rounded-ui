@@ -1,3 +1,6 @@
+import "./assets/mdi.min.css";
+import "./assets/custom.css";
+
 import type { Preview } from "@storybook/react";
 
 const preview: Preview = {
