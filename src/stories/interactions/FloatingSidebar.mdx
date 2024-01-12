@@ -1,0 +1,20 @@
+import { Meta, Source } from "@storybook/blocks";
+import * as FloatingSidebarStories from './FloatingSidebar.stories';
+
+<Meta of={FloatingSidebarStories} />
+
+# FloatingSidebar 
+
+Display FloatingSidebar to show any content.
+
+## Basic Usage:
+
+<Source
+  code={`<FloatingSidebar
+  show={isSiderbarOpen}
+  onClose={() => setIsSidebarOpen(false)}
+  title="Any title"
+>
+  <p className="p-3">Any content</p>
+</FloatingSidebar>`}
+/>

@@ -25,7 +25,12 @@ export default function ModalExample({ show, size = "sm", closeOnClickOutside }:
   return (
     <>
       <Button color="primary" text="Show modal" onClick={() => setIsModalOpen(true)} />
-      <Modal show={isModalOpen} onClose={() => {}} size={size} closeOnClickOutside={closeOnClickOutside}>
+      <Modal
+        show={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        size={size}
+        closeOnClickOutside={closeOnClickOutside}
+      >
         <ModalHeader>
           <h3>Modal title</h3>
         </ModalHeader>
