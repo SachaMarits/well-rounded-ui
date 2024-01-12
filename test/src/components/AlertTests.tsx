@@ -3,7 +3,7 @@ import { Collapse, Button, Alert } from "well-rounded-ui";
 
 export default function AlertTests() {
   return (
-    <Collapse title="Tabs" className="mb-3">
+    <Collapse title="Alert" className="mb-3">
       <Button
         color="primary"
         className="mr-2"

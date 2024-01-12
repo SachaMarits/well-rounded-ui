@@ -4,7 +4,7 @@ import Title from "./Title";
 
 export default function ButtonTests() {
   return (
-    <Collapse title={<Title text="Buttons" />} className="mb-3">
+    <Collapse title={<Title text="Button" />} className="mb-3">
       <div className="flex-center gab-3 flex-wrap">
         <Button text="Primary (animate)" animate />
         <Button text="Primary (!animate)" />

@@ -18,6 +18,10 @@ import SliderTests from "./components/SliderTests";
 import ModalTests from "./components/ModalTests";
 import FloatingSidebarTests from "./components/FloatingSidebarTests";
 import AlertTests from "./components/AlertTests";
+import ListTests from "./components/ListTests";
+import CardTests from "./components/CardTests";
+import ColAndRowTests from "./components/ColAndRowTests";
+import NoDataPlaceholderTests from "./components/NoDataPlaceholderTests";
 
 export default function CompleteTest() {
   return (
@@ -38,10 +42,14 @@ export default function CompleteTest() {
         <PaginationTests />
         <EmptyLinePlaceholderTests />
         <TabsTests />
+        <ListTests />
+        <SliderTests />
       </Section>
 
       <Section title="Layout" subtitle="Components that fills space" hr>
-        <SliderTests />
+        <CardTests />
+        <ColAndRowTests />
+        <NoDataPlaceholderTests />
       </Section>
 
       <Section title="Interactions" subtitle="Components or functions that create visual interactions with the user">

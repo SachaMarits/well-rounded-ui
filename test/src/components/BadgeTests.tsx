@@ -4,7 +4,7 @@ import Title from "./Title";
 
 export default function BadgeTests() {
   return (
-    <Collapse title={<Title text="Badges" />} className="mb-3">
+    <Collapse title={<Title text="Badge" />} className="mb-3">
       <div className="flex-center gab-3">
         <Badge>Primary (default value)</Badge>
         <Badge color="primary">Primary</Badge>

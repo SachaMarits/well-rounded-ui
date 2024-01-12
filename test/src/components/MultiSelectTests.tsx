@@ -3,7 +3,7 @@ import { Collapse, MultiSelect } from "well-rounded-ui";
 
 export default function MultiSelectTests() {
   return (
-    <Collapse title="Fields" className="mb-3">
+    <Collapse title="MultiSelect" className="mb-3">
       <MultiSelect
         className="my-3"
         label="User selection"

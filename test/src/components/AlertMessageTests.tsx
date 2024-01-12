@@ -4,7 +4,7 @@ import Title from "./Title";
 
 export default function AlertMessageTests() {
   return (
-    <Collapse title={<Title text="Alert Messages" />} className="mb-3">
+    <Collapse title={<Title text="Alert Message" />} className="mb-3">
       <AlertMessage color="primary" className="mb-3">
         Primary
       </AlertMessage>

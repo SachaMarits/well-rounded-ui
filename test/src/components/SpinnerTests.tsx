@@ -4,7 +4,7 @@ import Title from "./Title";
 
 export default function SpinnerTests() {
   return (
-    <Collapse title={<Title text="Spinners" />} className="mb-3">
+    <Collapse title={<Title text="Spinner" />} className="mb-3">
       <div className="flex-center gab-3">
         <Spinner />
         <Spinner color="primary" size="md" />

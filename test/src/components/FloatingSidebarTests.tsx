@@ -5,6 +5,7 @@ import { Collapse, Button, FloatingSidebar } from "well-rounded-ui";
 export default function FloatingSidebarTests() {
   const [isFloatingSidebarLeftOpen, setIsFloatingSidebarLeftOpen] = useState(false);
   const [isFloatingSidebarRightOpen, setIsFloatingSidebarRightOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <Collapse title="Floating Sidebar" className="mb-3">
@@ -36,6 +37,11 @@ export default function FloatingSidebarTests() {
         title="Right FloatingSidebar"
       >
         <p className="p-3">Right</p>
+      </FloatingSidebar>
+
+      <Button color="primary" text="Show sidebar" onClick={() => setIsSidebarOpen(true)} />
+      <FloatingSidebar show={isSidebarOpen} onClose={() => setIsSidebarOpen(false)}>
+        <p className="p-3">Any content</p>
       </FloatingSidebar>
     </Collapse>
   );

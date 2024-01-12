@@ -1,5 +1,3 @@
-import "../assets/mdi.min.css";
-
 import type { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";

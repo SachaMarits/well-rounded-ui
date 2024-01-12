@@ -6,7 +6,7 @@ export default function ModalTests() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <Collapse title="Modals" className="mb-3">
+    <Collapse title="Modal" className="mb-3">
       <Button color="primary" className="mr-2" onClick={() => setIsModalOpen(true)} text="Open Modal" />
       <Modal show={isModalOpen} onClose={() => {}}>
         <ModalHeader>
