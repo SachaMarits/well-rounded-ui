@@ -59,7 +59,12 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
                 .filter((l) => l.key in row && l.type !== "details")
                 .map(({ key, type, size }) => (
                   <div key={key} className={`col-${size || "md"}`}>
-                    {type === "image" && <img className="rounded-circle square36" src={`/${row[key]}.jpg`} />}
+                    {type === "image" && (
+                      <img
+                        className="rounded-circle square36"
+                        src={row[key].includes("http") ? row[key] : `/${row[key]}.jpg`}
+                      />
+                    )}
                     {(type === "text" || type === "price") && (
                       <p>
                         {row[key]} {type === "price" && "€"}
@@ -107,9 +112,6 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
               layout={layout.find((l) => l.type === "details")}
               parentRow={row}
               keyColumn={keyColumn}
-              columnCount={
-                layout.filter((l) => l.type !== "details").length + (actions.length > 0 || hasDetails ? 1 : 0)
-              }
             />
           </Fragment>
         ))}
@@ -123,10 +125,9 @@ interface DetailsProps {
   layout: Layout | undefined;
   parentRow: any;
   keyColumn: string;
-  columnCount: number;
 }
 
-function Details({ opened, layout, parentRow, keyColumn, columnCount }: DetailsProps) {
+function Details({ opened, layout, parentRow, keyColumn }: DetailsProps) {
   if (!opened) return null;
   if (!layout?.detailsLayout) return null;
 
