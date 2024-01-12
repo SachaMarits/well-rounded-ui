@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 export default function ColorThemePalette() {
   const root = document.querySelector(":root") as HTMLElement;
@@ -15,7 +15,7 @@ export default function ColorThemePalette() {
 
   const [themeColors, setThemeColors] = useState(getThemeColors());
 
-  useEffect(() => setThemeColors(getThemeColors()), []);
+  useLayoutEffect(() => setThemeColors(getThemeColors()), []);
 
   return (
     <div className="color-palette">
