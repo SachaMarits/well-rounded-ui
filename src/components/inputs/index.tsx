@@ -3,8 +3,6 @@ export { default as Input } from "./Input";
 export { default as MultiSelect } from "./MultiSelect";
 export { default as Pagination } from "./Pagination";
 export { default as Select } from "./Select";
-export { default as Table } from "./Table";
-export { default as Table2 } from "./Table2";
 export { default as Calendar } from "./Calendar";
 export { default as Dropdown } from "./Dropdown";
 export { default as Tooltip } from "./Tooltip";
