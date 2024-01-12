@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 interface ColorPaletteProp {
   value: string[];
-  defaultValue: string[];
+  defaultValue?: string[];
   onChange: (v: string[]) => void;
 }
 
