@@ -82,26 +82,23 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
                 <div className="col-sm">
                   <div className="actions">
                     {actions.map((item: any) => (
-                      <Fragment key={item.action}>
-                        {item.action === "edit" && (
-                          <p className="text-primary px-2 pointer" onClick={() => item.onClick(row[keyColumn])}>
-                            <i className="mdi mdi-pencil" /> {!item.iconOnly && "Edit"}
-                          </p>
-                        )}
-                        {item.action === "delete" && (
-                          <p className="text-danger px-2 pointer" onClick={() => item.onClick(row[keyColumn])}>
-                            <i className="mdi mdi-delete" /> {!item.iconOnly && "Delete"}
-                          </p>
-                        )}
-                      </Fragment>
+                      <Action
+                        key={item.action}
+                        action={item.action}
+                        iconOnly={item.iconOnly}
+                        icon={item.icon}
+                        text={item.text}
+                        color={item.color}
+                        onClick={() => item.onClick(row[keyColumn])}
+                      />
                     ))}
                     {hasDetails && hasDetailsData(row) && (
-                      <p
-                        className="text-primary px-2 pointer"
+                      <Action
+                        color="primary"
+                        icon={`mdi-chevron-${openedDetails === row[keyColumn] ? "up" : "down"}`}
+                        iconOnly
                         onClick={() => setOpenedDetails(openedDetails === row[keyColumn] ? null : row[keyColumn])}
-                      >
-                        <i className={`mdi mdi-chevron-${openedDetails === row[keyColumn] ? "up" : "down"}`} />
-                      </p>
+                      />
                     )}
                   </div>
                 </div>
@@ -117,6 +114,43 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
         ))}
       </div>
     </div>
+  );
+}
+
+interface ActionProps {
+  action?: string;
+  iconOnly: boolean;
+  icon: string;
+  color: string;
+  text?: string;
+  onClick: () => void;
+}
+
+function Action({ action = "", iconOnly, icon, color, text = "", onClick }: ActionProps) {
+  const actionDetails = () => {
+    if (action === "edit")
+      return {
+        icon: "mdi-pencil",
+        color: "primary",
+        text: "Edit"
+      };
+    if (action === "delete")
+      return {
+        icon: "mdi-delete",
+        color: "danger",
+        text: "Delete"
+      };
+    return {
+      icon,
+      color,
+      text
+    };
+  };
+
+  return (
+    <p className={`text-${actionDetails().color} px-2 pointer`} onClick={onClick}>
+      <i className={`mdi ${actionDetails().icon}`} /> {!iconOnly && actionDetails().text}
+    </p>
   );
 }
 

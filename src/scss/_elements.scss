@@ -1385,16 +1385,20 @@ ul {
   }
 
   &:first-child::-moz-color-swatch {
-    border-radius: 16px 0 0 16px !important;
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
   }
   &:last-child::-moz-color-swatch {
-    border-radius: 0 16px 16px 0 !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
   }
   &:first-child::-webkit-color-swatch {
-    border-radius: 16px 0 0 16px !important;
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
   }
   &:last-child::-webkit-color-swatch {
-    border-radius: 0 16px 16px 0 !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
   }
 }
 
