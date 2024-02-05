@@ -2,6 +2,10 @@
 import { Collapse, List } from "well-rounded-ui";
 
 export default function ListTests() {
+  const handleOrder = (id: number) => {
+    console.log(id);
+  };
+
   return (
     <Collapse title="List" className="mb-3">
       <div style={{ backgroundColor: "whitesmoke", padding: 16 }}>
@@ -16,6 +20,18 @@ export default function ListTests() {
               action: "delete",
               iconOnly: true,
               onClick: () => {}
+            },
+            {
+              icon: "mdi-arrow-up",
+              color: "secondary",
+              iconOnly: true,
+              onClick: (id: number) => handleOrder(id)
+            },
+            {
+              icon: "mdi-arrow-down",
+              color: "secondary",
+              iconOnly: true,
+              onClick: (id: number) => handleOrder(id)
             }
           ]}
           data={[

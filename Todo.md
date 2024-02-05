@@ -1,7 +1,7 @@
 Input		                 Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✴️ - Doc ✅
 Button		                 Ui ✅ - Ui 100% ✅ - Unit ✅ - Template ✴️ - Doc ✅
 Select		                 Ui ✅ - Ui 100% ✅ - Unit ✅ - Template ✴️ - Doc ✅
-Calendar		             Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✴️ - Doc ✅
+Calendar		             Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✅ - Doc ✅
 FileUpload		             Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✴️ - Doc ✅
 ImageUpload		             Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✴️ - Doc ✅
 List			             Ui ✅ - Ui 100% ✴️ - Unit ✅ - Template ✴️ - Doc ✅
