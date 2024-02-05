@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeColor } from "../../types/Colors";
 
 interface BadgeProps {
   className?: string;
