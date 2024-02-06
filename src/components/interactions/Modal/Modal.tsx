@@ -42,7 +42,7 @@ const Modal = ({ onClose, show, toggle = true, children, size = "sm", closeOnCli
         onClick={closeOnClickOutside ? onClose : () => {}}
       >
         <div className="modal-content" role="alert" onClick={(e) => e.stopPropagation()}>
-          {toggle && <i className="mdi mdi-close pointer" onClick={() => setIsOpen(false)} />}
+          {toggle && <i className="mdi mdi-close pointer" onClick={() => onClose()} />}
           {children}
         </div>
       </div>
