@@ -3,7 +3,7 @@ import React from "react";
 interface SpinnerProps {
   className?: string;
   color?: "primary" | "success" | "warning" | "danger" | "black" | "white";
-  size: "lg" | "md" | "sm" | "xs";
+  size?: "lg" | "md" | "sm" | "xs";
 }
 
 export default function Spinner({ className = "", color = "primary", size = "sm" }: SpinnerProps) {

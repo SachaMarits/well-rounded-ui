@@ -17,7 +17,7 @@ interface ModalProps {
 const Modal = ({ onClose, show, toggle = true, children, size = "sm", closeOnClickOutside = false }: ModalProps) => {
   const nodeRef = useRef(null);
   const [isOpen, setIsOpen] = useState(show);
-  const closeOnEscapeKeyDown = (e: any) => {
+  const closeOnEscapeKeyDown = (e: KeyboardEvent) => {
     if ((e.charCode || e.keyCode) === 27) {
       setIsOpen(false);
       onClose();
@@ -42,7 +42,7 @@ const Modal = ({ onClose, show, toggle = true, children, size = "sm", closeOnCli
         onClick={closeOnClickOutside ? onClose : () => {}}
       >
         <div className="modal-content" role="alert" onClick={(e) => e.stopPropagation()}>
-          {toggle && <i className="mdi mdi-close pointer" onClick={() => setIsOpen(false)} />}
+          {toggle && <i className="mdi mdi-close pointer" onClick={() => onClose()} />}
           {children}
         </div>
       </div>
