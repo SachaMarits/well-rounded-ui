@@ -1418,7 +1418,7 @@ ul {
   }
 
   .previous-slide {
-    transform: translateX(-100%);
+    opacity: 0;
   }
 
   .current-slide {
@@ -1426,7 +1426,7 @@ ul {
   }
 
   .next-slide {
-    transform: translateX(100%);
+    opacity: 1;
   }
 
   .mdi-chevron-left,

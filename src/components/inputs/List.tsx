@@ -83,7 +83,7 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
                   <div className="actions">
                     {actions.map((item: any) => (
                       <Action
-                        key={item.action}
+                        key={item.action || item.icon}
                         action={item.action}
                         iconOnly={item.iconOnly}
                         icon={item.icon}
