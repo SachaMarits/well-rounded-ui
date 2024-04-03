@@ -8,7 +8,9 @@ export default function MultiSelectTests() {
         className="my-3"
         label="User selection"
         name="users"
-        options={[{ id: 1, text: "Sacha" }]}
+        options={Array(1000)
+          .fill(0)
+          .map((_, i) => ({ id: i, text: `User ${i}` }))}
         onChange={(ids: number[]) => console.log(ids)}
       />
     </Collapse>

@@ -1,4 +1,4 @@
-@import '../variables.module';
+@import "../variables.module";
 
 .input-with-label {
   display: flex;
@@ -12,11 +12,15 @@
     width: 100%;
   }
 
-  input, .multi-select-container {
+  input,
+  .multi-select-container {
     width: 100%;
   }
 
-  ul, li { width: 100% }
+  ul,
+  li {
+    width: 100%;
+  }
 }
 
 .multi-select-container {
@@ -34,7 +38,9 @@
   min-height: 40px;
 }
 
-.multi-select:hover { background: whitesmoke; }
+.multi-select:hover {
+  background: whitesmoke;
+}
 
 .multi-select-item {
   background: $selection;
@@ -54,7 +60,9 @@
     padding: 4px 3px 2px 3px;
   }
 
-  &:hover { filter: brightness(90%) }
+  &:hover {
+    filter: brightness(90%);
+  }
 }
 
 .multi-select-container .select {
@@ -63,10 +71,12 @@
   display: none;
   z-index: 2;
   border-radius: 0 0 4px 4px;
+  max-height: 400px;
+  overflow: auto;
   border: 0;
   outline: 0;
   font-size: 1rem;
-  transition: .2s;
+  transition: 0.2s;
   background: white;
   list-style: none;
   color: #222;
@@ -76,11 +86,14 @@
   border-top: none;
 }
 
-.multi-select-container .select.active { display: block; }
-.multi-select-container .select li { 
+.multi-select-container .select.active {
+  display: block;
+}
+
+.multi-select-container .select li {
   display: block;
   padding: 6px 11px;
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
