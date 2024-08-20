@@ -67,7 +67,7 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
                             ? row[key]
                             : /\.(jpg|jpeg|png|gif)$/i.test(row[key])
                             ? `/${row[key]}`
-                            : `/${row[key]}.sdsdjpg`
+                            : `/${row[key]}.jpg`
                         }
                       />
                     )}
