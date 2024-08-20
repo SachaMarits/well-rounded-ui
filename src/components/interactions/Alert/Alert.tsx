@@ -6,7 +6,7 @@ import { ErrorIcon, SuccessIcon, WarningIcon } from "../Icons/Icons";
 interface Button {
   color: "primary" | "success" | "warning" | "danger" | "default" | "gradient";
   text: string;
-  value: any;
+  value: unknown;
 }
 
 const Alert = (
@@ -32,7 +32,7 @@ const Alert = (
   };
 
   const promise = new Promise((resolve) => {
-    const hide = (value?: any | undefined) => {
+    const hide = (value?: unknown | undefined) => {
       root.unmount();
       resolve(value);
     };
