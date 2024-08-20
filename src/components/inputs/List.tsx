@@ -62,7 +62,13 @@ export default function List({ keyColumn, data, layout, actions }: TableProps) {
                     {type === "image" && (
                       <img
                         className="rounded-circle square36"
-                        src={row[key].includes("http") ? row[key] : `/${row[key]}.jpg`}
+                        src={
+                          row[key].includes("http")
+                            ? row[key]
+                            : /\.(jpg|jpeg|png|gif)$/i.test(row[key])
+                            ? `/${row[key]}`
+                            : `/${row[key]}.sdsdjpg`
+                        }
                       />
                     )}
                     {(type === "text" || type === "price") && (
