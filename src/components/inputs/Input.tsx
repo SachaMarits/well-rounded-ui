@@ -82,12 +82,11 @@ export default function Input({
     <textarea
       id={name + randomId}
       name={name}
-      type={type}
       className={`form-control${errors ? " error-input" : ""}${!label ? ` ${className}` : ""}`}
       placeholder={placeholder}
       minLength={minLength}
       maxLength={maxLength}
-      row={automaticTextareaHeight ? "1" : "3"}
+      rows={automaticTextareaHeight ? 1 : 3}
       onChange={(e) => {
         setInputLength(e.target.value.length);
         setTextAreaValue(e.target.value);

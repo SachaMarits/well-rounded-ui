@@ -461,25 +461,6 @@ ul {
 
 /* #endregion Pagination */
 
-/* #region User Profile */
-
-.user-profile .profile-details {
-  display: flex;
-  align-items: center;
-
-  .profile-content {
-    display: flex;
-    align-items: center;
-    margin-right: 12px;
-  }
-  .name-class .class {
-    font-size: small;
-    opacity: 0.8;
-  }
-}
-
-/* #endregion User Profile */
-
 /* #region List */
 
 .list {

@@ -12,6 +12,9 @@ interface MultiSelectProps {
 export default function MultiSelect({ className = "", name, label, options = [], onChange }: MultiSelectProps) {
   const [isListOpen, openList] = useState<boolean>(false);
   const [selection, setSelection] = useState<number[]>([]);
+  const [visibleItems, setVisibleItems] = useState<Option[]>([]);
+  const [lastVisibleIndex, setLastVisibleIndex] = useState<number>(0);
+  const itemsPerPagination = 50;
 
   const resizeObserver = new ResizeObserver((entries) => {
     const rect = entries[0].contentRect;
@@ -43,6 +46,24 @@ export default function MultiSelect({ className = "", name, label, options = [],
     false
   );
 
+  const loadMoreItems = () => {
+    const nextIndex = lastVisibleIndex + itemsPerPagination;
+    const itemsToShow = options.slice(lastVisibleIndex, nextIndex);
+    setVisibleItems([...visibleItems, ...itemsToShow]);
+    setLastVisibleIndex(nextIndex);
+  };
+
+  useEffect(() => {
+    loadMoreItems();
+  }, []);
+
+  const handleScroll = (event: React.UIEvent<HTMLUListElement>) => {
+    const ul = event.currentTarget;
+    if (ul.scrollTop + ul.clientHeight >= ul.scrollHeight - 100) {
+      loadMoreItems();
+    }
+  };
+
   return (
     <div className={`input-with-label mb-3 ${className}`}>
       <label htmlFor={name}>
@@ -61,8 +82,8 @@ export default function MultiSelect({ className = "", name, label, options = [],
               </div>
             ))}
           </div>
-          <ul id={name} className={`select ${isListOpen ? "active" : ""} lg`}>
-            {options.map((option) => {
+          <ul id={name} className={`select ${isListOpen ? "active" : ""} lg`} onScroll={handleScroll}>
+            {visibleItems.map((option) => {
               if (selection.findIndex((id) => id === option.id) === -1)
                 return (
                   <li key={option.id} onClick={() => addItem(option.id)}>
