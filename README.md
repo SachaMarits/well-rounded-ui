@@ -115,7 +115,7 @@ https://sachamarits.github.io/well-rounded-ui
 
 ---
 
-## [Live Demo](https://well-rounded-react-template.sachamarits.be/)
+## [Live Demo](https://well-rounded-react-template.sacha-marits.be)
 
 Live demo: https://well-rounded-react-template.sachamarits.be/ <br/>
 Most components can be seen within: `Template > Components` and `Template > Crud Table`.
